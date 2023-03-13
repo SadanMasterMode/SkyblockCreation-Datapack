@@ -1,0 +1,22 @@
+{
+    "values": [
+    "sbremake:tick",
+    "sbremake:world/dreamworld/tick",
+    "sbremake:items/aote/tick",
+    "sbremake:items/dreamnail/tick",
+    "sbremake:items/railgun/weak/tick",
+    "sbremake:items/railgun/weak/tick",
+    "sbremake:items/gleaming_blade/tick",
+    "sbremake:items/mage/fury/tick",
+    "sbremake:items/mage/sceptre/tick",
+    "sbremake:items/mage/spoon/tick",
+    "sbremake:items/mage/wimpact/tick",
+    "sbremake:items/berserk/hydra/tick",
+    "sbremake:items/wands/wor/tick",
+    "sbremake:items/wands/woa/tick",
+    "sbremake:items/armor/witherborn/tick",
+    "sbremake:world/dh/tick",
+    "sbremake:world/dwindler/tick",
+    "sbstats:tick"
+    ]
+}

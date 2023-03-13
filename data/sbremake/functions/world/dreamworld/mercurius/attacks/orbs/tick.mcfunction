@@ -1,0 +1,34 @@
+tag @s add orbTmp
+
+execute if score @s hits matches 11..15 in minecraft:overworld in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Summoning Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "green"},{"text":"/","color":"#55FF55"},{"text":"15","color":"#55FF55"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 6..10 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Summoning Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "gold"},{"text":"/","color":"gold"},{"text":"15","color":"gold"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 1..5 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Summoning Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "red"},{"text":"/","color":"red"},{"text":"15","color":"red"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute positioned 3000000 1 3000000 in minecraft:overworld run kill @e[type=item,nbt={Item:{id:"minecraft:oak_sign"}},limit=1,distance=..3]
+execute as @s[tag=summon_orb] in minecraft:overworld run data modify entity @s CustomName set from block 3000000 1 3000000 Text1
+
+execute if score @s hits matches 11..15 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Damaging Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "green"},{"text":"/","color":"#55FF55"},{"text":"15","color":"#55FF55"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 6..10 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Damaging Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "gold"},{"text":"/","color":"gold"},{"text":"15","color":"gold"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 1..5 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Damaging Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "red"},{"text":"/","color":"red"},{"text":"15","color":"red"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute positioned 3000000 1 3000000 in minecraft:overworld run kill @e[type=item,nbt={Item:{id:"minecraft:oak_sign"}},limit=1,distance=..3]
+execute as @s[tag=damage_orb] in minecraft:overworld run data modify entity @s CustomName set from block 3000000 1 3000000 Text1
+
+execute if score @s hits matches 11..15 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Stalker Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "green"},{"text":"/","color":"#55FF55"},{"text":"15","color":"#55FF55"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 6..10 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Stalker Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "gold"},{"text":"/","color":"gold"},{"text":"15","color":"gold"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 1..5 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Stalker Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "red"},{"text":"/","color":"red"},{"text":"15","color":"red"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute positioned 3000000 1 3000000 in minecraft:overworld run kill @e[type=item,nbt={Item:{id:"minecraft:oak_sign"}},limit=1,distance=..3]
+execute as @s[tag=stalker_orb] in minecraft:overworld run data modify entity @s CustomName set from block 3000000 1 3000000 Text1
+
+execute if score @s hits matches 11..15 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Crying Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "green"},{"text":"/","color":"#55FF55"},{"text":"15","color":"#55FF55"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 6..10 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Crying Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "gold"},{"text":"/","color":"gold"},{"text":"15","color":"gold"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute if score @s hits matches 1..5 in minecraft:overworld run setblock 3000000 1 3000000 oak_sign{Text1:'["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Crying Orb","color":"red"},{"text":" "},{"score":{"name": "@e[tag=orbTmp,limit=1]","objective": "hits"},"color": "red"},{"text":"/","color":"red"},{"text":"15","color":"red"},{"text":"❤","color":"#FF5555"}]'} destroy
+execute positioned 3000000 1 3000000 in minecraft:overworld run kill @e[type=item,nbt={Item:{id:"minecraft:oak_sign"}},limit=1,distance=..3]
+execute as @s[tag=crying_orb] in minecraft:overworld run data modify entity @s CustomName set from block 3000000 1 3000000 Text1
+
+execute at @s run tp @s[tag=!stalker_orb] ~ ~ ~ ~5 ~
+execute at @s run tp @s[tag=stalker_orb] ~ ~ ~ facing entity @p eyes
+
+execute if score @s health matches ..0 run function sbremake:world/dreamworld/mercurius/attacks/orbs/health
+execute if score @s hits matches ..0 in minecraft:overworld run function sbremake:world/dreamworld/mercurius/attacks/orbs/death
+
+schedule clear sbremake:world/dreamworld/mercurius/attacks/orbs/summon
+tag @s remove orbTmp

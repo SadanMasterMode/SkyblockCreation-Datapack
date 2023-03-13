@@ -1,0 +1,7 @@
+[
+    {
+      "function": "minecraft:set_nbt",
+      "tag": "{Unbreakable:1b,HideFlags:127,attack:200,damage:0,gleaming:true,Enchantments:[{}]}"
+    }
+  ]
+  

@@ -1,0 +1,11 @@
+kill @e[tag=weakRail1]
+kill @e[tag=weakRail2]
+kill @e[tag=weakRail3]
+kill @e[tag=weakRail4]
+kill @e[tag=weakRail5]
+kill @e[tag=weakRail6]
+kill @e[tag=weakRail7]
+kill @e[tag=weakRail8]
+kill @e[tag=weakRail9]
+kill @e[tag=weakRail10]
+scoreboard players set @p weakRailCheck 0

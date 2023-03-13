@@ -1,0 +1,16 @@
+[
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "sbstats:reforge"
+      },
+      "ops": [
+        {
+          "source": "Item.tag.NewLore",
+          "target": "display.Lore",
+          "op": "replace"
+        }
+      ]
+    }
+  ]  

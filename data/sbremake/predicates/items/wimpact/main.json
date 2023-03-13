@@ -1,0 +1,27 @@
+[
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "nbt": "{SelectedItem:{id:\"minecraft:iron_sword\",Count:1b,tag:{display:{Name:'[{\"text\":\"Withered Hyperion \",\"italic\":false,\"color\":\"light_purple\"},{\"text\":\"✪✪✪✪✪\",\"color\":\"gold\"}]'}}}}"
+    }
+  },
+  {
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+      "rightClick": {
+        "min": 1
+      }
+    }
+  },
+  {
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+      "mana": {
+        "min": 150
+      }
+    }
+  }
+]

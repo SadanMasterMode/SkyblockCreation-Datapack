@@ -1,0 +1,5 @@
+tellraw @a "loaded"
+scoreboard objectives add bob dummy
+
+kill @e[tag=emperorHeart]
+summon item_display 4 63 -32 {item:{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;1634755910,-714325559,-1358273596,770959820],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTFjNTFiOTQ2Y2I0ODRiOWM3NmIyYzViZjVlYWIwYzc0YzljZWQ5NWYzNWFhODFlNjk5YmQ1ZDliNTdlMjBmIn19fQ=="}]}}}},Glowing:1b,glow_color_override:4456703,interpolation_duration:20,interpolation_start:-1,transformation:[1.5000000000000004f,-0.4393398282201788f,2.560660171779821f,0f,1.5f,2.560660171779821f,-0.4393398282201788f,-1.5f,-2.1213203435596424f,1.5f,1.5000000000000004f,0f,0f,0f,0f,1f],shadow_radius:0f,shadow_strength:0f,Tags:["emperorHeart"],brightness:{block:15,sky:15}}

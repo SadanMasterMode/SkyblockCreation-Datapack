@@ -1,0 +1,1 @@
+execute if entity @s[tag=!invulnerable] run function sbremake:utils/damages/magic_damage/l6/l6_0

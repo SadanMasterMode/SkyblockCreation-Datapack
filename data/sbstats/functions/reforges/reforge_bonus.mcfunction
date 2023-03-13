@@ -1,0 +1,2 @@
+data modify storage sbstats:stone Item.tag.ReforgeBonus append value '[{"text":" "}]'
+data modify storage sbstats:stone Item.tag.ReforgeBonus append from storage sbstats:stone SelectedItem.tag.ReforgeStone.bonus[]

@@ -1,0 +1,30 @@
+execute at @a[advancements={sbstats:villager=true}] at @e[tag=reforge,limit=1,sort=nearest] positioned ~ ~1 ~ as @e[type=item,nbt={Item:{tag:{Base:{type:'UPGRADE'}}}},nbt=!{Item:{tag:{Base:{id:'RECOMBOBULATOR_3000'}}}},distance=..0.8,limit=1] run data modify storage sbstats:stone SelectedItem set from entity @s Item
+execute at @a[advancements={sbstats:villager=true}] at @e[tag=reforge,limit=1,sort=nearest] positioned ~ ~1 ~ as @e[type=item,nbt={Item:{tag:{Base:{type:'UPGRADE'}}}},nbt=!{Item:{tag:{Base:{id:'RECOMBOBULATOR_3000'}}}},distance=..0.8,limit=1] run function sbstats:stats/remove_item
+execute at @s run playsound block.anvil.use master @s ~ ~ ~
+
+item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:old_name
+data modify storage sbstats:item_name Name set from entity @s SelectedItem.tag.OldName
+data modify storage sbstats:reforge Name set from entity @s SelectedItem.tag.Upgrades.reforge.type
+item modify entity @s weapon.mainhand sbstats:custom_stone
+
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'COMMON'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.common
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'UNCOMMON'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.uncommon
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'RARE'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.rare
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'EPIC'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.epic
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'LEGENDARY'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.legendary
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'MYTHIC'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.mythic
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'DIVINE'}}}}] run data modify storage sbstats:stone Item.tag.NewStats set from storage sbstats:stone SelectedItem.tag.ReforgeStone.stats.divine
+
+data modify storage sbstats:reforge SelectedItem.tag.Upgrades.reforge.type set from storage sbstats:stone SelectedItem.tag.ReforgeStone.id
+item modify entity @s weapon.mainhand sbstats:stoner
+item modify entity @s weapon.mainhand sbstats:reforge_type
+item modify entity @s weapon.mainhand sbstats:reforged
+function sbstats:reforges/apply_lore
+
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'COMMON'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "white","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "white","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "white","interpret": true}]
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'UNCOMMON'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "green","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "green","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "green","interpret": true}]
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'RARE'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "blue","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "blue","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "blue","interpret": true}]
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'EPIC'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "dark_purple","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "dark_purple","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "dark_purple","interpret": true}]
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'LEGENDARY'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "gold","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "gold","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "gold","interpret": true}]
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'MYTHIC'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "light_purple","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "light_purple","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "light_purple","interpret": true}]
+execute if entity @s[nbt={SelectedItem:{tag:{Base:{rarity:'DIVINE'}}}}] run tellraw @s [{"text": "You reforged your ","color": "green"},{"nbt":"Name","storage":"sbstats:item_name","color": "aqua","interpret": true},{"text": " into a ","color": "green"},{"nbt":"Name","storage": "sbstats:reforge","color": "light_purple","interpret": false},{"text": " "},{"nbt":"Name","storage": "sbstats:item_name","color": "aqua","interpret": true}]

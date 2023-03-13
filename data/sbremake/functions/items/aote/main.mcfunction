@@ -1,0 +1,3 @@
+execute at @s anchored eyes positioned ^ ^ ^ anchored feet run function sbremake:items/aote/start_ray
+execute at @s anchored eyes positioned ^ ^ ^ anchored feet unless block ^ ^ ^1 #sbremake:items/air anchored feet run tellraw @s [{"text": "There are blocks in the way!","color": "red"}]
+execute at @s anchored eyes positioned ^ ^ ^ anchored feet unless block ^ ^ ^1 #sbremake:items/air anchored feet run summon armor_stand ~ ~-1 ~ {Tags:["aote1","spectator"],Invisible:1,Invulnerable:1b}

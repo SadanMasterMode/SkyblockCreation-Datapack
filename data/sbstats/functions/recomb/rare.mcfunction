@@ -1,0 +1,2 @@
+tellraw @s [{"text": "You recombobulated your ","color": "green"},{"nbt":"SelectedItem.tag.display.Name","entity":"@a[tag=recomb],limit=1","interpret": true,"italic": false},{"text": " to become ","color": "green","bold": false,"italic": false},{"text": "EPIC","color": "dark_purple","bold": true,"italic": false},{"text": "!","color": "green","bold": false,"italic": false}]
+data modify storage sbstats:recomb Item.tag.rarity set value 'EPIC'

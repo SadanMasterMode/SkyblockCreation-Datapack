@@ -1,0 +1,3 @@
+execute at @s anchored eyes positioned ^ ^ ^ anchored feet if block ^ ^ ^1 #sbremake:items/air run function sbremake:items/mage/wimpact/start_ray
+execute at @s anchored eyes positioned ^ ^ ^ anchored feet unless block ^ ^ ^1 #sbremake:items/air anchored feet run tellraw @s [{"text": "There are blocks in the way!","color": "red"}]
+execute at @s anchored eyes positioned ^ ^ ^ anchored feet unless block ^ ^ ^1 #sbremake:items/air anchored feet run summon armor_stand ~ ~-1 ~ {Tags:["wimpact1","spectator"],Invisible:1,Invulnerable:1b}

@@ -1,0 +1,1 @@
+execute as @e[name="aots"] store result entity @s Pose.RightArm[0] float 1.00 run scoreboard players get @p aotsRotate

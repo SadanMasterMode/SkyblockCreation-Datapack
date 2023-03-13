@@ -1,0 +1,26 @@
+[
+    {
+      "function": "minecraft:set_lore",
+      "entity": "this",
+      "lore": [
+        [
+          [
+            {
+              "text": "Durability:",
+              "color": "blue",
+              "italic": false
+            },
+            {
+              "score": {
+                "name": "@s",
+                "objective": "durability"
+              },
+              "color": "aqua"
+            }
+          ]
+        ]
+      ],
+      "replace": true
+    }
+  ]
+  
