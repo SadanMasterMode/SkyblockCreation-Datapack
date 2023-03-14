@@ -2,13 +2,13 @@ data remove storage sbremake:actionbar Item.tag.actionbar
 
 # Base
 ## Health
-setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name":"@p","objective":"healthVis"},"color":"red"},{"text":"/100❤ ","color":"red"}]'} destroy
+setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name":"@a[limit=1]","objective":"healthVis"},"color":"red"},{"text":"/100❤ ","color":"red"}]'} destroy
 data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
 ## Defense
-execute if score @s defense matches 1.. run setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name":"@p","objective":"defense"},"color": "green"},{"text": "❈ Defense ","color": "green"}]'} destroy
+execute if score @s defense matches 1.. run setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name":"@a[limit=1]","objective":"defense"},"color": "green"},{"text": "❈ Defense ","color": "green"}]'} destroy
 execute if score @s defense matches 1.. run data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
 ## Mana
-setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name":"@p","objective":"mana"},"color":"aqua"},{"text":"/","color":"aqua"},{"score":{"name":"@p","objective":"maxMana"},"color":"aqua"},{"text":"✎","color":"aqua"}]'} destroy
+setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name":"@a[limit=1]","objective":"mana"},"color":"aqua"},{"text":"/","color":"aqua"},{"score":{"name":"@a[limit=1]","objective":"maxMana"},"color":"aqua"},{"text":"✎","color":"aqua"}]'} destroy
 data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
 
 # Angel's Ascent
@@ -27,7 +27,7 @@ execute if entity @s[nbt={Inventory:[{Slot:101b,id:"minecraft:leather_leggings",
 
 # Terrorwraith Cloak
 ## CD
-execute if score @s wraithCD matches 1.. run setblock 3000000 1 3000000 oak_sign{Text1:'[{"text":""},{"score":{"name":"@p","objective":"wraithCD"},"color":"dark_gray","bold": false}]'} destroy
+execute if score @s wraithCD matches 1.. run setblock 3000000 1 3000000 oak_sign{Text1:'[{"text":""},{"score":{"name":"@a[limit=1]","objective":"wraithCD"},"color":"dark_gray","bold": false}]'} destroy
 ## No CD
 execute if score @s wraithCD matches 0 run setblock 3000000 1 3000000 oak_sign{Text1:'[{"text":"READY","color": "dark_gray","bold": true}]'} destroy
 #endregion

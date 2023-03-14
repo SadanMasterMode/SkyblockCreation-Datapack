@@ -1,8 +1,6 @@
 # Create objectives
 scoreboard objectives add bootsIntelligence dummy
-scoreboard objectives add inSpookyGUI dummy
 scoreboard objectives add wraithSn minecraft.custom:minecraft.sneak_time
-scoreboard objectives add spookyRC minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add ascendRC minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add itemCD dummy
 scoreboard objectives add chestplateFerocity dummy
@@ -18,7 +16,6 @@ scoreboard objectives add const0 dummy
 scoreboard objectives add glideTimeMod dummy
 scoreboard objectives add bootsDurability dummy
 scoreboard objectives add fallingEdge dummy
-scoreboard objectives add spookyMute dummy
 scoreboard objectives add const250 dummy
 scoreboard objectives add wraithCD dummy
 scoreboard objectives add intelligence dummy
@@ -75,7 +72,6 @@ scoreboard objectives add glideTimeMod2 dummy
 scoreboard objectives add bootsDamage dummy
 scoreboard objectives add ghastlyConsequences dummy
 scoreboard objectives add maxMana2 dummy
-scoreboard objectives add spookyRC2 dummy
 scoreboard objectives add leggingsDurability dummy
 scoreboard objectives add itemIntelligence dummy
 scoreboard objectives add Test dummy
@@ -136,8 +132,6 @@ scoreboard objectives add wimpactPart dummy
 scoreboard objectives add wimpactPartToggle dummy
 scoreboard objectives add infiniteMana dummy
 scoreboard objectives add infiniteManaToggle dummy
-scoreboard objectives add 25Mana dummy
-scoreboard objectives add 25ManaMod dummy
 scoreboard objectives add defense dummy
 scoreboard objectives add maxHealth dummy
 scoreboard objectives add maxHealthMod dummy
@@ -200,7 +194,6 @@ bossbar set objective color red
 bossbar set objective value 10
 bossbar set objective max 10
 bossbar set objective players @a
-scoreboard players set @a spookyMute 1
 scoreboard players set @a wimpactPart 0
 scoreboard players set @a infiniteMana 0
 scoreboard players set @a wraithCD 0
@@ -218,9 +211,9 @@ tellraw @a [{"text": "Misc #1 done","color": "dark_gray"}]
 
 # Raycasts
 kill @e[tag=raycast]
-summon minecraft:marker ~ ~ ~ {UUID:[I;-1953028026,-856931226,-1240793240,-1598231354],Invulnerable:1b,NoGravity:1b,Tags:["raycast1","raycast"],data:{SBRemake:{UUID:"8b972846-ccec-4466-b60a-ff68a0bcecc6"}}}
-summon minecraft:marker ~ ~ ~ {UUID:[I;-1359934995,-1333768250,-1836555244,-511399816],Invulnerable:1b,NoGravity:1b,Tags:["raycast2","raycast"],data:{SBRemake:{UUID:"aef109ed-b080-4fc6-9288-6414e184a878"}}}
-summon minecraft:marker ~ ~ ~ {UUID:[I;-481596867,-206420554,-1462093073,-1031935036],Invulnerable:1b,NoGravity:1b,Tags:["raycast3","raycast"],data:{SBRemake:{UUID:"e34b6a3d-f3b2-45b6-a8da-3aefc27debc4"}}}
+summon minecraft:marker ~ ~ ~ {UUID:[I;-1953028026,-856931226,-1240793240,-1598231354],Invulnerable:1b,NoGravity:1b,Tags:["raycast1","raycast"],data:{SBRemake:{UUID:'8b972846-ccec-4466-b60a-ff68a0bcecc6'}}}
+summon minecraft:marker ~ ~ ~ {UUID:[I;-1359934995,-1333768250,-1836555244,-511399816],Invulnerable:1b,NoGravity:1b,Tags:["raycast2","raycast"],data:{SBRemake:{UUID:'aef109ed-b080-4fc6-9288-6414e184a878'}}}
+summon minecraft:marker ~ ~ ~ {UUID:[I;-481596867,-206420554,-1462093073,-1031935036],Invulnerable:1b,NoGravity:1b,Tags:["raycast3","raycast"],data:{SBRemake:{UUID:'e34b6a3d-f3b2-45b6-a8da-3aefc27debc4'}}}
 tellraw @a [{"text": "Raycasts done","color": "dark_gray"}]
 
 # Forceloading (chest + sign)
@@ -228,8 +221,8 @@ forceload add 3000000 3000000
 setblock 3000000 0 3000000 chest
 setblock 3000000 1 3000000 oak_sign
 kill @e[tag=cw_typewriter]
-setblock 3000000 0 3000001 air
 setblock 3000000 1 3000001 air
+setblock 3000000 0 3000001 air
 execute positioned 3000000 0 3000001 run function sbremake:utils/typewriter/setup
 
 # Const Variables
@@ -263,7 +256,6 @@ execute as @e[tag=decayedHusk] run tp @s 24.5 54.24 22.5
 kill @e[tag=objectiveMarker]
 summon minecraft:marker ~ ~ ~ {Invulnerable:1b,NoGravity:1b,Tags:["objectiveMarker"]}
 setblock 0 0 0 air
-setblock 0 0 0 chest{Items:[{Slot:0b,id:"minecraft:player_head",Count:1b,tag:{spook:1,SkullOwner:{Id:[I;-106965583,1392722555,-1387069706,1410584343],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE1NjEyMzhiYWNiNTgzYTYwZjlhNTBlNzk0NDZkNGRiNTZkMTgwNGQ3MGE4YTAyNDA3MjcxM2RlYjQ3ZWUxZCJ9fX0="}]}},display:{Name:'[{"text":"Spooky Mask","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"This brand is particularly spooky.","color":"dark_gray"},{"text":"","color":"dark_purple","italic":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK TWICE","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Opens a new GUI.","italic":false,"color":"gray"}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"NONE","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Redo ","italic":false,"color":"gold"},{"text":"LEFT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Resets the Mask back","italic":false,"color":"gray"}]','[{"text":"to the original state.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"EPIC MASK","italic":false,"color":"dark_purple","bold":true}]']}}},{Slot:1b,id:"zombie_head",Count:1b,tag:{spook:1,display:{Name:'[{"text":"Zombie Mask","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"It\'s alive, it\'s ALIVE!","color":"dark_gray"},{"text":"","color":"dark_purple","italic":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK TWICE","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Opens a new GUI.","italic":false,"color":"gray"}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"ZOMBIES","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Redo ","italic":false,"color":"gold"},{"text":"LEFT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Resets the Mask back","italic":false,"color":"gray"}]','[{"text":"to the original state.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"EPIC MASK","italic":false,"color":"dark_purple","bold":true}]']}}},{Slot:2b,id:"minecraft:skeleton_skull",Count:1b,tag:{spook:1,display:{Name:'[{"text":"Skeleton Mask","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"You got a bone to pick with me?","color":"dark_gray"},{"text":"","color":"dark_purple","italic":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK TWICE","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Opens a new GUI.","italic":false,"color":"gray"}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"SKELETONS","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Redo ","italic":false,"color":"gold"},{"text":"LEFT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Resets the Mask back","italic":false,"color":"gray"}]','[{"text":"to the original state.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"EPIC MASK","italic":false,"color":"dark_purple","bold":true}]']}}},{Slot:3b,id:"minecraft:creeper_head",Count:1b,tag:{spook:1,display:{Name:'[{"text":"Explosion Mask","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"BOOM BOOM BOOM!","color":"dark_gray"},{"text":"","color":"dark_purple","italic":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK TWICE","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Opens a new GUI.","italic":false,"color":"gray"}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"EXPLOSIONS","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Redo ","italic":false,"color":"gold"},{"text":"LEFT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Resets the Mask back","italic":false,"color":"gray"}]','[{"text":"to the original state.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"EPIC MASK","italic":false,"color":"dark_purple","bold":true}]']}}},{Slot:4b,id:"minecraft:player_head",Count:1b,tag:{spook:1,SkullOwner:{Id:[I;-1339275177,1329941719,-2024897808,-1501401745],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzVlMjQ4ZGEyZTEwOGYwOTgxM2E2Yjg0OGEwZmNlZjExMTMwMDk3ODE4MGVkYTQxZDNkMWE3YThlNGRiYTNjMyJ9fX0="}]}},display:{Name:'[{"text":"Arthropod Mask","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"Creepy crawlies won’t touch you again.","color":"dark_gray"},{"text":"","color":"dark_purple","italic":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK TWICE","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Opens a new GUI.","italic":false,"color":"gray"}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"ARTHROPODS","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Redo ","italic":false,"color":"gold"},{"text":"LEFT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Resets the Mask back","italic":false,"color":"gray"}]','[{"text":"to the original state.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"EPIC MASK","italic":false,"color":"dark_purple","bold":true}]']}}}],CustomName:'[{"text":"Origin Chest (do not take, will break datapack)"}]'}
 tellraw @a [{"text": "Misc done \n","color": "dark_gray"}]
 team join player @a
 team join notPlayer @e[type=!player]
@@ -284,7 +276,5 @@ gamerule commandBlockOutput false
 
 # Initialization message. Everything worked!
 tellraw @a [{"text": "Hey!\n\n","color": "red","bold": true},{"text": "Thanks for playing my map/datapack. If you have any questions or concerns,feel free to contact me :)\n\n","color": "red","bold": false},{"text": "Socials\n","color": "gray","bold": false},{"text": "Discord: @Sadan (Master Mode)#2278\n","color": "dark_gray","bold": false},{"text": "Twitter: @SadanMasterMode\n","color": "aqua","bold": false},{"text": "Forums: https://hypixel.net/members/sadan_mastermode.3210268/","color": "gold","bold": false}]
-tellraw @a {"text": " "}
-tellraw @a [{"text": "⚠ Note: At coords (0, 0, 0), a chest has spawned. This chest is used for the spooky items.","color": "red","bold": false},{"text": " Do not take the items in the chest.","color": "red","bold": true},{"text": " That will break the datapack.","color": "red","bold": false}]
 tellraw @a {"text": " "}
 tellraw @a {"text": "Disclaimer: ALL credit goes to Hypixel for their item ideas and stuff. They deserve the credit for making an amazing server, join it at mc.hypixel.net!","color": "red"}

@@ -1,8 +1,10 @@
 # Raycasts
 execute as @a at @s anchored eyes run function sbremake:tick/raycasts
 
-# Get stats from player
-execute as @a run function sbremake:utils/stats/stats
+# Function Calls
+function sbremake:utils/spectator
+execute as @a run function sbremake:tick/contextial/as_all_players 
+function sbremake:utils/undead
 
 # Invisible Minecarts
 execute as @e[type=#minecraft:minecarts,tag=!invisible_minecart] run function sbremake:utils/invisible_minecarts
@@ -12,7 +14,7 @@ data merge entity @e[tag=spectator,type=armor_stand,tag=!enable_slot,limit=1,sor
 
 # Mob Nametags
 execute as @e[tag=!maxHealth,tag=!spectator] run function sbremake:nametags/max_health
-execute as @e[type=!player,tag=!boss,tag=!newDmg,tag=!spectator] store result score @s health run data get entity @s Health
+execute as @e[tag=!boss,tag=!newDmg,tag=!spectator] store result score @s health run data get entity @s Health
 execute as @e[tag=!noName] in minecraft:overworld run function sbremake:nametags/main
 
 # Actionbar
@@ -22,10 +24,8 @@ execute as @a[predicate=sbremake:items/tick/actionbar] run function sbremake:tic
 execute as @a[scores={damage=0..}] run function sbremake:utils/stats/dmg_attribute
 
 # Misc
-
 execute store result score @a[limit=1] healthMod run scoreboard players get @a[limit=1] playerHealth
 execute store result score @a[limit=1] healthVis run scoreboard players operation @a[limit=1] healthMod *= #5 const
-
 execute at @a as @e[distance=50..] run function sbremake:tick/raycast_kill
 
 ## Mana Stuff
@@ -34,19 +34,14 @@ execute as @a unless score @s mana >= @s maxMana run scoreboard players add @s m
 function sbremake:utils/stats/extra_mana_give
 execute as @a run function sbremake:utils/stats/mana
 function sbremake:utils/stats/extra_mana_remove
-execute store result score @a[limit=1] 25Mana run scoreboard players get @a[limit=1] maxMana
-execute store result score @a[limit=1] 25ManaMod run scoreboard players operation @a[limit=1] 25Mana /= #4 const
-execute store result score @a[limit=1] 25Mana run scoreboard players get @a[limit=1] maxMana
+### Percentage Mana
+execute store result score #25 percentageMana run scoreboard players get @a[limit=1] maxMana
+execute store result score #25 percentageManaMod run scoreboard players operation #25 percentageMana /= #4 const
+execute store result score #25 percentageMana run scoreboard players get @a[limit=1] maxMana
+scoreboard players set #40 percentageMana 40
 scoreboard players operation #40 percentageMana *= @a[limit=1] maxMana
 execute store result score @a percentageManaMod run scoreboard players operation #40 percentageMana /= #100 const
 execute if score @a[limit=1] mana >= @a[limit=1] maxMana run execute store result score @a[limit=1] mana run scoreboard players get @a[limit=1] maxMana
-
-execute as @a run function sbremake:achievements/check
-
-execute as @a run function sbremake:utils/player_gamemode
-function sbremake:utils/spectator
-function sbremake:utils/cos
-function sbremake:utils/undead
 
 execute as @e[tag=float] run function sbremake:utils/item_float
 execute as @a[scores={solMaxDmg=1..},tag=!inDwindlerBoss] run function sbremake:utils/sol_max_dmg
@@ -86,24 +81,24 @@ execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run p
 execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run kill @s
 
 # Wither Cloak
-execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] mana >= @a[limit=1] 25ManaMod run execute store result score @a[limit=1] cloakRC2 run scoreboard players get @a[limit=1] cloakRC
+execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] mana >= #25 percentageManaMod run execute store result score @a[limit=1] cloakRC2 run scoreboard players get @a[limit=1] cloakRC
 execute unless entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] run execute store result score @a[limit=1] cloakRC run scoreboard players get @a[limit=1] cloakRC2
-execute if score @a[limit=1] mana >= @a[limit=1] 25ManaMod unless score @a[limit=1] cloakWarn matches 1.. run execute store result score @a[limit=1] cloakRC run scoreboard players get @a[limit=1] cloakRC2
-execute if entity @a[limit=1,scores={cloakRC3=1..},nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] unless score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] mana <= @a[limit=1] 25ManaMod run function sbremake:items/cloak/manawarn
-execute if entity @a[limit=1,scores={cloakRC=1..},nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] mana >= @a[limit=1] 25ManaMod unless score @a[limit=1] cloakWarn matches 1.. run function sbremake:items/cloak/main
+execute if score @a[limit=1] mana >= #25 percentageManaMod unless score @a[limit=1] cloakWarn matches 1.. run execute store result score @a[limit=1] cloakRC run scoreboard players get @a[limit=1] cloakRC2
+execute if entity @a[limit=1,scores={cloakRC3=1..},nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] unless score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] mana <= #25 percentageManaMod run function sbremake:items/cloak/manawarn
+execute if entity @a[limit=1,scores={cloakRC=1..},nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] mana >= #25 percentageManaMod unless score @a[limit=1] cloakWarn matches 1.. run function sbremake:items/cloak/main
 execute as @r at @s run tp @e[tag=cloak1] ~2 ~ ~1
 execute as @r at @s run tp @e[tag=cloak2] ~2 ~ ~-1
 execute as @r at @s run tp @e[tag=cloak3] ~ ~ ~2
 execute as @r at @s run tp @e[tag=cloak4] ~ ~ ~-2
 execute as @r at @s run tp @e[tag=cloak5] ~-2 ~ ~1
 execute as @r at @s run tp @e[tag=cloak6] ~-2 ~ ~-1
-execute if score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] dmgTaken matches 1.. if score @a[limit=1] mana <= @a[limit=1] 25ManaMod run scoreboard players set @a[limit=1] cloakRC 2
-execute if score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] dmgTaken matches 1.. if score @a[limit=1] mana <= @a[limit=1] 25ManaMod run scoreboard players set @a[limit=1] cloakRC2 2
+execute if score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] dmgTaken matches 1.. if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players set @a[limit=1] cloakRC 2
+execute if score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] dmgTaken matches 1.. if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players set @a[limit=1] cloakRC2 2
 execute if entity @r[scores={dmgTaken=1..}] if score @a[limit=1] cloakWarn matches 1.. run function sbremake:items/cloak/mana
 execute as @a[scores={cloakRC=2..}] at @s run function sbremake:items/cloak/final
 execute as @a[scores={cloakRC3=1..}] at @s run scoreboard players reset @a[limit=1] cloakRC3
-execute if score @a[limit=1] mana <= @a[limit=1] 25ManaMod run scoreboard players reset @a[limit=1] cloakRC
-execute if score @a[limit=1] mana <= @a[limit=1] 25ManaMod run scoreboard players reset @a[limit=1] cloakRC2
+execute if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players reset @a[limit=1] cloakRC
+execute if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players reset @a[limit=1] cloakRC2
 scoreboard players reset @a[limit=1] dmgTaken
 
 # Sinseeker
@@ -161,26 +156,6 @@ execute if score @a[limit=1] ascendRecharge matches 22.. run function sbremake:i
 execute unless entity @a[limit=1,nbt={SelectedItem:{}}] if score @a[limit=1] spookyMute matches 1 run execute if score @a[limit=1] ascendRC matches 1.. at @a[limit=1] if score @a[limit=1] ascendCharge matches ..0 at @a[limit=1] if block ~ ~-0.5 ~ air run tellraw @a[limit=1] [{"text":"ANGELS ASCENT","color":"red","bold":true},{"text":" You don't have enough charges to use this!","color":"red","bold":false}]
 execute unless entity @a[limit=1,nbt={SelectedItem:{}}] if entity @a[limit=1,nbt={Inventory:[{Slot:101b,id:"minecraft:leather_leggings",tag:{display:{Name:'[{"text":"Angel\'s Ascent","italic":false,"color":"gold"}]'}}}]}] if score @a[limit=1] ascendRC matches 1.. at @a[limit=1] if score @a[limit=1] ascendCharge matches 1.. at @a[limit=1] if block ~ ~-0.5 ~ air run function sbremake:items/ascent/main
 scoreboard players reset @a ascendRC
-
-# Spooky Mask
-execute as @a[limit=1] at @s if block ^ ^ ^2 air run tp @e[tag=spooky] ^ ^1 ^2
-effect give @e[tag=spooky] resistance 1 4 true
-execute as @a[limit=1] at @s run tp @e[tag=spookyCart] ~ ~1 ~
-execute unless entity @e[tag=spookyCart] if entity @a[limit=1,nbt={SelectedItem:{tag:{spook:1}}}] run execute store result score @a[limit=1] spookyRC2 run scoreboard players get @a[limit=1] spookyRC
-execute unless entity @e[tag=spookyCart] unless entity @e[tag=spooky] if entity @a[limit=1,nbt={SelectedItem:{tag:{spook:1}}}] run function sbremake:items/mask/summon
-execute unless entity @a[limit=1,nbt={SelectedItem:{tag:{spook:1}}}] if score @a[limit=1] fallingEdge matches 1 run function sbremake:items/mask/destroy
-execute if score @a[limit=1] spookyRC matches 1.. if entity @a[limit=1,nbt={SelectedItem:{tag:{spook:1}}}] run function sbremake:items/mask/main
-execute unless entity @a[limit=1,nbt={SelectedItem:{tag:{spook:1}}}] run function sbremake:items/mask/guidestroy
-execute if entity @e[tag=spookyCart] unless entity @e[tag=spookyCart,nbt={Items:[{Slot:16b,id:"minecraft:player_head",Count:1b}]}] run function sbremake:items/mask/spider
-execute if entity @e[tag=spookyCart] unless entity @e[tag=spookyCart,nbt={Items:[{Slot:14b,id:"minecraft:creeper_head",Count:1b}]}] run function sbremake:items/mask/creeper
-execute if entity @e[tag=spookyCart] unless entity @e[tag=spookyCart,nbt={Items:[{Slot:12b,id:"minecraft:skeleton_skull",Count:1b}]}] run function sbremake:items/mask/skeleton
-execute if entity @e[tag=spookyCart] unless entity @e[tag=spookyCart,nbt={Items:[{Slot:10b,id:"minecraft:zombie_head",Count:1b}]}] run function sbremake:items/mask/zombie
-execute if entity @a[limit=1,tag=arthropodMode,nbt={Inventory:[{Slot:103b,id:"minecraft:player_head",tag:{display:{Name:'[{"text":"Arthropod Mask","italic":false,"color":"dark_purple"}]'}}}]}] run function sbremake:items/mask/spiderdie
-execute if entity @a[limit=1,tag=explosionMode,nbt={Inventory:[{Slot:103b,id:"minecraft:creeper_head",tag:{display:{Name:'[{"text":"Explosion Mask","italic":false,"color":"dark_purple"}]'}}}]}] run function sbremake:items/mask/creeperdie
-execute if entity @a[limit=1,tag=skeletonMode,nbt={Inventory:[{Slot:103b,id:"minecraft:skeleton_skull",tag:{display:{Name:'[{"text":"Skeleton Mask","italic":false,"color":"dark_purple"}]'}}}]}] run function sbremake:items/mask/skeletondie
-execute if entity @a[limit=1,tag=zombieMode,nbt={Inventory:[{Slot:103b,id:"minecraft:zombie_head",tag:{display:{Name:'[{"text":"Zombie Mask","italic":false,"color":"dark_purple"}]'}}}]}] run function sbremake:items/mask/skeletondie
-execute if entity @e[tag=spooky,nbt={HurtTime:10s}] run function sbremake:items/mask/lc
-execute if score @a[limit=1] gamemodeType matches 3 run function sbremake:items/mask/destroy
 
 # Spirit Boots
 scoreboard players add @a[limit=1] spiritCD 1

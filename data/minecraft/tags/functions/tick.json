@@ -15,6 +15,7 @@
     "sbremake:items/wands/wor/tick",
     "sbremake:items/wands/woa/tick",
     "sbremake:items/armor/witherborn/tick",
+    "sbremake:items/armor/mask/tick",
     "sbremake:world/dh/tick",
     "sbremake:world/dwindler/tick",
     "sbstats:tick"

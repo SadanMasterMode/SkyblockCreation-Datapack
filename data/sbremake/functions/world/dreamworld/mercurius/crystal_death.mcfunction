@@ -1,4 +1,4 @@
-advancement revoke @s only sbremake:emperor_heart_lc
+advancement revoke @s only sbremake:mercurius/emperor_heart_lc
 scoreboard players remove @e[tag=emperorHeart,type=interaction] life 1
 execute at @a run playsound entity.wither.hurt master @a ~ ~ ~
 particle crimson_spore 88 43.5 99 0 0 0 1 300 normal

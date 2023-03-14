@@ -1,58 +1,154 @@
-execute if entity @s[type=zombie,tag=!spectator] run function sbremake:nametags/aggressive/zombie_basic
-execute if entity @s[type=skeleton,tag=!stronk] run function sbremake:nametags/aggressive/skeleton_basic
-execute if entity @s[type=husk] run function sbremake:nametags/aggressive/husk_basic
-execute if entity @s[type=allay] run function sbremake:nametags/passive/allay_basic
-execute if entity @s[type=axolotl] run function sbremake:nametags/passive/axolotl_basic
-execute if entity @s[type=bat,tag=!sceptre] run function sbremake:nametags/passive/bat_basic
-execute if entity @s[type=bee] run function sbremake:nametags/neutral/bee_basic
-execute if entity @s[type=blaze] run function sbremake:nametags/aggressive/blaze_basic
-execute if entity @s[type=cat] run function sbremake:nametags/passive/cat_basic
-execute if entity @s[type=cave_spider] run function sbremake:nametags/neutral/cave_spider_basic
-execute if entity @s[type=chicken] run function sbremake:nametags/passive/chicken_basic
-execute if entity @s[type=cod] run function sbremake:nametags/passive/cod_basic
-execute if entity @s[type=cow] run function sbremake:nametags/passive/cow_basic
-execute if entity @s[type=creeper] run function sbremake:nametags/aggressive/creeper_basic
-execute if entity @s[type=dolphin] run function sbremake:nametags/neutral/dolphin_basic
-execute if entity @s[type=donkey] run function sbremake:nametags/passive/donkey_basic
-execute if entity @s[type=drowned] run function sbremake:nametags/aggressive/drowned_basic
-execute if entity @s[type=enderman] run function sbremake:nametags/aggressive/enderman_basic
-execute if entity @s[type=endermite] run function sbremake:nametags/aggressive/endermite_basic
-execute if entity @s[type=evoker,tag=!boss] run function sbremake:nametags/aggressive/evoker_basic
-execute if entity @s[type=fox] run function sbremake:nametags/passive/fox_basic
-execute if entity @s[type=frog] run function sbremake:nametags/passive/frog_basic
-execute if entity @s[type=ghast] run function sbremake:nametags/aggressive/ghast_basic
-execute if entity @s[type=glow_squid] run function sbremake:nametags/passive/glow_squid_basic
-execute if entity @s[type=goat] run function sbremake:nametags/neutral/goat_basic
-execute if entity @s[type=guardian] run function sbremake:nametags/aggressive/guardian_basic
-execute if entity @s[type=hoglin] run function sbremake:nametags/aggressive/hoglin_basic
-execute if entity @s[type=horse] run function sbremake:nametags/passive/horse_basic
-execute if entity @s[type=iron_golem,tag=!lc] run function sbremake:nametags/neutral/iron_golem_basic
-execute if entity @s[type=llama] run function sbremake:nametags/neutral/llama_basic
-execute if entity @s[type=magma_cube] run function sbremake:nametags/aggressive/magma_cube_basic
-execute if entity @s[type=mooshroom] run function sbremake:nametags/passive/mooshroom_basic
-execute if entity @s[type=mule] run function sbremake:nametags/passive/mule_basic
-execute if entity @s[type=ocelot] run function sbremake:nametags/passive/ocelot_basic
-execute if entity @s[type=panda] run function sbremake:nametags/neutral/panda_basic
-execute if entity @s[type=parrot] run function sbremake:nametags/passive/parrot_basic
-execute if entity @s[type=phantom] run function sbremake:nametags/aggressive/phantom
-execute if entity @s[type=pig] run function sbremake:nametags/passive/pig_basic
-execute if entity @s[type=piglin] run function sbremake:nametags/neutral/piglin_basic
-execute if entity @s[type=piglin_brute] run function sbremake:nametags/aggressive/piglin_brute_basic
-execute if entity @s[type=pillager] run function sbremake:nametags/aggressive/pillager_basic
-execute if entity @s[type=polar_bear] run function sbremake:nametags/neutral/polar_bear_basic
-execute if entity @s[type=pufferfish] run function sbremake:nametags/neutral/pufferfish_basic
-execute if entity @s[type=rabbit] run function sbremake:nametags/passive/rabbit_basic
-execute if entity @s[type=ravager] run function sbremake:nametags/aggressive/ravager_basic
+scoreboard players operation #current health = @s health
+scoreboard players operation #current maxHealth = @s maxHealth
+data modify storage sbremake:nametags EntityData.CustomNameVisible set value 1b
 
-execute if entity @s[type=vex] run function sbremake:nametags/aggressive/vex_basic
-execute if entity @s[type=vindicator] run function sbremake:nametags/aggressive/vindicator_basic
-execute if entity @s[type=illusioner] run function sbremake:nametags/aggressive/illusioner_basic
-execute if entity @s[type=witch] run function sbremake:nametags/aggressive/witch_basic
+# Basic Mobs
+## Allay
+execute if entity @s[type=allay] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Allay","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Axolotl
+execute if entity @s[type=axolotl] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Axolotl","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Bat
+execute if entity @s[type=bat,tag=!sceptre] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Bat","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Bee
+execute if entity @s[type=bee] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Bee","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Blaze
+execute if entity @s[type=blaze] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv3","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Blaze","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Cat
+execute if entity @s[type=cat] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Cat","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Cave Spider
+execute if entity @s[type=cave_spider] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Cave Spider","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Chicken
+execute if entity @s[type=chicken] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Chicken","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Cod
+execute if entity @s[type=cod] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Cod","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Cow
+execute if entity @s[type=cow] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Cow","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Creeper
+execute if entity @s[type=creeper] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Creeper","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Dolphin
+execute if entity @s[type=dolphin] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Dolphin","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Donkey
+execute if entity @s[type=donkey] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Donkey","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Drowned
+execute if entity @s[type=drowned] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Drowned","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Enderman
+execute if entity @s[type=enderman] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv3","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Enderman","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Endermite
+execute if entity @s[type=endermite] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv5","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Endermite","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Evoker
+execute if entity @s[type=evoker,tag=!boss] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Evoker","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Fox
+execute if entity @s[type=fox] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Fox","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Frog
+execute if entity @s[type=frog] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Frog","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Ghast
+execute if entity @s[type=ghast] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv3","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Ghast","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Glow Squid
+execute if entity @s[type=glow_squid] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Glow Squid","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Goat
+execute if entity @s[type=goat] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Goat","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Guardian
+execute if entity @s[type=guardian] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Guardian","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Hoglin
+execute if entity @s[type=hoglin] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv3","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Hoglin","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Horse
+execute if entity @s[type=horse] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Horse","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Husk
+execute if entity @s[type=husk] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Husk","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Illusioner (doesn't work the majority of the time)
+execute if entity @s[type=illusioner] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Illusioner","color":"#FF5555"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
+## Iron Golem
+execute if entity @s[type=iron_golem] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv2","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Iron Golem","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Llama
+execute if entity @s[type=llama] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Llama","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Magma Cube
+execute if entity @s[type=magma_cube] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv3","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Magma Cube","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Mooshroom
+execute if entity @s[type=magma_cube] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Mooshroom Cow","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Mule
+execute if entity @s[type=mule] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Mule","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Ocelot
+execute if entity @s[type=ocelot] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Ocelot","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Panda
+execute if entity @s[type=panda] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Panda","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Parrot
+execute if entity @s[type=parrot] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Parrot","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Phantom
+execute if entity @s[type=phantom] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Phantom","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Pig
+execute if entity @s[type=pig] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Pig","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Piglin
+execute if entity @s[type=piglin] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Pig","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Piglin Brute
+execute if entity @s[type=piglin_brute] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv3","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Piglin Brute","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Pillager
+execute if entity @s[type=pillager] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Pillager","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Polar Bear
+execute if entity @s[type=polar_bear] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Polar Bear","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Pufferfish
+execute if entity @s[type=pufferfish] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Pufferfish","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Rabbit
+execute if entity @s[type=rabbit] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Rabbit","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Ravager
+execute if entity @s[type=ravager] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Ravager","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Salmon
+execute if entity @s[type=salmon] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Salmon","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Sheep
+execute if entity @s[type=sheep] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Sheep","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Shulker
+execute if entity @s[type=shulker] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Shulker","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Silverfish
+execute if entity @s[type=silverfish] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Silverfish","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Skeleton
+execute if entity @s[type=skeleton,tag=!stronk] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Skeleton","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Strider
+execute if entity @s[type=strider] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Strider","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Tadpole
+execute if entity @s[type=tadpole] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Tadpole","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Trader Llama
+execute if entity @s[type=trader_llama] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Trader Llama","color":"yellow"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Tropical Fish
+execute if entity @s[type=tropical_fish] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Tropical Fish","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Turtle
+execute if entity @s[type=turtle] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Turtle","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Vex
+execute if entity @s[type=vex] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Vex","color":"#FF5555"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
+## Villager
+execute if entity @s[type=villager] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Villager","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Vindicator
+execute if entity @s[type=vindicator] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"#555555"},{"text":"Lv1","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Vindicator","color":"#FF5555"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
+## Wandering Trader
+execute if entity @s[type=wandering_trader] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Wandering Trader","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Witch
+execute if entity @s[type=witch] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Witch","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Wither Skeleton
+execute if entity @s[type=wither_skeleton] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Wither Skeleton","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Wolf
+execute if entity @s[type=wolf] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Wolf","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Zoglin
+execute if entity @s[type=zoglin] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Zoglin","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Zombie
+execute if entity @s[type=zombie] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Zombie","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Zombie Horse
+execute if entity @s[type=zombie_horse] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Zombie Horse","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Zombie Villager
+execute if entity @s[type=zombie_villager] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Zombie Villager","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Zombified Piglin
+execute if entity @s[type=zombified_piglin] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Zombified Piglin","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
 
 # Bosses
-execute if entity @s[type=evoker,tag=dwindler] run function sbremake:nametags/bosses/dwindler_boss
-execute if entity @s[type=evoker,tag=mercurius] run function sbremake:nametags/bosses/mercurius_boss
-execute if entity @s[type=elder_guardian] run function sbremake:nametags/bosses/elder_guardian_boss
+## The Dwindler
+execute if entity @s[type=evoker,tag=dwindler] run data modify block 3000000 1 3000000 Text1 set value '[{"text":"\\ufd3e","color":"#FFFF55"},{"text":" ☠","color":"#FF5555"},{"text":" The Dwindler ","color":"dark_purple"},{"text":"\\ufd3f ","color": "yellow"},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
+## Mercurius
+execute if entity @s[type=evoker,tag=mercurius] run data modify block 3000000 1 3000000 Text1 set value '[{"text":"\\ufd3e","color":"#FFFF55"},{"text":" ☠","color":"#FF5555"},{"text":" Grand Emperor Mercurius ","color":"dark_purple"},{"text":"\\ufd3f ","color": "yellow"},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
+## Elder Guardian
+execute if entity @s[type=elder_guardian] run data modify block 3000000 1 3000000 Text1 set value '[{"text":"\\ufd3e","color":"#FFFF55"},{"text":" ☠","color":"#FF5555"},{"text":" Elder Guardian ","color":"#AA0000"},{"text":"\\ufd3f ","color": "yellow"},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
+## Warden
+execute if entity @s[type=warden] run data modify block 3000000 1 3000000 Text1 set value '[{"text":"\\ufd3e","color":"#FFFF55"},{"text":" ☠","color":"#FF5555"},{"text":" Warden ","color":"blue"},{"text":"\\ufd3f ","color": "yellow"},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
 
 # Abilities
-execute if entity @s[type=bat,tag=sceptre] run function sbremake:nametags/abilities/sceptre
+## Sceptre Bats
+execute if entity @s[type=bat,tag=sceptre] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"#555555"},{"text":"Lv10","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Spirit Bat","color":"green"},{"text":" "},{"text":"1/1","color": "green"},{"text":"\\u2764","color":"#FF5555"}]'
+
+data modify storage sbremake:nametags EntityData.CustomName set from block 3000000 1 3000000 Text1
+data modify entity @s[tag=!spectator] {} merge from storage sbremake:nametags EntityData

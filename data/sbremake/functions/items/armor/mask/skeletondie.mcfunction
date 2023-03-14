@@ -1,0 +1,4 @@
+execute at @a[limit=1] as @e[type=skeleton,distance=..20] at @s facing entity @a[limit=1] feet positioned ^ ^ ^-1 if block ~ ~ ~ air run tp @s ~ ~ ~
+execute at @a[limit=1] as @e[type=minecraft:wither_skeleton,distance=..20] at @s facing entity @a[limit=1] feet positioned ^ ^ ^-1 if block ~ ~ ~ air run tp @s ~ ~ ~
+execute at @a[limit=1] as @e[type=minecraft:skeleton_horse,distance=..20] at @s facing entity @a[limit=1] feet positioned ^ ^ ^-1 if block ~ ~ ~ air run tp @s ~ ~ ~
+execute at @a[limit=1] as @e[type=minecraft:stray,distance=..20] at @s facing entity @a[limit=1] feet positioned ^ ^ ^-1 if block ~ ~ ~ air run tp @s ~ ~ ~

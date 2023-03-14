@@ -5,7 +5,11 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "nbt": "{SelectedItem:{tag:{actionbar:1b}}}"
+        "equipment": {
+          "mainhand": {
+            "nbt": "{actionbar:1b}"
+          }
+        }
       }
     }
   },

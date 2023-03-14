@@ -1,15 +1,9 @@
 # Particles
-function sbremake:world/dreamworld/mercurius/crystal/particles
-execute if entity @e[type=marker,tag=emperorHeartParticle,tag=!particleOn] run schedule function sbremake:world/dreamworld/mercurius/crystal/particles_increase 8t append
 execute as @e[type=interaction,tag=emperorHeart,scores={life=..0}] run scoreboard players add #2 life 1
 execute as @e[type=marker,tag=emperorHeartParticle,scores={life=60..}] run scoreboard players reset @s life
 execute as @e[type=marker,tag=emperorHeartParticle,scores={life=..0}] run scoreboard players add #2 life 1
-execute at @e[type=interaction,tag=emperorHeart] if score #2 life matches ..60 run particle crimson_spore 88 43.5 99 0 0 0 1 300 normal
-execute at @e[type=interaction,tag=emperorHeart] if score #2 life matches ..60 run particle flame 88 43.5 99 0 0 0 0.2 100 normal
-execute at @e[type=interaction,tag=emperorHeart] if score #2 life matches 1 run data merge entity @e[type=item_display,tag=emperorHeart,limit=1] {glow_color_override:16711680}
-execute at @e[type=interaction,tag=emperorHeart] if score #2 life matches 1 run schedule clear sbremake:world/dreamworld/mercurius/crystal/crystal_color
-execute if score #2 life matches 1 run kill @e[type=marker,tag=emperorHeartParticle]
-execute at @e[type=interaction,tag=emperorHeart] if score #2 life matches 1 run playsound entity.wither.death master @a ~ ~ ~
+execute at @e[type=interaction,tag=emperorHeart] if score #2 life matches 1.. run function sbremake:world/dreamworld/mercurius/tick/particles
+
 execute if score #2 life matches 61.. run function sbremake:world/dreamworld/mercurius/boss_spawn
 
 # Spawning

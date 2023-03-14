@@ -8,9 +8,12 @@ execute as @a[tag=inDwindlerBoss] unless entity @e[tag=dwindler,limit=1] run fun
 execute as @a[tag=crystalDeath] unless entity @e[tag=dwindler,limit=1] run function sbremake:world/dwindler/crystal_death
 execute as @a[tag=inDwindlerBoss] if score @e[tag=dwindler,limit=1] health matches ..0 run function sbremake:world/dwindler/end_fight
 execute as @a[tag=inDwindlerBoss,scores={dwindlerDeaths=1..}] run function sbremake:world/dwindler/player_died
-function sbremake:world/dwindler/cinematic
-execute if score #killedDwindler fakePlayers matches 0 unless entity @e[type=end_crystal,tag=crystalHeart] if score #inWorld fakePlayers matches 1 run summon minecraft:end_crystal 57.5 47.5 -51.5 {Invulnerable:1b,ShowBottom:0b,Tags:["crystalHeart"]} 
-execute if score #killedDwindler fakePlayers matches 0 unless entity @e[type=armor_stand,tag=crystalHeart] if score #inWorld fakePlayers matches 1 run summon minecraft:armor_stand 57.5 46.9 -51.5 {Invulnerable:1b,Invisible:1b,Marker:1b,CustomName:'[{"text": "﴾ ","color": "yellow"},{"text": "Crystal Heart","color": "dark_purple"},{"text": " ﴿","color": "yellow"}]',CustomNameVisible:1b,Tags:["crystalHeart"]}
+
+execute if score #inWorld fakePlayers matches 1 if entity @a[predicate=sbremake:world/cinematic/dimension_check,limit=1] run function sbremake:world/dwindler/cinematic/tick
+
+execute if score #killedDwindler fakePlayers matches 0 unless entity @e[type=end_crystal,tag=crystalHeart] if score #inWorld fakePlayers matches 1 run summon minecraft:end_crystal 57.5 47.5 -51.5 {Invulnerable:1b,ShowBottom:0b,Tags:["crystalHeart","spectator"]} 
+execute if score #killedDwindler fakePlayers matches 0 unless entity @e[type=armor_stand,tag=crystalHeart] if score #inWorld fakePlayers matches 1 run summon minecraft:armor_stand 57.5 46.9 -51.5 {Invulnerable:1b,Invisible:1b,Marker:1b,CustomName:'[{"text": "﴾ ","color": "yellow"},{"text": "Crystal Heart","color": "dark_purple"},{"text": " ﴿","color": "yellow"}]',CustomNameVisible:1b,Tags:["crystalHeart","spectator"]}
+
 execute as @a[scores={dmgDealt=1..},tag=inDwindlerBoss] run function sbremake:utils/sol_max_dmg
 scoreboard players set @a dmgDealt 0
 

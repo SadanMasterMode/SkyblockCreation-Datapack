@@ -13,6 +13,7 @@
     "sbremake:items/wands/wor/load",
     "sbremake:items/wands/woa/load",
     "sbremake:items/armor/witherborn/load",
+    "sbremake:items/armor/mask/load",
     "sbremake:world/dwindler/load",
     "sbstats:load"
     ]

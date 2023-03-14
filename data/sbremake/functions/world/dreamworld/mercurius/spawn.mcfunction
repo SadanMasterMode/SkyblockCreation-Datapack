@@ -1,21 +1,9 @@
 kill @e[tag=emperorHeart]
 kill @e[tag=stalkerEyeMarker]
+kill @e[tag=stalkerEyeMarker2]
 kill @e[tag=mercurius]
 kill @e[tag=mercuriusSummon]
 summon marker 88 44 99 {Invulnerable:1b,Tags:["emperorHeartParticleMain","emperorHeart"]}
-summon marker 91 41 102 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 91 41 96 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 85 41 96 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 85 41 102 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-
-summon marker 89 41 103 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 87 41 103 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 84 41 100 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 84 41 98 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 87 41 95 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 89 41 95 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 92 41 98 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
-summon marker 92 41 100 {Invulnerable:1b,Tags:["emperorHeartParticle","emperorHeart"]}
 
 summon magma_cube 100 42.2 88 {Size:0.75,NoAI:1b,NoGravity:1b,Invulnerable:1b,Tags:["spectator","stalkerEyeMarker","noName"],ActiveEffects:[{Id:14,Duration:2147483647,Amplifier:1,ShowParticles:0b}]}
 summon marker 100 41 88 {NoGravity:1b,Invulnerable:1b,Tags:["spectator","stalkerEyeMarker2"]}
