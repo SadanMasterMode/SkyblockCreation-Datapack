@@ -20,9 +20,6 @@ execute as @e[tag=!noName] in minecraft:overworld run function sbremake:nametags
 # Actionbar
 execute as @a[predicate=sbremake:items/tick/actionbar] run function sbremake:tick/actionbar
 
-# Custom Damage
-execute as @a[scores={damage=0..}] run function sbremake:utils/stats/dmg_attribute
-
 # Misc
 execute store result score @a[limit=1] healthMod run scoreboard players get @a[limit=1] playerHealth
 execute store result score @a[limit=1] healthVis run scoreboard players operation @a[limit=1] healthMod *= #5 const
@@ -65,17 +62,17 @@ execute as @a[scores={witherlordRC3=1..}] if entity @s[nbt={SelectedItem:{id:"mi
 execute as @a[scores={witherlordRC3=1..}] if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_sword",Count:1b,tag:{display:{Name:'[{"text":"Crypt Witherlord Sword","italic":false,"color":"dark_purple"}]'}}}}] unless entity @a[limit=1,scores={mana=..39}] run function sbremake:items/witherlord/main
 execute if score @a[limit=1] witherlordRC3 matches 1.. run scoreboard players reset @a[limit=1] witherlordRC3
 execute as @e[tag=witherlord] at @s run tp @s ^ ^ ^1
-execute as @e[tag=witherlord] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=!undead,type=!armor_stand,type=!item,type=!item_frame,type=!player] minecraft:instant_damage 1 1 true
+execute as @e[tag=witherlord] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=!undead,tag=!spectator] minecraft:instant_damage 1 1 true
 execute as @e[tag=witherlord] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=undead] minecraft:instant_health 1 1 true
 execute as @e[tag=witherlord] at @s anchored eyes unless block ~ ~2 ~ air run particle explosion ~ ~3 ~ 0 0 0 0 1 normal @a[limit=1]
 execute as @e[tag=witherlord] at @s anchored eyes unless block ~ ~2 ~ air run kill @s
 execute as @e[tag=witherlord3] at @s run tp @s ^ ^ ^1
-execute as @e[tag=witherlord3] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=!undead,type=!armor_stand,type=!item,type=!item_frame,type=!player] minecraft:instant_damage 1 1 true
+execute as @e[tag=witherlord3] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=!undead,tag=!spectator] minecraft:instant_damage 1 1 true
 execute as @e[tag=witherlord3] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=undead] minecraft:instant_health 1 1 true
 execute as @e[tag=witherlord3] at @s anchored eyes unless block ~ ~2 ~ air run particle explosion ~ ~3 ~ 0 0 0 0 1 normal @a[limit=1]
 execute as @e[tag=witherlord3] at @s anchored eyes unless block ~ ~2 ~ air run kill @s
 execute as @e[tag=witherlord2] at @s run tp @s ^ ^ ^1
-execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=!undead,type=!armor_stand,type=!item,type=!item_frame,type=!player] minecraft:instant_damage 1 1 true
+execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=!undead,tag=!spectator] minecraft:instant_damage 1 1 true
 execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run effect give @e[distance=..3,tag=undead] minecraft:instant_health 1 1 true
 execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run particle explosion ~ ~3 ~ 0 0 0 0 1 normal @a[limit=1]
 execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run kill @s

@@ -1,6 +1,6 @@
 schedule clear sbremake:items/ffs/final
 
-execute at @e[tag=ffs] as @e[distance=..5,type=!player,type=!item_frame,type=!armor_stand] run tag @s add ffsMark
+execute at @e[tag=ffs] as @e[distance=..5,tag=!spectator] run tag @s add ffsMark
 
 execute at @e[tag=ffs] run particle smoke ~ ~1.5 ~ 0 0 0 0.2 1000 normal
 execute at @e[tag=ffs] run particle smoke ~ ~1.5 ~ 0 0 0 0.2 1000 normal

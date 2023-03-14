@@ -1,4 +1,4 @@
-execute as @p at @s run summon armor_stand ^ ^ ^1 {Invisible:1b,Invulnerable:1b,Tags:["moltenGuide","spectator"],NoGravity:1b,DisabledSlots:4144896}
+execute as @p at @s run summon marker ^ ^ ^1 {Invulnerable:1b,Tags:["moltenGuide","spectator"],NoGravity:1b,data:{SBRemake:{UUID:"a6ae9cfe-01ee-4cc2-8752-f481b8babe7a"}},UUID:[I;-1498505986,32394434,-2024606591,-1195721094]}
 
 execute as @e[tag=moltenGuide,tag=!facingPlayer] at @s run tp @s ~ ~ ~ facing entity @p feet
 execute as @e[tag=moltenGuide,tag=!facingPlayer] at @s run tp @s ~ ~ ~ ~180 0

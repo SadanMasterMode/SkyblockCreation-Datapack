@@ -1,4 +1,4 @@
-execute at @e[tag=wimpact1] run tp @s ~ ~ ~
+execute at 00ed0fa0-6ab8-49ed-ad8f-e1edf22cba5d run tp @s ~ ~ ~
 function sbremake:gravity
 execute at @s if score @p wimpactPart matches 0 run particle minecraft:explosion_emitter ~ ~ ~ 1 1 1 1 10 normal
 execute at @s run playsound minecraft:entity.generic.explode ambient @s ~ ~ ~ 1 1 1
@@ -12,5 +12,5 @@ scoreboard players remove @s mana 150
 
 execute at @s as @e[distance=..6,tag=!spectator] run function sbremake:items/mage/wimpact/dmg
 
-kill @e[tag=wimpact1,limit=1,sort=nearest]
+kill 00ed0fa0-6ab8-49ed-ad8f-e1edf22cba5d
 execute at @s unless block ~ ~ ~ air run tp @s ~ ~1 ~
