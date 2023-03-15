@@ -7,7 +7,7 @@
       },
       "ops": [
         {
-          "source": "Item.tag.OldName",
+          "source": "Item.tag.SBStats.OldName",
           "target": "display.Name",
           "op": "replace"
         }

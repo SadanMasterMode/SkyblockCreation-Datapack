@@ -12,7 +12,7 @@ execute as @a[nbt=!{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}] at @s anchored e
 execute as @a[nbt={SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}] at @s run tp @e[tag=reforgeBlock,limit=2,sort=nearest] ~ ~-100 ~
 execute as @a[nbt={SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}] at @s run kill @e[tag=reforgeBlock,limit=2,sort=nearest]
 
-execute as @p at @s run tp @e[tag=reforgeBlock,type=area_effect_cloud] ~ ~ ~
+execute as @a at @s run tp @e[tag=reforgeBlock,type=area_effect_cloud] ~ ~ ~
 execute as @e[type=area_effect_cloud] store result entity @s Air short 1 run time query gametime
 
 execute as @a[advancements={sbstats:villager=true},nbt={SelectedItem:{tag:{Base:{stats:{}}}}}] at @s at @e[tag=reforge,limit=1,sort=nearest] positioned ~ ~1 ~ unless entity @e[type=item,nbt={Item:{tag:{Base:{type:'UPGRADE'}}}},distance=..0.8,limit=1] if score #reforge cd matches 2.. run function sbstats:reforges/right_click

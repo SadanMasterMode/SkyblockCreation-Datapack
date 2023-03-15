@@ -4,8 +4,7 @@ summon area_effect_cloud ^0.4 ^ ^1 {Passengers:[{id:"minecraft:armor_stand",Invi
 execute as @e[tag=aots,tag=!facingPlayer] at @s facing entity 8b972846-ccec-4466-b60a-ff68a0bcecc6 feet run tp @s ~ ~ ~ ~ ~
 tag @e[tag=aots,tag=!facingPlayer] add facingPlayer
 
-playsound minecraft:entity.wither.break_block master @s ~ ~ ~ 0.5 0.7
-
+playsound minecraft:block.lava.pop master @s
 
 scoreboard players set @s manaWarn 1
 schedule clear sbremake:manareset

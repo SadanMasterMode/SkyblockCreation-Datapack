@@ -7,7 +7,7 @@
       },
       "ops": [
         {
-          "source": "Item.tag.NewLore",
+          "source": "Item.tag.SBStats.NewLore",
           "target": "display.Lore",
           "op": "replace"
         }

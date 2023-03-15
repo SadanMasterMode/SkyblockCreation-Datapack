@@ -5,7 +5,7 @@
       "ops": [
         {
           "source": "SelectedItem.tag.display.Name",
-          "target": "OldName",
+          "target": "SBStats.OldName",
           "op": "replace"
         }
       ]
