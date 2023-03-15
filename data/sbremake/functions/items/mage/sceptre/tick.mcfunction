@@ -3,7 +3,7 @@ execute anchored eyes as @r at @s if entity @s[scores={sceptreRC=1..},nbt={Selec
 execute anchored eyes as @r at @s if entity @s[scores={sceptreRC=1..},nbt={SelectedItem:{id:"minecraft:allium",Count:1b,tag:{display:{Name:'[{"text":"Spirit Sceptre","italic":false,"color":"gold"}]'}}}}] if entity @p[scores={mana=125..}] run function sbremake:items/mage/sceptre/main
 
 execute as @e[tag=sceptre] at @s unless block ~ ~ ~ air run function sbremake:items/mage/sceptre/death
-execute at @e[tag=kill] as @e[distance=..3,tag=!spectator] run function sbremake:items/mage/sceptre/dmg
+execute at @e[tag=kill] as @e[distance=..3,tag=!spectator,type=!#sbremake:never-detect] run function sbremake:items/mage/sceptre/dmg
 execute as @e[tag=kill] run kill @s
 scoreboard players reset @a[scores={sceptreRC=1..}] sceptreRC
 

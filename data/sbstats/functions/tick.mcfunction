@@ -1,9 +1,10 @@
+data modify storage sbstats:data PlayerData set from entity @a[limit=1]
 execute unless score #reforge cd matches 100.. run scoreboard players add #reforge cd 1
 
-execute as @a[nbt={SelectedItem:{tag:{Upgrades:{recomb:1b}}}}] run data modify storage sbstats:recomb Item.tag.Footer1 set value 'S '
-execute as @a[nbt={SelectedItem:{tag:{Upgrades:{recomb:1b}}}}] run data modify storage sbstats:recomb Item.tag.Footer2 set value ' S'
-execute as @a[nbt=!{SelectedItem:{tag:{Upgrades:{recomb:1b}}}}] run data remove storage sbstats:recomb Item.tag.Footer1
-execute as @a[nbt=!{SelectedItem:{tag:{Upgrades:{recomb:1b}}}}] run data remove storage sbstats:recomb Item.tag.Footer2
+execute as @a if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{recomb:1b}}}}} run data modify storage sbstats:recomb Item.tag.Footer1 set value 'S '
+execute as @a if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{recomb:1b}}}}} run data modify storage sbstats:recomb Item.tag.Footer2 set value ' S'
+execute as @a unless data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{recomb:1b}}}}} run data remove storage sbstats:recomb Item.tag.Footer1
+execute as @a unless data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{recomb:1b}}}}} run data remove storage sbstats:recomb Item.tag.Footer2
 
 function sbstats:pickaxe
 execute as @a[nbt=!{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}] at @s anchored eyes positioned ^ ^ ^ anchored feet run function sbstats:reforges/raycast/start_ray

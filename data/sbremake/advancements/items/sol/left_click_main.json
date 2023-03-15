@@ -1,0 +1,57 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:player_hurt_entity",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "sneak": {
+                    "min": 1
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "lifeCD": {
+                  "min": 240
+                },
+                "mana": {
+                  "min": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#40"
+                    },
+                    "score": "percentageManaMod",
+                    "scale": 1
+                  }
+                }
+              }
+            }
+          ],
+          "entity": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:interaction",
+                "nbt": "{Tags:[\"sol\"]}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "sbremake:items/sol/final"
+    }
+  }
+  

@@ -1,4 +1,3 @@
-# Fire Fury Staff
 execute as @e[tag=furyMark] at @s run tp @s ~ ~ ~ ~5 ~
 execute as @e[tag=furyMark2] at @s run tp @s ~ ~ ~ ~-5 ~
 execute as @e[tag=fury] run scoreboard players add @s furyLife 1
@@ -16,10 +15,10 @@ execute as @e[tag=fury,scores={furyLife=6..15}] at @s run tp @s ^ ^ ^-0.35
 execute as @e[tag=fury,scores={furyLife=16..20}] at @s run tp @s ^ ^ ^-0.5
 execute as @e[tag=fury,scores={furyLife=21..}] at @s run tp @s ^ ^ ^-0.8
 
-function sbremake:items/mage/fury/dance
+execute as @e[tag=furyMark] at @s run function sbremake:items/mage/fury/dance
 
 execute if entity @e[tag=furyMark] run schedule function sbremake:items/mage/fury/delay 8t append
-execute at @e[tag=furyMark] as @e[distance=..7,tag=!spectator] run data merge entity @s {HasVisualFire:1b}
+execute at @e[tag=furyMark] as @e[distance=..7,tag=!spectator,type=!#sbremake:never-detect] run data merge entity @s {HasVisualFire:1b}
 
 execute if entity @e[tag=furyMark] run schedule function sbremake:items/mage/fury/dmg 5t append
 

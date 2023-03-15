@@ -1,9 +1,5 @@
-tag @e[type=item,tag=!spectator,limit=1] add spectator
-tag @e[type=item_frame,tag=!spectator,limit=1] add spectator
-tag @e[type=area_effect_cloud,tag=!spectator,limit=1] add spectator
 tag @e[type=armor_stand,tag=!dwindlerDream,tag=!spectator,limit=1] add spectator
 tag @e[type=arrow,tag=!spectator,limit=1] add spectator
-tag @e[type=glow_item_frame,tag=!spectator,limit=1] add spectator
 tag @e[type=player,tag=!spectator,limit=1] add spectator
 tag @e[type=experience_bottle,tag=!spectator,limit=1] add spectator
 tag @e[type=experience_orb,tag=!spectator,limit=1] add spectator
@@ -43,12 +39,3 @@ tag @e[type=tnt,tag=!spectator,limit=1] add spectator
 tag @e[type=tnt_minecart,tag=!spectator,limit=1] add spectator
 tag @e[type=trident,tag=!spectator,limit=1] add spectator
 tag @e[type=wither_skull,tag=!spectator,limit=1] add spectator
-
-tag @e[tag=lc,tag=!spectator,limit=1] add spectator
-
-tag @e[tag=cloak1,tag=!spectator,limit=1] add spectator
-tag @e[tag=cloak2,tag=!spectator,limit=1] add spectator
-tag @e[tag=cloak3,tag=!spectator,limit=1] add spectator
-tag @e[tag=cloak4,tag=!spectator,limit=1] add spectator
-tag @e[tag=cloak5,tag=!spectator,limit=1] add spectator
-tag @e[tag=cloak6,tag=!spectator,limit=1] add spectator

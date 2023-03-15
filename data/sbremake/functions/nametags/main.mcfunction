@@ -146,9 +146,5 @@ execute if entity @s[type=elder_guardian] run data modify block 3000000 1 300000
 ## Warden
 execute if entity @s[type=warden] run data modify block 3000000 1 3000000 Text1 set value '[{"text":"\\ufd3e","color":"#FFFF55"},{"text":" ☠","color":"#FF5555"},{"text":" Warden ","color":"blue"},{"text":"\\ufd3f ","color": "yellow"},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
 
-# Abilities
-## Sceptre Bats
-execute if entity @s[type=bat,tag=sceptre] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"#555555"},{"text":"Lv10","color":"#AAAAAA"},{"text":"]","color":"#555555"},{"text":" Spirit Bat","color":"green"},{"text":" "},{"text":"1/1","color": "green"},{"text":"\\u2764","color":"#FF5555"}]'
-
 data modify storage sbremake:nametags EntityData.CustomName set from block 3000000 1 3000000 Text1
 data modify entity @s[tag=!spectator] {} merge from storage sbremake:nametags EntityData

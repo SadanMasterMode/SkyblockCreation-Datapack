@@ -30,5 +30,4 @@ execute at @s run tp @s[tag=stalker_orb] ~ ~ ~ facing entity @p eyes
 execute if score @s health matches ..0 run function sbremake:world/dreamworld/mercurius/attacks/orbs/health
 execute if score @s hits matches ..0 in minecraft:overworld run function sbremake:world/dreamworld/mercurius/attacks/orbs/death
 
-schedule clear sbremake:world/dreamworld/mercurius/attacks/orbs/summon
 tag @s remove orbTmp

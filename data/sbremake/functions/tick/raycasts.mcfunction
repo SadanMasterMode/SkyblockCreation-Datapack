@@ -1,3 +1,4 @@
+tp @e[tag=raycast] ~ ~ ~
 # Raycast 1
 tp 8b972846-ccec-4466-b60a-ff68a0bcecc6 ^ ^ ^55
 # Raycast 2

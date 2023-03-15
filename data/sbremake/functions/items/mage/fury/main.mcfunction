@@ -1,6 +1,7 @@
-execute at @p run summon armor_stand ^ ^1.5 ^2 {Invisible:1b,Invulnerable:1b,NoGravity:1b,Tags:["fury","spectator"]}
+execute as @p at @s anchored eyes run summon armor_stand ^ ^ ^0.1 {Invisible:1b,Invulnerable:1b,NoGravity:1b,Tags:["fury","spectator"]}
 execute as @e[tag=fury,tag=!facingPlayer] at @s run tp @s ~ ~ ~ facing entity @p eyes
 tag @e[tag=fury,tag=!facingPlayer] add facingPlayer
+
 scoreboard players set @p manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append

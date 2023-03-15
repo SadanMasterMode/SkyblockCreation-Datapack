@@ -10,7 +10,7 @@ schedule function sbremake:manareset 1s append
 title @s actionbar ["",{"text":"Used","color":"aqua"},{"text":" Wither Impact","color":"gold"},{"text":"! (-150 \u270e Mana)","color":"aqua"}]
 scoreboard players remove @s mana 150
 
-execute at @s as @e[distance=..6,tag=!spectator] run function sbremake:items/mage/wimpact/dmg
+execute at @s as @e[distance=..6,tag=!spectator,type=!#sbremake:never-detect] run function sbremake:items/mage/wimpact/dmg
 
 kill 00ed0fa0-6ab8-49ed-ad8f-e1edf22cba5d
 execute at @s unless block ~ ~ ~ air run tp @s ~ ~1 ~

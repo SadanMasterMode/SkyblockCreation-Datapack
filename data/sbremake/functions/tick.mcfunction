@@ -15,7 +15,7 @@ data merge entity @e[tag=spectator,type=armor_stand,tag=!enable_slot,limit=1,sor
 # Mob Nametags
 execute as @e[tag=!maxHealth,tag=!spectator] run function sbremake:nametags/max_health
 execute as @e[tag=!boss,tag=!newDmg,tag=!spectator] store result score @s health run data get entity @s Health
-execute as @e[tag=!noName] in minecraft:overworld run function sbremake:nametags/main
+execute as @e[tag=!noName,tag=!spectator,type=!#sbremake:never-detect] in minecraft:overworld run function sbremake:nametags/main
 
 # Actionbar
 execute as @a[predicate=sbremake:items/tick/actionbar] run function sbremake:tick/actionbar
@@ -37,7 +37,8 @@ execute store result score #25 percentageManaMod run scoreboard players operatio
 execute store result score #25 percentageMana run scoreboard players get @a[limit=1] maxMana
 scoreboard players set #40 percentageMana 40
 scoreboard players operation #40 percentageMana *= @a[limit=1] maxMana
-execute store result score @a percentageManaMod run scoreboard players operation #40 percentageMana /= #100 const
+execute store result score #40 percentageManaMod run scoreboard players operation #40 percentageMana /= #100 const
+
 execute if score @a[limit=1] mana >= @a[limit=1] maxMana run execute store result score @a[limit=1] mana run scoreboard players get @a[limit=1] maxMana
 
 execute as @e[tag=float] run function sbremake:utils/item_float
@@ -97,34 +98,6 @@ execute as @a[scores={cloakRC3=1..}] at @s run scoreboard players reset @a[limit
 execute if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players reset @a[limit=1] cloakRC
 execute if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players reset @a[limit=1] cloakRC2
 scoreboard players reset @a[limit=1] dmgTaken
-
-# Sinseeker
-execute store result score @s entityCount if entity @e[name="sinmark"]
-execute if score @a[limit=1] entityCount matches 2.. run kill @e[name="sinmark",limit=1]
-execute at @e[name="sinmark"] anchored feet run particle minecraft:dust 1 1 1 2 ~ ~ ~ 0.1 0.1 0.1 0.01 0 normal
-execute as @r at @s if entity @s[scores={sinseekerRC2=1..},nbt={SelectedItem:{id:"minecraft:golden_hoe",Count:1b,tag:{display:{Name:'[{"text":"Sin","italic":false,"color":"dark_red"},{"text":"seeker Scythe","color":"dark_purple"}]'}}}}] if entity @a[limit=1,scores={sneak=1..}] unless entity @e[name="sinmark",limit=1] run tellraw @a {"text":"You do not have a marker set!","color":"red"}
-execute as @r at @s if entity @s[scores={sinseekerRC2=1..},nbt={SelectedItem:{id:"minecraft:golden_hoe",Count:1b,tag:{display:{Name:'[{"text":"Sin","italic":false,"color":"dark_red"},{"text":"seeker Scythe","color":"dark_purple"}]'}}}}] if entity @a[limit=1,scores={sneak=1..}] if entity @e[name="sinmark",limit=1] run function sbremake:items/sinseeker/main
-execute if score @a[limit=1] sinseekerRC matches 1.. unless entity @a[limit=1,scores={sneak2=1..}] if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:golden_hoe",Count:1b,tag:{display:{Name:'[{"text":"Sin","italic":false,"color":"dark_red"},{"text":"seeker Scythe","color":"dark_purple"}]'}}}}] if entity @e[name="sinmark",limit=1] run function sbremake:items/sinseeker/sinmark2
-execute if score @a[limit=1] sinseekerRC matches 1.. unless entity @a[limit=1,scores={sneak2=1..}] if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:golden_hoe",Count:1b,tag:{display:{Name:'[{"text":"Sin","italic":false,"color":"dark_red"},{"text":"seeker Scythe","color":"dark_purple"}]'}}}}] unless entity @e[name="sinmark",limit=1] run function sbremake:items/sinseeker/sinmark
-scoreboard players reset @a[limit=1] sinseekerRC
-scoreboard players reset @a[limit=1] sinseekerRC2
-scoreboard players reset @a[limit=1] sneak
-scoreboard players reset @a[limit=1] sneak2
-
-# AOTS
-execute unless score @a[limit=1] aotsRotate matches 359 run scoreboard players add @a[limit=1] aotsRotate 20
-execute if score @a[limit=1] aotsRotate matches 359.. run scoreboard players set @a[limit=1] aotsRotate 1
-function sbremake:items/aots/pose
-scoreboard players add @a[limit=1] aotsCD 1
-execute as @e[name="aots"] run scoreboard players add @s aotsLife 1
-execute as @e[name="aots",scores={aotsLife=60..}] run kill @s
-execute if entity @a[limit=1,scores={aotsRC=1..},nbt={SelectedItem:{id:"minecraft:diamond_axe",Count:1b,tag:{display:{Name:'[{"text":"Axe of the Shredded","italic":false,"color":"gold"}]'}}}}] if score @a[limit=1] aotsCD matches 20.. run function sbremake:items/aots/main
-scoreboard players reset @a[limit=1] aotsRC
-execute as @e[name="aots"] at @s run tp @s ^ ^ ^0.5
-execute at @e[name="aots",tag=stage1] as @e[distance=..2,type=!ender_dragon,tag=!spectator] run function sbremake:items/aots/stage1dmg
-execute at @e[name="aots",tag=stage2] as @e[distance=..2,type=!ender_dragon,tag=!spectator] run function sbremake:items/aots/stage2dmg
-execute at @e[name="aots",tag=stage3] as @e[distance=..2,type=!ender_dragon,tag=!spectator] run function sbremake:items/aots/stage3dmg
-execute at @e[name="aots",tag=stage4] as @e[distance=..2,type=!ender_dragon,tag=!spectator] run function sbremake:items/aots/stage4dmg
 
 # Terrorwraith
 execute if entity @a[limit=1,tag=inWraith] run scoreboard players add @a[limit=1] wraithTime 1
@@ -255,37 +228,3 @@ scoreboard players reset @a[limit=1] ffsRC
 # Armor of Wisdom
 execute if entity @a[limit=1,nbt={Inventory:[{Slot:103b,id:"minecraft:diamond_helmet",tag:{display:{Name:'[{"text":"Helmet of Wisdom","italic":false,"color":"blue"}]'}}}]}] if entity @a[limit=1,nbt={Inventory:[{Slot:102b,id:"minecraft:diamond_chestplate",tag:{display:{Name:'[{"text":"Chestplate of Wisdom","italic":false,"color":"blue"}]'}}}]}] if entity @a[limit=1,nbt={Inventory:[{Slot:101b,id:"minecraft:diamond_leggings",tag:{display:{Name:'[{"text":"Leggings of Wisdom","italic":false,"color":"blue"}]'}}}]}] if entity @a[limit=1,nbt={Inventory:[{Slot:100b,id:"minecraft:diamond_boots",tag:{display:{Name:'[{"text":"Boots of Wisdom","italic":false,"color":"blue"}]'}}}]}] run function sbremake:items/wisdom/main
 execute unless entity @a[limit=1,nbt={Inventory:[{Slot:103b,id:"minecraft:diamond_helmet",tag:{display:{Name:'[{"text":"Helmet of Wisdom","italic":false,"color":"blue"}]'}}},{Slot:102b,id:"minecraft:diamond_chestplate",tag:{display:{Name:'[{"text":"Chestplate of Wisdom","italic":false,"color":"blue"}]'}}},{Slot:101b,id:"minecraft:diamond_leggings",tag:{display:{Name:'[{"text":"Leggings of Wisdom","italic":false,"color":"blue"}]'}}},{Slot:100b,id:"minecraft:diamond_boots",tag:{display:{Name:'[{"text":"Boots of Wisdom","italic":false,"color":"blue"}]'}}}]}] run function sbremake:items/wisdom/remove
-
-# Staff of Life
-execute as @e[tag=lifeOrb] at @s run schedule function sbremake:items/sol/particles 4t append
-execute as @e[tag=shadowOrb] at @s run schedule function sbremake:items/sol/particles2 4t append
-execute as @a[limit=1] at @s run tp @e[tag=sol] ^ ^1 ^2
-effect give @e[tag=sol] resistance 1 4 true
-execute as @e[tag=lifeOrb] at @s if block ~ ~ ~ air run tp @s ^ ^ ^-0.2
-execute as @e[tag=shadowOrb] at @s if block ~ ~ ~ air run tp @s ^ ^ ^-0.2
-execute as @e[tag=lifeOrb] run scoreboard players add @s orbLife 1
-execute as @e[tag=shadowOrb] run scoreboard players add @s orbLife 1
-execute as @e[scores={orbLife=200..}] run function sbremake:items/sol/death
-scoreboard players add @a[limit=1] lifeCD 1
-scoreboard players add @a[limit=1] shadowCD 1
-execute at @e[tag=lifeMark] run particle dust 0.169 1 0 1 ~ ~1.5 ~ 0.5 0.5 0.5 1 2 normal
-execute at @e[tag=shadowMark] run particle dust 0.8 0 1 1 ~ ~1.5 ~ 0.5 0.5 0.5 1 2 normal
-execute as @e[tag=lifeMark] run effect give @s[tag=!undead] instant_health 1 0 true
-execute as @e[tag=lifeMark] run effect give @s[tag=undead] instant_damage 1 0 true 
-execute as @e[tag=shadowMark] run schedule function sbremake:items/sol/dmg 10t append
-execute at @e[tag=lifeOrb] run tag @e[distance=..3,tag=!spectator] add lifeMark
-execute at @e[tag=lifeOrb] run tag @e[distance=3..] remove lifeMark
-execute at @e[tag=shadowOrb] run tag @e[distance=..3,tag=!spectator] add shadowMark
-execute at @e[tag=shadowOrb] run tag @e[distance=3..] remove shadowMark
-execute unless entity @e[tag=lifeOrb] run tag @e remove lifeMark
-execute unless entity @e[tag=shadowOrb] run tag @e remove shadowMark
-execute store success score @a[limit=1] solSuccess if score @a[limit=1] solSuccess matches 0 if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:red_tulip",Count:1b,tag:{display:{Name:'[{"text":"Staff of Life","italic":false,"color":"gold"}]'}}}}] run function sbremake:items/sol/summon
-execute unless entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:red_tulip",Count:1b,tag:{display:{Name:'[{"text":"Staff of Life","italic":false,"color":"gold"}]'}}}}] run function sbremake:items/sol/destroy
-execute if entity @e[tag=sol,nbt={HurtTime:10s}] unless score @a[limit=1] lifeCD matches 240.. run function sbremake:items/sol/cd
-execute if entity @e[tag=sol,nbt={HurtTime:10s}] if score @a[limit=1] mana <= @a[limit=1] percentageManaMod if score @a[limit=1] lifeCD matches 240.. run function sbremake:items/sol/mana
-execute if entity @e[tag=sol,nbt={HurtTime:10s}] unless score @a[limit=1] mana <= @a[limit=1] percentageManaMod if score @a[limit=1] lifeCD matches 240.. run function sbremake:items/sol/final
-execute if entity @a[limit=1,scores={solRC=1..},nbt={SelectedItem:{id:"minecraft:red_tulip",Count:1b,tag:{display:{Name:'[{"text":"Staff of Life","italic":false,"color":"gold"}]'}}}}] unless score @a[limit=1] shadowCD matches 240.. run function sbremake:items/sol/cd
-execute if entity @a[limit=1,scores={solRC=1..},nbt={SelectedItem:{id:"minecraft:red_tulip",Count:1b,tag:{display:{Name:'[{"text":"Staff of Life","italic":false,"color":"gold"}]'}}}}] if score @a[limit=1] mana <= @a[limit=1] percentageManaMod if score @a[limit=1] shadowCD matches 240.. run function sbremake:items/sol/mana
-execute if entity @a[limit=1,scores={solRC=1..},nbt={SelectedItem:{id:"minecraft:red_tulip",Count:1b,tag:{display:{Name:'[{"text":"Staff of Life","italic":false,"color":"gold"}]'}}}}] unless score @a[limit=1] mana <= @a[limit=1] percentageManaMod if score @a[limit=1] shadowCD matches 240.. run function sbremake:items/sol/main
-execute if score @a[limit=1] gamemodeType matches 3 run function sbremake:items/sol/destroy
-scoreboard players reset @a[limit=1] solRC

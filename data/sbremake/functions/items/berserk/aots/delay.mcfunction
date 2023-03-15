@@ -1,0 +1,1 @@
+scoreboard players set @a aotsStage 0
