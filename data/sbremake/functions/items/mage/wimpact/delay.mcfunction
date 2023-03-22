@@ -1,1 +1,1 @@
-effect give @p minecraft:instant_health 1 1 true
+effect give @a minecraft:instant_health 1 1 true

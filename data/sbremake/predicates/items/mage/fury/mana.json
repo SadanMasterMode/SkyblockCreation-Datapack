@@ -1,0 +1,29 @@
+[
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "furyCD": {
+          "min": 240
+        },
+        "mana": {
+          "max": 999
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "nbt": "{Base:{id:'FIRE_FURY_STAFF'}}"
+          }
+        }
+      }
+    }
+  ]
+  

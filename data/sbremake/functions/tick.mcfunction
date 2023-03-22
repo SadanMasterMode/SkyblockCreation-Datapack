@@ -2,7 +2,7 @@
 execute as @a at @s anchored eyes run function sbremake:tick/raycasts
 
 # Function Calls
-function sbremake:utils/spectator
+execute as @e[tag=!spectator] run function sbremake:utils/spectator
 execute as @a run function sbremake:tick/contextial/as_all_players 
 function sbremake:utils/undead
 

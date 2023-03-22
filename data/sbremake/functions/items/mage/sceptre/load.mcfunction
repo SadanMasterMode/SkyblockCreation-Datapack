@@ -1,1 +1,0 @@
-scoreboard objectives add sceptreRC minecraft.used:minecraft.carrot_on_a_stick

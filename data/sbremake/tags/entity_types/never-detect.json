@@ -4,6 +4,7 @@
         "minecraft:item",
         "minecraft:experience_orb",
         "minecraft:item_frame",
-        "minecraft:glow_item_frame"
+        "minecraft:glow_item_frame",
+        "minecraft:text_display"
     ]
 }

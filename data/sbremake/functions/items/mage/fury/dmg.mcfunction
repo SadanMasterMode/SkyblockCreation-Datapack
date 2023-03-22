@@ -1,6 +1,6 @@
 schedule clear sbremake:items/mage/fury/dmg
 
-execute at @e[tag=furyMark] as @e[distance=..7,tag=!spectator,type=!#sbremake:never-detect] run tag @s add hologramTmp
+execute at 90b8d561-8157-464e-9d1c-c1849d65a4fe as @e[distance=..7,tag=!spectator,type=!#sbremake:never-detect] run tag @s add hologramTmp
 execute as @e[tag=hologramTmp,tag=!invulnerable] run attribute @s generic.knockback_resistance base set 100
 
 scoreboard players set @a damageHologram 4
