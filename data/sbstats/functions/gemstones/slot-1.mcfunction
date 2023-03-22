@@ -48,7 +48,7 @@ execute if data storage sbstats:data {BaseGemstoneData:{id:'SAPPHIRE'}} if data 
 ## Amethyst
 execute if data storage sbstats:data {BaseGemstoneData:{id:'AMETHYST'}} unless data storage sbstats:data {BaseGemstoneData:{Unlocked:1b}} unless data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❈","color":"dark_gray"}'
 execute if data storage sbstats:data {BaseGemstoneData:{id:'AMETHYST'}} if data storage sbstats:data {BaseGemstoneData:{Unlocked:1b}} unless data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❈","color":"gray"}'
-execute if data storage sbstats:data {BaseGemstoneData:{id:'AMETHYST'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❈","color":"light_pink"}'
+execute if data storage sbstats:data {BaseGemstoneData:{id:'AMETHYST'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❈","color":"light_purple"}'
 
 ## Jasper
 execute if data storage sbstats:data {BaseGemstoneData:{id:'JASPER'}} unless data storage sbstats:data {BaseGemstoneData:{Unlocked:1b}} unless data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❁","color":"dark_gray"}'
@@ -68,7 +68,7 @@ execute if data storage sbstats:data {BaseGemstoneData:{id:'COMBAT'}} if data st
 ### Sapphire
 execute if data storage sbstats:data {BaseGemstoneData:{id:'COMBAT'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'SAPPHIRE'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"⚔","color":"blue"}'
 ### Amethyst
-execute if data storage sbstats:data {BaseGemstoneData:{id:'COMBAT'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'AMETHYST'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"⚔","color":"light_pink"}'
+execute if data storage sbstats:data {BaseGemstoneData:{id:'COMBAT'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'AMETHYST'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"⚔","color":"light_purple"}'
 ### Jasper
 execute if data storage sbstats:data {BaseGemstoneData:{id:'COMBAT'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'JASPER'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"⚔","color":"dark_pink"}'
 ### Ruby
@@ -88,7 +88,7 @@ execute if data storage sbstats:data {BaseGemstoneData:{id:'DEFENSIVE'}} if data
 ### Ruby
 execute if data storage sbstats:data {BaseGemstoneData:{id:'DEFENSIVE'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'RUBY'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"☤","color":"red"}'
 ### Amethyst
-execute if data storage sbstats:data {BaseGemstoneData:{id:'DEFENSIVE'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'AMETHYST'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"☤","color":"light_pink"}'
+execute if data storage sbstats:data {BaseGemstoneData:{id:'DEFENSIVE'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'AMETHYST'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"☤","color":"light_purple"}'
 ### Opal
 execute if data storage sbstats:data {BaseGemstoneData:{id:'DEFENSIVE'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'OPAL'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"☤","color":"white"}'
 
@@ -114,7 +114,7 @@ execute if data storage sbstats:data {BaseGemstoneData:{id:'UNIVERSAL'}} if data
 ### Sapphire
 execute if data storage sbstats:data {BaseGemstoneData:{id:'UNIVERSAL'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'SAPPHIRE'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❂","color":"blue"}'
 ### Amethyst
-execute if data storage sbstats:data {BaseGemstoneData:{id:'UNIVERSAL'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'AMETHYST'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❂","color":"light_pink"}'
+execute if data storage sbstats:data {BaseGemstoneData:{id:'UNIVERSAL'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'AMETHYST'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❂","color":"light_purple"}'
 ### Jasper
 execute if data storage sbstats:data {BaseGemstoneData:{id:'UNIVERSAL'}} if data storage sbstats:data {UpgradeGemstoneData:{Applied:1b}} if data storage sbstats:data {UpgradeGemstoneData:{id:'JASPER'}} run data modify storage sbstats:data GemstoneBuilder append value '{"text":"❂","color":"dark_pink"}'
 ### Ruby

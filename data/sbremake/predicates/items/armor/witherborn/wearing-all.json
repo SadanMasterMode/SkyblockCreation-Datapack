@@ -1,0 +1,22 @@
+[
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "nbt": "{SBRemake:{Witherborn:1b}}"
+          },
+          "chest": {
+            "nbt": "{SBRemake:{Witherborn:1b}}"
+          },
+          "legs": {
+            "nbt": "{SBRemake:{Witherborn:1b}}"
+          },
+          "feet": {
+            "nbt": "{SBRemake:{Witherborn:1b}}"
+          }
+        }
+      }
+    }
+  ]  

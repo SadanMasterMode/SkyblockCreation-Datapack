@@ -1,7 +1,10 @@
-# BASE STATS
+# Pre stuff
 data modify storage sbstats:data PlayerData set from entity @s
+function sbstats:hpb/main
 
-# General
+# BASE STATS
+
+## General
 execute store result score #Base_damage stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.damage
 execute store result score #Base_health stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.health
 execute store result score #Base_defense stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.defense
@@ -17,14 +20,14 @@ execute store result score #Base_vitality stats run data get storage sbstats:dat
 execute store result score #Base_mending stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.mending
 execute store result score #Base_true_def stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.true_defense
 
-# Misc
+## Misc
 execute store result score #Base_speed stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.speed
 execute store result score #Base_scc stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.scc
 execute store result score #Base_magic_find stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.magic_find
 execute store result score #Base_pet_luck stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.pet_luck
 execute store result score #Base_fishing_speed stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.fishing_speed
 
-# Wisdom
+## Wisdom
 execute store result score #Base_wisdom_combat stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.wisdom_combat
 execute store result score #Base_wisdom_mining stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.wisdom_mining
 execute store result score #Base_wisdom_farming stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.wisdom_farming
@@ -36,7 +39,7 @@ execute store result score #Base_wisdom_carpentry stats run data get storage sbs
 execute store result score #Base_wisdom_rune stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.wisdom_rune
 execute store result score #Base_wisdom_social stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.wisdom_social
 
-# Gathering
+## Gathering
 execute store result score #Base_mining_speed stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.mining_speed
 execute store result score #Base_breaking_power stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.breaking_power
 execute store result score #Base_pristine stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.pristine
@@ -46,7 +49,7 @@ execute store result score #Base_fortune_mining stats run data get storage sbsta
 
 # REFORGE STATS
 
-# General
+## General
 execute store result score #damage reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.damage
 execute store result score #health reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.health
 execute store result score #defense reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.defense
@@ -62,14 +65,14 @@ execute store result score #vitality reforgeStats run data get storage sbstats:d
 execute store result score #mending reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.mending
 execute store result score #true_def reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.true_defense
 
-# Misc
+## Misc
 execute store result score #speed reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.speed
 execute store result score #scc reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.scc
 execute store result score #magic_find reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.magic_find
 execute store result score #pet_luck reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.pet_luck
 execute store result score #fishing_speed reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.fishing_speed
 
-# Wisdom
+## Wisdom
 execute store result score #wisdom_combat reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.wisdom_combat
 execute store result score #wisdom_mining reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.wisdom_mining
 execute store result score #wisdom_farming reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.wisdom_farming
@@ -81,7 +84,7 @@ execute store result score #wisdom_carpentry reforgeStats run data get storage s
 execute store result score #wisdom_rune reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.wisdom_rune
 execute store result score #wisdom_social reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.wisdom_social
 
-# Gathering
+## Gathering
 
 execute store result score #mining_speed reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.mining_speed
 execute store result score #breaking_power reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.breaking_power
@@ -90,9 +93,9 @@ execute store result score #fortune_foraging reforgeStats run data get storage s
 execute store result score #fortune_farming reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.fortune_farming
 execute store result score #fortune_mining reforgeStats run data get storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.stats.fortune_mining
 
-# STAT OPERATIONS
+# STAT OPERATIONS - reforges
 
-# General
+## General
 scoreboard players operation #Base_damage stats += #damage reforgeStats
 scoreboard players operation #Base_health stats += #health reforgeStats
 scoreboard players operation #Base_defense stats += #defense reforgeStats
@@ -106,13 +109,13 @@ scoreboard players operation #Base_abil_dmg stats += #abil_dmg reforgeStats
 scoreboard players operation #Base_health_Regen stats += #health_regen reforgeStats
 scoreboard players operation #Base_vitality stats += #vitality reforgeStats
 scoreboard players operation #Base_true_def stats += #true_def reforgeStats
-# Misc
+## Misc
 scoreboard players operation #Base_speed stats += #speed reforgeStats
 scoreboard players operation #Base_scc stats += #scc reforgeStats
 scoreboard players operation #Base_magic_find stats += #magic_find reforgeStats
 scoreboard players operation #Base_pet_luck stats += #pet_luck reforgeStats
 scoreboard players operation #Base_fishing_speed stats += #fishing_speed reforgeStats
-# Wisdom
+## Wisdom
 scoreboard players operation #Base_wisdom_combat stats += #wisdom_combat reforgeStats
 scoreboard players operation #Base_wisdom_mining stats += #wisdom_mining reforgeStats
 scoreboard players operation #Base_wisdom_farming stats += #wisdom_farming reforgeStats
@@ -123,10 +126,16 @@ scoreboard players operation #Base_wisdom_alchemy stats += #wisdom_alchemy refor
 scoreboard players operation #Base_wisdom_carpentry stats += #wisdom_carpentry reforgeStats
 scoreboard players operation #Base_wisdom_rune stats += #wisdom_rune reforgeStats
 scoreboard players operation #Base_wisdom_social stats += #wisdom_social reforgeStats
-# Gathering
+## Gathering
 scoreboard players operation #Base_mining_speed stats += #wisdom_combat reforgeStats
 scoreboard players operation #Base_breaking_power stats += #wisdom_mining reforgeStats
 scoreboard players operation #Base_pristine stats += #wisdom_farming reforgeStats
 scoreboard players operation #Base_fortune_foraging stats += #wisdom_foraging reforgeStats
 scoreboard players operation #Base_fortune_farming stats += #wisdom_fishing reforgeStats
 scoreboard players operation #Base_fortune_mining stats += #wisdom_enchanting reforgeStats
+
+# STAT OPERATIONS - h/fpb
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'TOOL'}}}}} run scoreboard players operation #Base_damage stats += #HPBDamage modifiers
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'TOOL'}}}}} run scoreboard players operation #Base_strength stats += #HPBDamage modifiers
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'ARMOR'}}}}} run scoreboard players operation #Base_health stats += #HPBHealth modifiers
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'ARMOR'}}}}} run scoreboard players operation #Base_defense stats += #HPBDamage modifiers

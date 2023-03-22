@@ -3,14 +3,18 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "nbt": "{SelectedItem:{id:\"minecraft:diamond_sword\",Count:1b,tag:{display:{Name:'[{\"text\":\"Aspect of the End\",\"italic\":false,\"color\":\"blue\"}]'}}}}"
+      "equipment": {
+        "mainhand": {
+          "nbt": "{Base:{id:'ASPECT_OF_THE_END'}}"
+        }
+      }
     }
   },
   {
     "condition": "minecraft:entity_scores",
     "entity": "this",
     "scores": {
-      "aoteRC": {
+      "rightClick": {
         "min": 1
       }
     }

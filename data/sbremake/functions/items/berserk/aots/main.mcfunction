@@ -9,7 +9,6 @@ execute if score @s[scores={mana=..79}] aotsStage matches 2 run function sbremak
 execute if score @s[scores={mana=..159}] aotsStage matches 3 run function sbremake:items/berserk/aots/mana
 
 execute unless score @s aotsStage matches 3.. run scoreboard players add @s aotsStage 1
-scoreboard players reset @a aotsCD
-scoreboard players reset @a aotsRC
+scoreboard players set @a aotsCD 0
 
 schedule function sbremake:items/berserk/aots/delay 30t append

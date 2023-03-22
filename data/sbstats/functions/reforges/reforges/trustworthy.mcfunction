@@ -3,7 +3,7 @@ data modify storage sbstats:reforge SelectedItem.tag.Upgrades.reforge.type set v
 item modify entity @s weapon.mainhand sbstats:reforge_type
 
 item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:old_name
-data modify storage sbstats:item_name Name set from entity @s SelectedItem.tag.OldName
+data modify storage sbstats:item_name Name set from entity @s SelectedItem.tag.SBStats.OldName
 data modify storage sbstats:reforge Name set from entity @s SelectedItem.tag.Upgrades.reforge.type
 
 # Apply stats

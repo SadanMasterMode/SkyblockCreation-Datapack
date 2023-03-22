@@ -3,46 +3,49 @@ function sbstats:stats/get_item_stats
 tag @s add recombLoreBuilder
 
 # Get item type/reforge
-item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:old_name
+execute unless data entity @s SelectedItem.tag.SBStats.OldName run item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:old_name
 data modify storage sbstats:item_name Name set from storage sbstats:data PlayerData.SelectedItem.tag.SBStats.OldName
-data modify storage sbstats:reforge Name set from entity @s SelectedItem.tag.Upgrades.reforge.type
+data modify storage sbstats:reforge Name set from storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.type
 
 # Apply new name (no reforge)
 data remove storage sbstats:reforge Item.tag.SBStats.OldName
-fill 3000000 1 3000000 3000000 1 3000000 air replace oak_sign
 
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'COMMON'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "white","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'UNCOMMON'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "green","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'RARE'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "blue","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'EPIC'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "dark_purple","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'LEGENDARY'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "gold","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'MYTHIC'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "light_pink","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'DIVINE'},Upgrades:{reforged:0b}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "aqua","interpret": true,"italic": false}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforged:0b}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.OldName set from block 3000000 1 3000000 Text1
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'COMMON'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "white","interpret": true,"italic": false}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'UNCOMMON'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "green","interpret": true,"italic": false}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'RARE'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "blue","interpret": true,"italic": false}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'EPIC'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "dark_purple","interpret": true,"italic": false}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'LEGENDARY'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "gold","interpret": true,"italic": false}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'MYTHIC'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "light_purple","interpret": true,"italic": false}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'DIVINE'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "aqua","interpret": true,"italic": false}]'
+execute unless data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.OldName set from block 3000000 1 3000000 Text1
 
 item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:item_name_2
 
+
 # Apply new name (reforged)
-execute if entity @s[nbt={SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] run function sbstats:reforges/reforge_name
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}} run function sbstats:reforges/reforge_name
 
 # Get the item's stats and old lore
 data modify storage sbstats:reforge Item.tag.SBStats.OldLore set from storage sbstats:data PlayerData.SelectedItem.tag.Base.description
 # Prep
 tag @s add LoreBuilder
 data remove storage sbstats:reforge Item.tag.SBStats.NewLore
-data remove storage sbstats:data HotPotatoBooks
 # Add stats
 ## RED STATS
 
 ### DAMAGE
+data remove storage sbstats:data HPB
 data remove storage sbstats:reforge damage
-execute if score #damage reforgeStats matches 1.. run data modify storage sbstats:reforge damage set value '[{"text":"(+","color":"blue"},{"score":{"name":"#damage","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
-execute if score #Base_damage stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Damage: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_damage","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"damage","storage": "sbstats:reforge","color": "blue","interpret": true,"italic": false}]'
+execute if score #damage reforgeStats matches 1.. run data modify storage sbstats:reforge damage set value '[{"text":" (+","color":"blue"},{"score":{"name":"#damage","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'TOOL'}}}}} if score #HPBDamage modifiers matches 1.. run data modify storage sbstats:data HPB set value '[{"text":" (+","color":"yellow"},{"score":{"name":"#HPBDamage","objective":"modifiers"},"color": "yellow"},{"text": ")","color": "yellow"}]'
+execute if score #Base_damage stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Damage: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_damage","objective": "stats"},"color":"red","italic": false},{"nbt":"damage","storage": "sbstats:reforge","color": "blue","interpret": true,"italic": false},{"nbt":"HPB","storage":"sbstats:data","color":"yellow","interpret":true}]'
 execute if score #Base_damage stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### STRENGTH
+data remove storage sbstats:data HPB
 data remove storage sbstats:reforge strength
 execute if score #strength reforgeStats matches 1.. run data modify storage sbstats:reforge strength set value '[{"text":"(+","color":"blue"},{"score":{"name":"#strength","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
-execute if score #Base_strength stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Strength: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_strength","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"strength","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'TOOL'}}}}} if score #HPBDamage modifiers matches 1.. run data modify storage sbstats:data HPB set value '[{"text":" (+","color":"yellow"},{"score":{"name":"#HPBDamage","objective":"modifiers"},"color": "yellow"},{"text": ")","color": "yellow"}]'
+execute if score #Base_strength stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Strength: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_strength","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"strength","storage": "sbstats:reforge","color": "blue","interpret": true},{"nbt":"HPB","storage":"sbstats:data","color":"yellow","interpret":true}]'
 execute if score #Base_strength stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### CRIT DAMAGE
 data remove storage sbstats:reforge crit_damage
@@ -78,14 +81,18 @@ execute if score #Base_vitality stats matches 1.. run data modify storage sbstat
 ## GREEN STATS
 
 ### HEALTH
+data remove storage sbstats:data HPB
 data remove storage sbstats:reforge health
 execute if score #health reforgeStats matches 1.. run data modify storage sbstats:reforge health set value '[{"text":"(+","color":"blue"},{"score":{"name":"#health","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
-execute if score #Base_health stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Health: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_health","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"health","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'ARMOR'}}}}} if score #HPBHealth modifiers matches 1.. run data modify storage sbstats:data HPB set value '[{"text":" (+","color":"yellow"},{"score":{"name":"#HPBHealth","objective":"modifiers"},"color": "yellow"},{"text": ")","color": "yellow"}]'
+execute if score #Base_health stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Health: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_health","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"health","storage": "sbstats:reforge","color": "blue","interpret": true},{"nbt":"HPB","storage":"sbstats:data","color":"yellow","interpret":true}]'
 execute if score #Base_health stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### DEFENSE
+data remove storage sbstats:data HPB
 data remove storage sbstats:reforge defense
 execute if score #defense reforgeStats matches 1.. run data modify storage sbstats:reforge defense set value '[{"text":"(+","color":"blue"},{"score":{"name":"#defense","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
-execute if score #Base_defense stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Defense: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_defense","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"defense","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapon:'ARMOR'}}}}} if score #HPBDamage modifiers matches 1.. run data modify storage sbstats:data HPB set value '[{"text":" (+","color":"yellow"},{"score":{"name":"#HPBDamage","objective":"modifiers"},"color": "yellow"},{"text": ")","color": "yellow"}]'
+execute if score #Base_defense stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Defense: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_defense","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"defense","storage": "sbstats:reforge","color": "blue","interpret": true},{"nbt":"HPB","storage":"sbstats:data","color":"yellow","interpret":true}]'
 execute if score #Base_defense stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### INTELLIGENCE
 data remove storage sbstats:reforge intelligence
@@ -229,15 +236,13 @@ execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.Gemstones[
 execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.Gemstones[3] run function sbstats:gemstones/slot-4
 ## Slot 5
 execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.Gemstones[4] run function sbstats:gemstones/slot-5
-## Slot 6
-execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.Gemstones[5] run function sbstats:gemstones/slot-6
 
 ## Finish Up
 execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.Gemstones[0] run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"GemstoneBuilder[]","storage":"sbstats:data","interpret":true,"separator": "","italic":false}]'
 execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.Gemstones[0] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 
 # Add old lore
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{stats:{}}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":" "}]'
+execute if data storage sbstats:data PlayerData.SelectedItem.tag.Base.stats if data storage sbstats:reforge Item.tag.SBStats.NewLore[0] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":" "}]'
 data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from storage sbstats:reforge Item.tag.SBStats.OldLore[]
 
 # Add reforge bonus
@@ -248,9 +253,10 @@ data remove storage sbstats:stone Item.tag.ReforgeBonus
 
 # Clean Up (rarity + misc)
 data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":" "}]'
-execute if entity @s[nbt={SelectedItem:{tag:{Base:{soulbound:'COOP'}}}}] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"٭ ","bold":true,"italic":false,"color":"dark_gray"},{"text":"Co-op Soulbound","bold":false,"italic":false,"color":"dark_gray"},{"text":" ٭","bold":true,"italic":false,"color":"dark_gray"}]'
-execute if entity @s[nbt={SelectedItem:{tag:{Base:{soulbound:'SOLO'}}}}] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"٭ ","bold":true,"italic":false,"color":"dark_gray"},{"text":"Soulbound","bold":false,"italic":false,"color":"dark_gray"},{"text":" ٭","bold":true,"italic":false,"color":"dark_gray"}]'
-execute if entity @s[nbt={SelectedItem:{tag:{Upgrades:{reforge:{stats:{}}}}}}] unless entity @s[nbt={SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"This item can be reforged!","bold":false,"italic":false,"color":"dark_gray"}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{soulbound:'COOP'}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"٭ ","bold":true,"italic":false,"color":"dark_gray"},{"text":"Co-op Soulbound","bold":false,"italic":false,"color":"dark_gray"},{"text":" ٭","bold":true,"italic":false,"color":"dark_gray"}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{soulbound:'SOLO'}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"٭ ","bold":true,"italic":false,"color":"dark_gray"},{"text":"Soulbound","bold":false,"italic":false,"color":"dark_gray"},{"text":" ٭","bold":true,"italic":false,"color":"dark_gray"}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{stats:{}}}}}}} unless entity @s[nbt={SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"This item can be reforged!","bold":false,"italic":false,"color":"dark_gray"}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{SBRemake:{CustomItem:1b}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"Custom Item","bold":false,"italic":false,"color":"dark_gray"}]'
 function sbstats:reforges/lore_rarity
 data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 tag @s remove LoreBuilder

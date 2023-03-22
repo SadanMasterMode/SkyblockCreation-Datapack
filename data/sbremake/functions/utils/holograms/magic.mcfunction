@@ -1,4 +1,4 @@
-execute in overworld run setblock 3000000 1 3000000 oak_sign{Text1:'[{"score":{"name": "@p","objective": "damageHologram"},"color": "gray"}]'} destroy
+execute in overworld run data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name": "@p","objective": "damageHologram"},"color": "gray"}]'
 execute in overworld positioned 3000000 1 3000000 run kill @e[type=item,nbt={Item:{id:"minecraft:oak_sign",Count:1b}},limit=1,sort=nearest]
 
 summon armor_stand ~ ~-10 ~ {CustomName:'{"text": "N/A","color": "gray"}',Tags:["damageHologram","spectator"],NoGravity:1b,Invisible:1b,CustomNameVisible:1b,Invulnerable:1b,Marker:1b}

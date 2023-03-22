@@ -25,22 +25,6 @@ execute store result score @a[limit=1] healthMod run scoreboard players get @a[l
 execute store result score @a[limit=1] healthVis run scoreboard players operation @a[limit=1] healthMod *= #5 const
 execute at @a as @e[distance=50..] run function sbremake:tick/raycast_kill
 
-## Mana Stuff
-execute as @a unless score @s mana >= @s maxMana run scoreboard players add @s mana 1
-
-function sbremake:utils/stats/extra_mana_give
-execute as @a run function sbremake:utils/stats/mana
-function sbremake:utils/stats/extra_mana_remove
-### Percentage Mana
-execute store result score #25 percentageMana run scoreboard players get @a[limit=1] maxMana
-execute store result score #25 percentageManaMod run scoreboard players operation #25 percentageMana /= #4 const
-execute store result score #25 percentageMana run scoreboard players get @a[limit=1] maxMana
-scoreboard players set #40 percentageMana 40
-scoreboard players operation #40 percentageMana *= @a[limit=1] maxMana
-execute store result score #40 percentageManaMod run scoreboard players operation #40 percentageMana /= #100 const
-
-execute if score @a[limit=1] mana >= @a[limit=1] maxMana run execute store result score @a[limit=1] mana run scoreboard players get @a[limit=1] maxMana
-
 execute as @e[tag=float] run function sbremake:utils/item_float
 execute as @a[scores={solMaxDmg=1..},tag=!inDwindlerBoss] run function sbremake:utils/sol_max_dmg
 execute as @a[scores={dmgDealt=1..},tag=inDwindlerBoss] run function sbremake:utils/sol_max_dmg
@@ -78,27 +62,6 @@ execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run e
 execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run particle explosion ~ ~3 ~ 0 0 0 0 1 normal @a[limit=1]
 execute as @e[tag=witherlord2] at @s anchored eyes unless block ~ ~2 ~ air run kill @s
 
-# Wither Cloak
-execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] mana >= #25 percentageManaMod run execute store result score @a[limit=1] cloakRC2 run scoreboard players get @a[limit=1] cloakRC
-execute unless entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] run execute store result score @a[limit=1] cloakRC run scoreboard players get @a[limit=1] cloakRC2
-execute if score @a[limit=1] mana >= #25 percentageManaMod unless score @a[limit=1] cloakWarn matches 1.. run execute store result score @a[limit=1] cloakRC run scoreboard players get @a[limit=1] cloakRC2
-execute if entity @a[limit=1,scores={cloakRC3=1..},nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] unless score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] mana <= #25 percentageManaMod run function sbremake:items/cloak/manawarn
-execute if entity @a[limit=1,scores={cloakRC=1..},nbt={SelectedItem:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'[{"text":"Wither Cloak Sword","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] mana >= #25 percentageManaMod unless score @a[limit=1] cloakWarn matches 1.. run function sbremake:items/cloak/main
-execute as @r at @s run tp @e[tag=cloak1] ~2 ~ ~1
-execute as @r at @s run tp @e[tag=cloak2] ~2 ~ ~-1
-execute as @r at @s run tp @e[tag=cloak3] ~ ~ ~2
-execute as @r at @s run tp @e[tag=cloak4] ~ ~ ~-2
-execute as @r at @s run tp @e[tag=cloak5] ~-2 ~ ~1
-execute as @r at @s run tp @e[tag=cloak6] ~-2 ~ ~-1
-execute if score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] dmgTaken matches 1.. if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players set @a[limit=1] cloakRC 2
-execute if score @a[limit=1] cloakWarn matches 1.. if score @a[limit=1] dmgTaken matches 1.. if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players set @a[limit=1] cloakRC2 2
-execute if entity @r[scores={dmgTaken=1..}] if score @a[limit=1] cloakWarn matches 1.. run function sbremake:items/cloak/mana
-execute as @a[scores={cloakRC=2..}] at @s run function sbremake:items/cloak/final
-execute as @a[scores={cloakRC3=1..}] at @s run scoreboard players reset @a[limit=1] cloakRC3
-execute if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players reset @a[limit=1] cloakRC
-execute if score @a[limit=1] mana <= #25 percentageManaMod run scoreboard players reset @a[limit=1] cloakRC2
-scoreboard players reset @a[limit=1] dmgTaken
-
 # Terrorwraith
 execute if entity @a[limit=1,tag=inWraith] run scoreboard players add @a[limit=1] wraithTime 1
 effect give @e[tag=wraithMarked] minecraft:glowing 1 1 true
@@ -114,18 +77,6 @@ execute if entity @a[limit=1,scores={wraithTime=100..}] run function sbremake:it
 execute if entity @a[limit=1,tag=inWraith,tag=!notified] run function sbremake:items/terrorwraith/wraithin
 scoreboard players set @a[limit=1] wraithSn 0
 scoreboard players set @a[limit=1] wraithSnSt 0
-
-# Angel's Ascent
-execute as @e[tag=ascendAS] run scoreboard players add @s ascendLT 1
-execute as @e[tag=ascendAS,scores={ascendLT=10..}] at @s align xz run particle minecraft:block minecraft:white_concrete ~0.5 ~-1 ~0.5 0 0 0 1 10 normal
-execute as @e[scores={ascendLT=20..}] at @s run fill ~ ~-1 ~ ~ ~-1 ~ air replace minecraft:white_stained_glass
-execute as @e[scores={ascendLT=20..}] run kill @s
-execute at @a[limit=1] unless block ~ ~-0.5 ~ air if score @a[limit=1] ascendCharge matches ..2 run scoreboard players add @a[limit=1] ascendRecharge 1
-execute at @a[limit=1] if block ~ ~-0.5 ~ air run scoreboard players reset @a[limit=1] ascendRecharge
-execute if score @a[limit=1] ascendRecharge matches 22.. run function sbremake:items/ascent/recharge
-execute unless entity @a[limit=1,nbt={SelectedItem:{}}] if score @a[limit=1] spookyMute matches 1 run execute if score @a[limit=1] ascendRC matches 1.. at @a[limit=1] if score @a[limit=1] ascendCharge matches ..0 at @a[limit=1] if block ~ ~-0.5 ~ air run tellraw @a[limit=1] [{"text":"ANGELS ASCENT","color":"red","bold":true},{"text":" You don't have enough charges to use this!","color":"red","bold":false}]
-execute unless entity @a[limit=1,nbt={SelectedItem:{}}] if entity @a[limit=1,nbt={Inventory:[{Slot:101b,id:"minecraft:leather_leggings",tag:{display:{Name:'[{"text":"Angel\'s Ascent","italic":false,"color":"gold"}]'}}}]}] if score @a[limit=1] ascendRC matches 1.. at @a[limit=1] if score @a[limit=1] ascendCharge matches 1.. at @a[limit=1] if block ~ ~-0.5 ~ air run function sbremake:items/ascent/main
-scoreboard players reset @a ascendRC
 
 # Spirit Boots
 scoreboard players add @a[limit=1] spiritCD 1
@@ -154,76 +105,6 @@ scoreboard players reset @a[limit=1] spiritSneak2
 execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:wooden_sword",tag:{display:{Name:'[{"text":"Rogue Sword","italic":false}]'}}}}] if score @a[limit=1] rogueRC matches 1.. unless score @a[limit=1] mana matches 50.. run function sbremake:items/rogue/mana
 execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:wooden_sword",tag:{display:{Name:'[{"text":"Rogue Sword","italic":false}]'}}}}] if score @a[limit=1] rogueRC matches 1.. if score @a[limit=1] mana matches 50.. run function sbremake:items/rogue/main
 scoreboard players reset @a[limit=1] rogueRC
-
-# Fire Freeze Staff
-scoreboard players add @a[limit=1] ffsCD 1
-execute as @e[tag=ffs] at @s run tp @s ~ ~ ~ ~10 ~
-execute as @e[tag=ffs] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs1] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs2] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs3] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs4] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs5] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs6] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs7] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs8] run scoreboard players add @s ffsLife 1
-execute as @e[tag=ffs1,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs2,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs3,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs4,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs5,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs6,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs7,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs8,scores={ffsLife=100..}] at @s run tp @s ^ ^ ^0.75 facing entity @e[tag=ffs,limit=1]
-execute as @e[tag=ffs] at @s if entity @e[tag=ffs1,distance=..0.39] run schedule function sbremake:items/ffs/final 5t append
-execute as @e[tag=ffsMark] run data merge entity @s {NoAI:1b}
-execute as @e[tag=ffsMark] run scoreboard players add @s ffsFT 1
-execute as @e[scores={ffsFT=1..100}] at @s run particle block ice ~ ~1.75 ~ 0 0 0 1 10 normal
-execute as @e[scores={ffsFT=101..200}] at @s run particle block blue_ice ~ ~1.75 ~ 0 0 0 0.05 3 normal
-execute as @e[scores={ffsFT=1..100}] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:packed_ice",Count:1b}],ArmorDropChances:[0.085F,0.085F,0.085F,0.000F]}
-execute as @e[scores={ffsFT=101..200}] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:ice",Count:1b}],ArmorDropChances:[0.085F,0.085F,0.085F,0.000F]}
-execute as @e[scores={ffsFT=201..}] run data merge entity @s {NoAI:0b}
-execute as @e[scores={ffsFT=201..}] run data merge entity @s {ArmorItems:[{},{},{},{}]}
-execute as @e[scores={ffsFT=201..}] run tag @s remove ffsMark
-execute as @e[scores={ffsFT=201..}] run scoreboard players reset @s ffsFT
-execute at @e[tag=ffs] positioned ^2 ^ ^5 unless score @e[tag=ffs1,limit=1] ffsLife matches 100.. run tp @e[tag=ffs1] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^-2 ^ ^5 unless score @e[tag=ffs2,limit=1] ffsLife matches 100.. run tp @e[tag=ffs2] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^2 ^ ^-5 unless score @e[tag=ffs3,limit=1] ffsLife matches 100.. run tp @e[tag=ffs3] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^-2 ^ ^-5 unless score @e[tag=ffs4,limit=1] ffsLife matches 100.. run tp @e[tag=ffs4] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^5 ^ ^2 unless score @e[tag=ffs5,limit=1] ffsLife matches 100.. run tp @e[tag=ffs5] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^5 ^ ^-2 unless score @e[tag=ffs6,limit=1] ffsLife matches 100.. run tp @e[tag=ffs6] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^-5 ^ ^2 unless score @e[tag=ffs7,limit=1] ffsLife matches 100.. run tp @e[tag=ffs7] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-execute at @e[tag=ffs] positioned ^-5 ^ ^-2 unless score @e[tag=ffs8,limit=1] ffsLife matches 100.. run tp @e[tag=ffs8] ~ ~ ~ facing entity @e[tag=ffs,limit=1]
-function sbremake:items/ffs/dance
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^0.5 ^5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^0.5 ^-5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^5 ^0.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^-5 ^0.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^0.5 ^5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^0.5 ^-5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^5 ^0.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^-5 ^0.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^1.5 ^5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^1.5 ^-5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^5 ^1.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^-5 ^1.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^1.5 ^5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^1.5 ^-5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^5 ^1.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^-5 ^1.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^2.5 ^5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^2.5 ^-5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^5 ^2.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^-5 ^2.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^2.5 ^5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^ ^2.5 ^-5 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^5 ^2.5 ^ 0 0 0 0 0 normal
-execute as @e[tag=ffs] at @s run particle dust 0 0 0 1 ^-5 ^2.5 ^ 0 0 0 0 0 normal
-execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:dandelion",tag:{display:{Name:'[{"text":"Fire Freeze Staff","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] ffsRC matches 1.. unless score @a[limit=1] mana matches ..499 unless score @a[limit=1] ffsCD matches 200.. run function sbremake:items/ffs/cd
-execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:dandelion",tag:{display:{Name:'[{"text":"Fire Freeze Staff","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] ffsRC matches 1.. if score @a[limit=1] mana matches ..499 unless score @a[limit=1] ffsCD matches 200.. run function sbremake:items/ffs/cd
-execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:dandelion",tag:{display:{Name:'[{"text":"Fire Freeze Staff","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] ffsRC matches 1.. if score @a[limit=1] mana matches ..499 if score @a[limit=1] ffsCD matches 200.. run function sbremake:items/ffs/mana
-execute if entity @a[limit=1,nbt={SelectedItem:{id:"minecraft:dandelion",tag:{display:{Name:'[{"text":"Fire Freeze Staff","italic":false,"color":"dark_purple"}]'}}}}] if score @a[limit=1] ffsRC matches 1.. unless score @a[limit=1] mana matches ..499 if score @a[limit=1] ffsCD matches 200.. run function sbremake:items/ffs/main
-scoreboard players reset @a[limit=1] ffsRC
 
 # Armor of Wisdom
 execute if entity @a[limit=1,nbt={Inventory:[{Slot:103b,id:"minecraft:diamond_helmet",tag:{display:{Name:'[{"text":"Helmet of Wisdom","italic":false,"color":"blue"}]'}}}]}] if entity @a[limit=1,nbt={Inventory:[{Slot:102b,id:"minecraft:diamond_chestplate",tag:{display:{Name:'[{"text":"Chestplate of Wisdom","italic":false,"color":"blue"}]'}}}]}] if entity @a[limit=1,nbt={Inventory:[{Slot:101b,id:"minecraft:diamond_leggings",tag:{display:{Name:'[{"text":"Leggings of Wisdom","italic":false,"color":"blue"}]'}}}]}] if entity @a[limit=1,nbt={Inventory:[{Slot:100b,id:"minecraft:diamond_boots",tag:{display:{Name:'[{"text":"Boots of Wisdom","italic":false,"color":"blue"}]'}}}]}] run function sbremake:items/wisdom/main

@@ -7,7 +7,7 @@
       "predicate": {
         "equipment": {
           "mainhand": {
-            "nbt": "{actionbar:1b}"
+            "nbt": "{SBRemake:{DisableActionbar:1b}}"
           }
         }
       }

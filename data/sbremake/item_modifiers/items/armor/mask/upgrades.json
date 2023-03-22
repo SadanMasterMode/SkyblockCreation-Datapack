@@ -1,0 +1,16 @@
+[
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "sbstats:data"
+      },
+      "ops": [
+        {
+          "source": "PlayerData.SelectedItem.tag.Upgrades",
+          "target": "Upgrades",
+          "op": "replace"
+        }
+      ]
+    }
+  ]  

@@ -1,2 +1,1 @@
 scoreboard objectives add Wimpact dummy
-scoreboard objectives add rightClick minecraft.used:minecraft.carrot_on_a_stick

@@ -1,0 +1,48 @@
+[
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "ascendCharge": {
+          "max": 0
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "stepping_on": {
+          "block": {
+            "tag": "sbremake:items/air"
+          }
+        },
+        "equipment": {
+          "legs": {
+            "nbt": "{Base:{id:'ANGEL_ASCENT'}}"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "mainhand": {
+              "count": {
+                "min": 1,
+                "max": 64
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+  

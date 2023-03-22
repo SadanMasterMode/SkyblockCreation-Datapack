@@ -1,6 +1,6 @@
 [
     {
       "function": "minecraft:set_nbt",
-      "tag": "{sbstats:{pickaxe:1b}}"
+      "tag": "{SBStats:{pickaxe:1b}}"
     }
   ]  

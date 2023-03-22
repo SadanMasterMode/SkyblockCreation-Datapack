@@ -1,14 +1,10 @@
 # Create objectives
 scoreboard objectives add bootsIntelligence dummy
 scoreboard objectives add wraithSn minecraft.custom:minecraft.sneak_time
-scoreboard objectives add ascendRC minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add itemCD dummy
 scoreboard objectives add chestplateFerocity dummy
-scoreboard objectives add ffsFT dummy
-scoreboard objectives add const5 dummy
 scoreboard objectives add const dummy
 scoreboard objectives add gamemode dummy
-scoreboard objectives add ffsLife dummy
 scoreboard objectives add itemFerocity dummy
 scoreboard objectives add bootsFerocity dummy
 scoreboard objectives add const0 dummy
@@ -26,7 +22,6 @@ scoreboard objectives add witherlordRC3 minecraft.used:minecraft.carrot_on_a_sti
 scoreboard objectives add chestplateCD dummy
 scoreboard objectives add manaWarn dummy
 scoreboard objectives add bootsCD dummy
-scoreboard objectives add ascendCharge dummy
 scoreboard objectives add damage dummy
 scoreboard objectives add glideTime dummy
 scoreboard objectives add bootsDefense dummy
@@ -51,10 +46,7 @@ scoreboard objectives add headCD dummy
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy
-scoreboard objectives add ascendRecharge dummy
 scoreboard objectives add chestplateDefense dummy
-scoreboard objectives add cloakRC2 dummy
-scoreboard objectives add cloakRC3 minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add leggingsHealth dummy
 scoreboard objectives add arrowDmg dummy
 scoreboard objectives add rc69 minecraft.used:minecraft.carrot_on_a_stick
@@ -72,15 +64,11 @@ scoreboard objectives add itemIntelligence dummy
 scoreboard objectives add Test dummy
 scoreboard objectives add spiritCD dummy
 scoreboard objectives add leggingsDamage dummy
-scoreboard objectives add ffsCD dummy
 scoreboard objectives add healthVis dummy
-scoreboard objectives add cloakRC minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add ascendLT dummy
 scoreboard objectives add wraithCount dummy
 scoreboard objectives add test dummy
 scoreboard objectives add durability dummy
 scoreboard objectives add chestplateHealth dummy
-scoreboard objectives add cloakWarn dummy
 scoreboard objectives add chestplateDurability dummy
 scoreboard objectives add success dummy
 scoreboard objectives add healthMod dummy
@@ -99,7 +87,6 @@ scoreboard objectives add headIntelligence dummy
 scoreboard objectives add bootsStrength dummy
 scoreboard objectives add sputingWand minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add dmgTaken minecraft.custom:minecraft.damage_resisted
-scoreboard objectives add ffsRC minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add leggingsCD dummy
 scoreboard objectives add leggingsDefense dummy
 scoreboard objectives add headHealth dummy
@@ -151,6 +138,7 @@ scoreboard objectives add damageTmp dummy
 scoreboard objectives add dmgResis minecraft.custom:minecraft.damage_resisted
 scoreboard objectives add fakePlayers dummy
 scoreboard objectives add vdvcasttemp dummy
+scoreboard objectives add recursive dummy
 tellraw @a [{"text": "Objectives done","color": "dark_gray"}]
 
 # Typewriter
@@ -175,6 +163,9 @@ tellraw @a [{"text": "Scoreboard done","color": "dark_gray"}]
 # Set boss variables.
 scoreboard players set #killedDwindler fakePlayers 0
 tellraw @a [{"text": "Boss vars done","color": "dark_gray"}]
+
+# Set fakeplayers
+scoreboard players set #debug-mode fakePlayers 0
 
 # Misc #1
 bossbar remove objective
@@ -234,6 +225,7 @@ scoreboard players set #20 const 20
 scoreboard players set #24 const 24
 scoreboard players set #25 const 25
 scoreboard players set #30 const 30
+scoreboard players set #36 const 36
 scoreboard players set #50 const 50
 scoreboard players set #100 const 100
 scoreboard players set #249 const 249
@@ -261,9 +253,11 @@ scoreboard players operation @a extraMana += @a maxHealthMod
 scoreboard players operation @a extraMana += @a defenseMod
 scoreboard players set @a extraMana 0
 scoreboard players set @a aowMana 0
+execute store result score #old-slot fakePlayers run data get entity @a[limit=1] SelectedItemSlot
+
 gamerule commandBlockOutput false
 
 # Initialization message. Everything worked!
-tellraw @a [{"text": "Hey!\n\n","color": "red","bold": true},{"text": "Thanks for playing my map/datapack. If you have any questions or concerns,feel free to contact me :)\n\n","color": "red","bold": false},{"text": "Socials\n","color": "gray","bold": false},{"text": "Discord: @Sadan (Master Mode)#2278\n","color": "dark_gray","bold": false},{"text": "Twitter: @SadanMasterMode\n","color": "aqua","bold": false},{"text": "Forums: https://hypixel.net/members/sadan_mastermode.3210268/","color": "gold","bold": false}]
+tellraw @a [{"text": "Hey!\n\n","color": "red","bold": true},{"text": "Thanks for playing my map/datapack. If you have any questions or concerns,feel free to contact me :)\n\n","color": "red","bold": false},{"text": "Socials\n","color": "gray","bold": false},{"text": "Discord: @Sadan (Master Mode)#2278\n","color": "dark_gray","bold": false},{"text": "Twitter: @SadanMasterMode\n","color": "aqua","bold": false},{"text": "Forums: https://hypixel.net/members/sadan_mastermode.3210268/","color": "gold","bold": false,"clickEvent": {"action": "open_url","value": "https://hypixel.net/members/sadan_mastermode.3210268/"}}]
 tellraw @a {"text": " "}
 tellraw @a {"text": "Disclaimer: ALL credit goes to Hypixel for their item ideas and stuff. They deserve the credit for making an amazing server, join it at mc.hypixel.net!","color": "red"}

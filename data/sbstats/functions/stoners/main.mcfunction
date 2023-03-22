@@ -3,7 +3,7 @@ execute at @a[advancements={sbstats:villager=true}] at @e[tag=reforge,limit=1,so
 execute at @s run playsound block.anvil.use master @s ~ ~ ~
 
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}} run item modify entity @s weapon.mainhand sbstats:old_name
-data modify storage sbstats:item_name Name set from storage sbstats:data PlayerData.SelectedItem.tag.OldName
+data modify storage sbstats:item_name Name set from storage sbstats:data PlayerData.SelectedItem.tag.SBStats.OldName
 data modify storage sbstats:reforge Name set from storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.type
 item modify entity @s weapon.mainhand sbstats:custom_stone
 
