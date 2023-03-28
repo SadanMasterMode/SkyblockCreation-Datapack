@@ -1,0 +1,23 @@
+[
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "nbt": "{Base:{id:'WISDOM_HELMET'}}"
+          },
+          "chest": {
+            "nbt": "{Base:{id:'WISDOM_CHESTPLATE'}}"
+          },
+          "legs": {
+            "nbt": "{Base:{id:'WISDOM_LEGGINGS'}}"
+          },
+          "feet": {
+            "nbt": "{Base:{id:'WISDOM_BOOTS'}}"
+          }
+        }
+      }
+    }
+  ]
+  

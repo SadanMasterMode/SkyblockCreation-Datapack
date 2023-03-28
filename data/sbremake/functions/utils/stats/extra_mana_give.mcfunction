@@ -1,2 +1,2 @@
-scoreboard players operation @p extraMana += @p aowMana
-scoreboard players operation @p extraMana -= @p dwindlerMana
+scoreboard players operation @s extraMana += #wisdom-mana fakePlayers
+scoreboard players operation @s extraMana -= @s dwindlerMana

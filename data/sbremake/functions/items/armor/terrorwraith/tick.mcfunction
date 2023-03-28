@@ -1,0 +1,1 @@
+execute if score #lag-reduction fakePlayers matches 0 as @a run function sbremake:items/armor/terrorwraith/lag-tick

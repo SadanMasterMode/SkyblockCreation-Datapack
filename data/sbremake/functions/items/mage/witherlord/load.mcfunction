@@ -1,0 +1,3 @@
+scoreboard objectives add witherlordRC minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add witherlordRC2 minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add witherlordRC3 minecraft.used:minecraft.carrot_on_a_stick

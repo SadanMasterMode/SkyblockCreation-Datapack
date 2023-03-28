@@ -1,2 +1,2 @@
-execute if score @p x matches ..0 run scoreboard players operation @p x -= @p x
-scoreboard players operation @p x -= @p nx
+scoreboard players operation @s x -= @s x
+scoreboard players operation @s x -= @s nx

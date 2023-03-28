@@ -1,2 +1,2 @@
-scoreboard players set #debug-mode fakePlayers 0
-tellraw @a [{"text":"Debug-mode successfully disabled.","italic":false,"color":"green"}]
+scoreboard players set #lag-reduction fakePlayers 0
+tellraw @a [{"text":"Lag-reduction successfully disabled.","italic":false,"color":"green"}]

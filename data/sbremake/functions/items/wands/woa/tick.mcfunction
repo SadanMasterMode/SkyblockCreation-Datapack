@@ -1,8 +1,7 @@
-effect give @e[tag=woa] resistance 100 4 true
-execute as @p at @s run tp @e[tag=woa] ^ ^1 ^2
-execute store success score @p woaSuccess if score @p woaSuccess matches 0 if entity @p[nbt={SelectedItem:{id:"minecraft:stick",Count:1b,tag:{display:{Name:'[{"text":"Wand of Ascent","italic":false,"color":"dark_purple"}]'}}}}] run function sbremake:items/wands/woa/summon
-execute unless entity @p[nbt={SelectedItem:{id:"minecraft:stick",Count:1b,tag:{display:{Name:'[{"text":"Wand of Ascent","italic":false,"color":"dark_purple"}]'}}}}] run function sbremake:items/wands/woa/destroy
-execute if entity @e[tag=woa,nbt={HurtTime:10s}] run function sbremake:items/wands/woa/final
-execute if entity @p[scores={woaRC=1..},nbt={SelectedItem:{id:"minecraft:stick",Count:1b,tag:{display:{Name:'[{"text":"Wand of Ascent","italic":false,"color":"dark_purple"}]'}}}}] run function sbremake:items/wands/woa/main
-execute if score @p gamemodeType matches 3 run function sbremake:items/wands/woa/destroy
-scoreboard players reset @p woaRC
+execute at @a run tp d25888b5-9055-47a5-92a8-bd8d2b6b2a00 ~ ~ ~
+execute store result entity d25888b5-9055-47a5-92a8-bd8d2b6b2a00 Air short 1 run time query gametime
+
+execute as @a[predicate=sbremake:items/wands/woa/holding] at @s unless entity d25888b5-9055-47a5-92a8-bd8d2b6b2a00 run function sbremake:items/wands/woa/summon
+execute as @a[predicate=!sbremake:items/wands/woa/holding] run kill @e[tag=woa]
+
+execute if score @a[limit=1] gamemodeType matches 3 run kill d25888b5-9055-47a5-92a8-bd8d2b6b2a00

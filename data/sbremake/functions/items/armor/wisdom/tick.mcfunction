@@ -1,0 +1,2 @@
+execute as @a[predicate=sbremake:items/armor/wisdom/wearing] run function sbremake:items/armor/wisdom/main
+execute as @a[predicate=!sbremake:items/armor/wisdom/wearing] run function sbremake:items/armor/wisdom/remove

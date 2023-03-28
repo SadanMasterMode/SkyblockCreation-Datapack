@@ -1,10 +1,9 @@
-scoreboard players set @p ascendCharge 0
-tp @e[tag=woa] ~ ~-100 ~
-kill @e[tag=woa]
-scoreboard players set @p manaWarn 1
+advancement revoke @s only sbremake:items/wands/woa/left-click
+scoreboard players set @s ascendCharge 0
+
+scoreboard players set @s manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @p actionbar [{"text":"Used","color":"aqua","bold":false},{"text":" Rock Bottom","color":"gold","bold":false},{"text":"! (0 Charges)","color":"aqua","bold":false}]
-execute at @p run playsound minecraft:block.end_gateway.spawn master @p ~ ~ ~
-execute as @p at @s run summon minecraft:iron_golem ~ ~10 ~ {Health:100,NoAI:1b,NoGravity:1b,PersistenceRequired:1b,Silent:1b,Tags:["woa","lc","spectator"],ActiveEffects:[{Id:14,Duration:100000,Amplifier:-1,ShowParticles:0b}],Attributes:[{Name:"generic.max_health",Base:100d}]}
-scoreboard players set @p woaSuccess 0
+title @s actionbar [{"text":"Used","color":"aqua","bold":false},{"text":" Rock Bottom","color":"gold","bold":false},{"text":"! (0 Charges)","color":"aqua","bold":false}]
+
+execute at @s run playsound minecraft:block.end_gateway.spawn master @s ~ ~ ~

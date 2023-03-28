@@ -12,4 +12,4 @@ execute at @s anchored eyes run summon marker ^ ^ ^0.1 {Tags:["shadowOrb","spect
 execute as 48782dea-21f1-43a5-b4cb-23fa86396cec at @s run tp @s ~ ~ ~ facing entity @a[limit=1] eyes
 
 scoreboard players operation @s mana -= #40 percentageManaMod
-scoreboard players reset @s shadowCD
+scoreboard players set @s shadowCD 0

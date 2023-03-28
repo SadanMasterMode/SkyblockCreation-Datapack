@@ -12,4 +12,4 @@ execute at @s anchored eyes run summon marker ^ ^ ^0.1 {Tags:["lifeOrb","spectat
 execute as 07c041fc-445a-41ed-ad7e-090b5219235d at @s run tp @s ~ ~ ~ facing entity @a[limit=1] eyes
 
 scoreboard players operation @s mana -= #40 percentageManaMod
-scoreboard players reset @s lifeCD
+scoreboard players set @s lifeCD 0

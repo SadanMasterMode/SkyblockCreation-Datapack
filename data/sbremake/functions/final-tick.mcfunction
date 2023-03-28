@@ -1,4 +1,4 @@
 # Final Resets
-scoreboard players reset @a sneak
-scoreboard players reset @a rightClick
-scoreboard players reset @a dmgTaken
+scoreboard players set @a sneak 0
+scoreboard players set @a rightClick 0
+scoreboard players set @a dmgTaken 0

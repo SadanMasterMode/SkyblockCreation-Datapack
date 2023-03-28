@@ -1,0 +1,24 @@
+[
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "nbt": "{Base:{id:'SINSEEKER_SCYTHE'}}"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "sneak": 0
+      }
+    }
+  ]
+  

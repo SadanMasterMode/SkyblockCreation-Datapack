@@ -1,6 +1,5 @@
 # Effects
-effect give @s[tag=!undead] instant_damage 1 255 true
-effect give @s[tag=undead] instant_health 1 255 true
+damage @s 0 player_attack by @a[limit=1]
 particle totem_of_undying ~ ~1 ~ 0 0 0 0.5 100 normal
 playsound entity.player.attack.sweep master @a ~ ~ ~
 playsound entity.evoker.cast_spell master @a ~ ~ ~
