@@ -222,6 +222,9 @@ execute store result score #old-slot fakePlayers run data get entity @a[limit=1]
 
 gamerule commandBlockOutput false
 
+# Function Calls
+function sbremake:world/dwindler/load
+
 # Initialization message. Everything worked!
 tellraw @a [{"text": "Hey!\n\n","color": "red","bold": true},{"text": "Thanks for playing my map/datapack. If you have any questions or concerns,feel free to contact me :)\n\n","color": "red","bold": false},{"text": "Socials\n","color": "gray","bold": false},{"text": "Discord: @Sadan (Master Mode)#2278\n","color": "dark_gray","bold": false},{"text": "Twitter: @SadanMasterMode\n","color": "aqua","bold": false},{"text": "Forums: https://hypixel.net/members/sadan_mastermode.3210268/","color": "gold","bold": false,"clickEvent": {"action": "open_url","value": "https://hypixel.net/members/sadan_mastermode.3210268/"}}]
 tellraw @a {"text": " "}

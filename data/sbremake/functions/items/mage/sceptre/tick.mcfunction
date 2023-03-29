@@ -2,5 +2,4 @@ execute as @a[predicate=sbremake:items/mage/sceptre/mana] run function sbremake:
 execute as @a[predicate=sbremake:items/mage/sceptre/main] at @s run function sbremake:items/mage/sceptre/main
 
 execute as @e[tag=sceptre] at @s unless block ~ ~ ~ air run function sbremake:items/mage/sceptre/death
-execute at @a as @e[tag=sceptre,distance=50..] at @s run function sbremake:items/mage/sceptre/death
 execute as @e[tag=sceptre] at @s run tp @s ^ ^ ^1 facing entity 8b972846-ccec-4466-b60a-ff68a0bcecc6

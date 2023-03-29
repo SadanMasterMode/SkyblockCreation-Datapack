@@ -14,7 +14,7 @@ playsound entity.wither.ambient master @a[distance=..10] ~ ~ ~
 scoreboard players set @a manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-execute unless entity @a[scores={mana=..25}] run title @a actionbar ["",{"text":"Used","color":"aqua"},{"text":" Fire Freeze","color":"gold"},{"text":"! (-500 \u270e Mana)","color":"aqua"}]
+title @a actionbar ["",{"text":"Used","color":"aqua"},{"text":" Fire Freeze","color":"gold"},{"text":"! (-500 \u270e Mana)","color":"aqua"}]
 
 scoreboard players remove @a mana 500
 scoreboard players set @a ffsCD 0

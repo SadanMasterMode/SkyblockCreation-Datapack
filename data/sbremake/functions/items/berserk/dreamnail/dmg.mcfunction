@@ -8,9 +8,9 @@ scoreboard players add @a mana 250
 # Dialogue Messages - BASIC
 # Undead
 scoreboard players set @s success 0
-execute if entity @s[tag=undead] if predicate sbremake:random/33 if score @s success matches 0 store result score @s success run tellraw @a [{"text": "There's not much in there.","color": "dark_gray","italic": true}]
-execute if entity @s[tag=undead] if predicate sbremake:random/33 if score @s success matches 0 store result score @s success run tellraw @a [{"text": "Player must die.","color": "dark_gray","italic": true}]
-execute if entity @s[tag=undead] if score @s success matches 0 store result score @s success run tellraw @a [{"text": "Endless suffering, withering within.","color": "dark_gray","italic": true}]
+execute if entity @s[type=#sbremake:undead] if predicate sbremake:random/33 if score @s success matches 0 store result score @s success run tellraw @a [{"text": "There's not much in there.","color": "dark_gray","italic": true}]
+execute if entity @s[type=#sbremake:undead] if predicate sbremake:random/33 if score @s success matches 0 store result score @s success run tellraw @a [{"text": "Player must die.","color": "dark_gray","italic": true}]
+execute if entity @s[type=#sbremake:undead] if score @s success matches 0 store result score @s success run tellraw @a [{"text": "Endless suffering, withering within.","color": "dark_gray","italic": true}]
 # Allay
 execute if entity @s[type=allay] if predicate sbremake:random/50 if score @s success matches 0 store result score @s success run tellraw @a [{"text": "Don't leave me behind!","color": "dark_gray","italic": true}]
 execute if entity @s[type=allay] if score @s success matches 0 store result score @s success run tellraw @a [{"text": "Friend? Foe?","color": "dark_gray","italic": true}]

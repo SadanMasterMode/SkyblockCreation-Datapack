@@ -18,7 +18,6 @@
     "sbremake:items/armor/terrorwraith/load",
     "sbremake:items/armor/wisdom/load",
     "sbremake:items/armor/glide/load",
-    "sbremake:world/dwindler/load",
     "sbstats:load"
     ]
 }

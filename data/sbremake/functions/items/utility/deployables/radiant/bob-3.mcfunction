@@ -1,0 +1,2 @@
+data merge entity d00ad08c-6d83-4816-95ff-33b3d23d312e {interpolation_duration:6,start_interpolation:0,transformation:[1.000f, 0.000f, 0.000f,0.000f,0.000f, 1.000f, 0.000f,0.000f,0.000f, 0.000f, 1.000f,0.000f,0.000f, 0.000f, 0.000f,1.000f]}
+execute if entity d00ad08c-6d83-4816-95ff-33b3d23d312e run schedule function sbremake:items/utility/deployables/radiant/bob-1 0.3s append

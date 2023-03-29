@@ -1,7 +1,6 @@
 {
     "values": [
     "sbremake:tick",
-    "sbremake:world/dreamworld/tick",
     "sbremake:items/aote/tick",
     "sbremake:items/cloak/tick",
     "sbremake:items/sinseeker/tick",
@@ -24,8 +23,7 @@
     "sbremake:items/armor/terrorwraith/tick",
     "sbremake:items/armor/wisdom/tick",
     "sbremake:items/armor/glide/tick",
-    "sbremake:world/dh/tick",
-    "sbremake:world/dwindler/tick",
+    "sbremake:items/utility/deployables/radiant/tick",
     "sbstats:tick",
     "sbremake:final-tick"
     ]
