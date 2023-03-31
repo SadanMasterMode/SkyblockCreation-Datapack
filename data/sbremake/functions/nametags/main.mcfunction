@@ -1,3 +1,4 @@
+execute store result score @s[tag=!boss,tag=!newDmg,type=!#sbremake:spectators] health run data get entity @s Health
 scoreboard players operation #current health = @s health
 scoreboard players operation #current maxHealth = @s maxHealth
 data modify storage sbremake:nametags EntityData.CustomNameVisible set value 1b

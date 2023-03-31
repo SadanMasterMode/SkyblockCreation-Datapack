@@ -1,0 +1,2 @@
+data merge entity f9bfe799-3c1d-484c-9ed4-28333bc49fda {interpolation_duration:6,start_interpolation:0,transformation:[-0.500f, 0.000f, -0.866f,0.000f,0.000f, 1.000f, 0.000f,0.000f,0.866f, 0.000f, -0.500f,0.000f,0.000f, 0.000f, 0.000f,1.000f]}
+execute if entity f9bfe799-3c1d-484c-9ed4-28333bc49fda run schedule function sbremake:items/utility/deployables/overflux/bob-3 0.3s append

@@ -24,6 +24,8 @@
     "sbremake:items/armor/wisdom/tick",
     "sbremake:items/armor/glide/tick",
     "sbremake:items/utility/deployables/radiant/tick",
+    "sbremake:items/utility/deployables/manaflux/tick",
+    "sbremake:items/utility/deployables/overflux/tick",
     "sbstats:tick",
     "sbremake:final-tick"
     ]

@@ -1,6 +1,3 @@
-execute unless entity @e[type=item,nbt={Item:{id:"minecraft:golden_sword",Count:1b,tag:{gleaming:1b}}},limit=1] run kill @e[tag=gleam]
-team join green @e[type=item,nbt={Item:{id:"minecraft:golden_sword",Count:1b,tag:{gleaming:1b}}},limit=1]
-
 execute if score @p dhGleamingSpawn matches 1..100 run function sbremake:world/dh/item_give
 execute if entity @e[tag=decayedHusk,tag=digAnim] run scoreboard players add @p dhRotate 40
 execute if entity @e[tag=decayedHusk,tag=!digAnim] run scoreboard players set @p dhRotate 0

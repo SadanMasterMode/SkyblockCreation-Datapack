@@ -1,3 +1,3 @@
-advancement revoke @s only sbremake:items/utility/deployables/orbs/radiant-main
-execute if entity d00ad08c-6d83-4816-95ff-33b3d23d312e run function sbremake:items/utility/deployables/radiant/respawn
-execute unless entity d00ad08c-6d83-4816-95ff-33b3d23d312e run function sbremake:items/utility/deployables/radiant/spawn
+advancement revoke @s only sbremake:items/utility/deployables/orbs/manaflux-main
+execute if entity e42a9d23-f22d-4393-bb01-6676a5140841 run function sbremake:items/utility/deployables/manaflux/respawn
+execute unless entity e42a9d23-f22d-4393-bb01-6676a5140841 run function sbremake:items/utility/deployables/manaflux/spawn

@@ -5,7 +5,7 @@ scoreboard objectives add dmgDealt minecraft.custom:minecraft.damage_dealt_resis
 scoreboard players set #dwindlerCinematicEntrance fakePlayers 0
 scoreboard players set @a dwindlerCinematic 0
 
-kill @e[tag=dwindlerDream]
+kill a816fc8b-de39-49d5-be27-49efb1d5bca7
 
 kill @e[tag=cinematicEntrance]
 execute if score #inWorld fakePlayers matches 1 run summon block_display 61.0 44 -36.0 {NoGravity:1b,block_state:{Name:"minecraft:stone"},Tags:["cinematicEntrance","spectator"],brightness:{block:1,sky:0}}

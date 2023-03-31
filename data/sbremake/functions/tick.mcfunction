@@ -4,16 +4,15 @@ execute as @a at @s anchored eyes run function sbremake:tick/raycasts
 # Function Calls
 execute as @e[tag=!spectator,type=#sbremake:spectators] run function sbremake:utils/spectator
 execute as @a run function sbremake:tick/contextial/as_all_players
-execute if score #inWorld fakePlayers matches 1 run function sbremake:world/dh/tick
-execute if score #inWorld fakePlayers matches 1 run function sbremake:world/dwindler/tick
-execute if score #inWorld fakePlayers matches 1 run function sbremake:world/dreamworld/tick
+execute if score #inWorld fakePlayers matches 1 if score #lag-reduction fakePlayers matches 0 run function sbremake:world/dh/tick
+execute if score #inWorld fakePlayers matches 1 if score #lag-reduction fakePlayers matches 0 run function sbremake:world/dwindler/tick
+execute if score #inWorld fakePlayers matches 1 if score #lag-reduction fakePlayers matches 0 if entity @a[predicate=sbremake:world/mercurius/dimension_check] run function sbremake:world/dreamworld/tick
 
 # Invisible Minecarts
 execute as @e[type=#minecraft:minecarts,tag=!invisible_minecart] run function sbremake:utils/invisible_minecarts
 
 # Mob Nametags
-execute as @e[tag=!maxHealth,type=!#sbremake:spectators] run function sbremake:nametags/max_health
-execute as @e[tag=!boss,tag=!newDmg,type=!#sbremake:spectators] store result score @s health run data get entity @s Health
+execute as @e[tag=!maxHealth,type=!#sbremake:spectators] run function sbremake:nametags/max_health 
 execute as @e[tag=!noName,type=!#sbremake:spectators] in minecraft:overworld run function sbremake:nametags/main
 
 # Actionbar

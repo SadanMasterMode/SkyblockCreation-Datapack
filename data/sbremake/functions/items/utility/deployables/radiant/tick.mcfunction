@@ -14,3 +14,14 @@ data modify block 3000000 1 3000000 Text1 set value '[{"text":"Radiant ","color"
 data modify entity d00ad08c-6d83-4816-95ff-33b3d23d312e CustomName set from block 3000000 1 3000000 Text1
 
 execute as 9befeee3-67e9-4b7f-b282-987efeb7d2cb at @s run function sbremake:items/utility/deployables/radiant/as-stand
+
+scoreboard players set #radiant-regen fakePlayers 0
+execute at cf4104c7-f284-42d1-9c58-9b105a8d158b if entity @a[distance=..18,limit=1] run scoreboard players add #radiant-regen fakePlayers 1
+execute at 2122e1df-9d93-496e-8826-edae54fbead6 if entity @a[distance=..18,limit=1] run scoreboard players add #radiant-regen fakePlayers 1
+execute at 9befeee3-67e9-4b7f-b282-987efeb7d2cb as @a[distance=..18] if score #radiant-regen fakePlayers matches 0 run effect give @s regeneration infinite 0 true
+
+scoreboard players set #radiant-regen fakePlayers 0
+execute at cf4104c7-f284-42d1-9c58-9b105a8d158b if entity @a[distance=..18,limit=1] run scoreboard players add #radiant-regen fakePlayers 1
+execute at 2122e1df-9d93-496e-8826-edae54fbead6 if entity @a[distance=..18,limit=1] run scoreboard players add #radiant-regen fakePlayers 1
+execute at 9befeee3-67e9-4b7f-b282-987efeb7d2cb as @a[distance=18..,predicate=sbremake:items/utility/deployables/radiant/regen-1,tag=!regen] run effect clear @s regeneration
+execute if score #radiant-regen fakePlayers matches 1.. as @a[predicate=sbremake:items/utility/deployables/radiant/regen-1,tag=!regen] run effect clear @s regeneration
