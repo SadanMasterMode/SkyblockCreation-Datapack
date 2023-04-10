@@ -15,14 +15,10 @@ data modify entity e42a9d23-f22d-4393-bb01-6676a5140841 CustomName set from bloc
 
 execute as cf4104c7-f284-42d1-9c58-9b105a8d158b at @s run function sbremake:items/utility/deployables/manaflux/as-stand
 
-scoreboard players set #manaflux-regen fakePlayers 0
-execute at 2122e1df-9d93-496e-8826-edae54fbead6 if entity @a[distance=..18,limit=1] run scoreboard players add #manaflux-regen fakePlayers 1
+execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=..18] run tag @s add near-manaflux
+execute as @a[tag=near-manaflux,predicate=!sbremake:items/utility/deployables/manaflux/regen-2,tag=!near-overflux] run effect give @s regeneration infinite 1 true
+execute as @a[tag=near-manaflux] if score @s mana < @s maxMana run scoreboard players add @s mana 1
 
-execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=..18] if score #manaflux-regen fakePlayers matches 0 run effect give @s regeneration infinite 1 true
-execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=..18] if score @s mana < @s maxMana if score #manaflux-regen fakePlayers matches 0 run scoreboard players add @s mana 1
-
-scoreboard players set #manaflux-regen fakePlayers 0
-execute at cf4104c7-f284-42d1-9c58-9b105a8d158b if entity @a[distance=..18,limit=1] run scoreboard players add #manaflux-regen fakePlayers 1
-execute at 2122e1df-9d93-496e-8826-edae54fbead6 if entity @a[distance=..18,limit=1] run scoreboard players add #manaflux-regen fakePlayers 1
 execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=18..,predicate=sbremake:items/utility/deployables/manaflux/regen-2,tag=!regen] run effect clear @s regeneration
-execute if score #manaflux-regen fakePlayers matches 1.. as @a[predicate=sbremake:items/utility/deployables/manaflux/regen-2,tag=!regen] run effect clear @s regeneration
+execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=18..,tag=near-manaflux] run tag @s remove near-manaflux
+execute as @a[tag=near-overflux,predicate=sbremake:items/utility/deployables/manaflux/regen-2] run effect clear @s regeneration

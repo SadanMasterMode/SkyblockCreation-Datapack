@@ -1,2 +1,2 @@
-tellraw @a [{"text": "[BOSS]","color": "red"},{"text": " Grand Emperor Mercurius","color": "red"},{"text": ": Unfortunetaly, this is where you will fail.","color": "white"}]
+tellraw @a [{"text": "[BOSS]","color": "red"},{"text": " Grand Emperor Mercurius","color": "red"},{"text": ": Unfortunetaly, this is where your journey will end.","color": "white"}]
 execute in sbremake:dreamworld at @a run playsound entity.evoker.ambient master @a ~ ~ ~

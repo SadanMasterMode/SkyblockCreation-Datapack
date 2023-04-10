@@ -110,6 +110,7 @@ scoreboard objectives add dmgResis minecraft.custom:minecraft.damage_resisted
 scoreboard objectives add fakePlayers dummy
 scoreboard objectives add vdvcasttemp dummy
 scoreboard objectives add recursive dummy
+scoreboard objectives add achievements dummy
 tellraw @a [{"text": "Objectives done","color": "dark_gray"}]
 
 # Typewriter
@@ -128,11 +129,22 @@ tellraw @a [{"text": "Mana done","color": "dark_gray"}]
 
 # Set boss variables.
 scoreboard players set #killedDwindler fakePlayers 0
+scoreboard players set #killedMercurius fakePlayers 0
+scoreboard players set #killed-mercurius fakePlayers 0
+scoreboard players set #mercuriusDeath fakePlayers 0
+scoreboard players set #mercurius-death-2 fakePlayers 0
 tellraw @a [{"text": "Boss vars done","color": "dark_gray"}]
 
 # Set fakeplayers
 scoreboard players set #debug-mode fakePlayers 0
 scoreboard players set #lag-reduction fakePlayers 0
+
+# Set achievements
+scoreboard players set #fragmented-memories achievements 0
+
+# Tags
+tag @a remove digAnim
+tag @a remove talkedToDH
 
 # Misc #1
 bossbar remove objective
@@ -153,6 +165,7 @@ scoreboard players set @a dhDialogueProgress 0
 scoreboard players set @a dhGleamingSpawn 0
 scoreboard players set @a dhDetermination 0
 execute as @a run function sbremake:world/dh/dh_reset_triggers
+execute as @a run function sbremake:world/dh/leave
 tellraw @a [{"text": "Misc #1 done","color": "dark_gray"}]
 
 # Raycasts
@@ -187,9 +200,12 @@ scoreboard players set #9 const 9
 scoreboard players set #10 const 10
 scoreboard players set #11 const 11
 scoreboard players set #12 const 12
+scoreboard players set #15 const 15
 scoreboard players set #20 const 20
+scoreboard players set #23 const 23
 scoreboard players set #24 const 24
 scoreboard players set #25 const 25
+scoreboard players set #26 const 26
 scoreboard players set #30 const 30
 scoreboard players set #36 const 36
 scoreboard players set #50 const 50
@@ -198,12 +214,8 @@ scoreboard players set #249 const 249
 scoreboard players set #250 const 250
 
 # Misc
-execute as @e[tag=decayedHusk] run data merge entity @s {Pose:{Head:[334f,0f,0f]}}
-execute as @e[tag=decayedHusk] run tp @s 24.5 54.24 22.5
 kill 38b904a1-5164-476e-b23d-e86630ed0445
 execute if score #inWorld fakePlayers matches 1 run summon minecraft:marker ~ ~ ~ {Invulnerable:1b,NoGravity:1b,Tags:["objectiveMarker"],UUID:[I;951649441,1365526382,-1304565658,820839493],data:{SBRemake:{UUID:"38b904a1-5164-476e-b23d-e86630ed0445"}}}
-setblock 0 0 0 air
-tellraw @a [{"text": "Misc done \n","color": "dark_gray"}]
 team join player @a
 team join notPlayer @e[type=!player]
 team modify noName nametagVisibility never
@@ -219,11 +231,11 @@ scoreboard players operation @a extraMana += @a maxHealthMod
 scoreboard players operation @a extraMana += @a defenseMod
 scoreboard players set @a extraMana 0
 execute store result score #old-slot fakePlayers run data get entity @a[limit=1] SelectedItemSlot
-
 gamerule commandBlockOutput false
+tellraw @a [{"text": "Misc done \n","color": "dark_gray"}]
 
 # Function Calls
-function sbremake:world/dwindler/load
+execute if score #inWorld fakePlayers matches 1 run function sbremake:world/dwindler/load
 
 # Initialization message. Everything worked!
 tellraw @a [{"text": "Hey!\n\n","color": "red","bold": true},{"text": "Thanks for playing my map/datapack. If you have any questions or concerns,feel free to contact me :)\n\n","color": "red","bold": false},{"text": "Socials\n","color": "gray","bold": false},{"text": "Discord: @Sadan (Master Mode)#2278\n","color": "dark_gray","bold": false},{"text": "Twitter: @SadanMasterMode\n","color": "aqua","bold": false},{"text": "Forums: https://hypixel.net/members/sadan_mastermode.3210268/","color": "gold","bold": false,"clickEvent": {"action": "open_url","value": "https://hypixel.net/members/sadan_mastermode.3210268/"}}]

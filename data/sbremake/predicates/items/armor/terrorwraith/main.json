@@ -5,13 +5,32 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "nbt": "{Tags:[\"inGlide\",\"inWraith\"]}",
-          "stepping_on": {
-            "block": {
-              "tag": "sbremake:items/air"
+          "nbt": "{Tags:[\"inWraith\"]}"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "nbt": "{Tags:[\"inGlide\"]}"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "stepping_on": {
+              "block": {
+                "tag": "sbremake:items/air"
+              }
             }
           }
-        }
       }
     },
     {

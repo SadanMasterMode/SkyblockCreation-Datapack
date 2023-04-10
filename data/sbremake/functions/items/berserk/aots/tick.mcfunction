@@ -13,7 +13,7 @@ execute as @a[limit=1,predicate=sbremake:items/berserk/aots/main] at @s run func
 execute as @e[tag=aots,type=area_effect_cloud] at @s run tp @s ^ ^ ^0.5
 scoreboard players remove @e[scores={aotsHT=1..}] aotsHT 1
 
-execute at @e[tag=aots,tag=stage-1] positioned ^-0.5 ^ ^ as @e[distance=..1,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage1dmg
-execute at @e[tag=aots,tag=stage-2] positioned ^-0.5 ^ ^ as @e[distance=..1,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage2dmg
-execute at @e[tag=aots,tag=stage-3] positioned ^-0.5 ^ ^ as @e[distance=..1,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage3dmg
-execute at @e[tag=aots,tag=stage-4] positioned ^-0.5 ^ ^ as @e[distance=..1,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage4dmg
+execute at @e[tag=aots,tag=stage-1] positioned ^-0.5 ^ ^ as @e[distance=..2,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage1dmg
+execute at @e[tag=aots,tag=stage-2] positioned ^-0.5 ^ ^ as @e[distance=..2,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage2dmg
+execute at @e[tag=aots,tag=stage-3] positioned ^-0.5 ^ ^ as @e[distance=..2,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage3dmg
+execute at @e[tag=aots,tag=stage-4] positioned ^-0.5 ^ ^ as @e[distance=..2,tag=!spectator,type=!#sbremake:never-detect] unless score @s aotsHT matches 1.. run function sbremake:items/berserk/aots/stage4dmg

@@ -15,8 +15,6 @@ execute at @e[tag=cryingParticles,limit=1,sort=random] run particle falling_wate
 execute at @e[tag=cryingOrbIcicle] unless block ~ ~2.5 ~ #sbremake:items/air positioned ~ ~3 ~ run function sbremake:world/dreamworld/mercurius/attacks/orbs/crying/damage
 
 execute at @e[tag=damage_orb] if entity @a[distance=..7] run schedule function sbremake:world/dreamworld/mercurius/attacks/orbs/damage 1s append
-execute at @e[tag=summon_orb] if entity @a[distance=..10] run schedule function sbremake:world/dreamworld/mercurius/attacks/orbs/summon 4s append
-
-schedule function sbremake:world/dreamworld/mercurius/attacks/orbs/summon 4s append
+execute at @e[tag=summon_orb] if entity @a[distance=..10] run schedule function sbremake:world/dreamworld/mercurius/attacks/orbs/summon 6s append
 
 execute if entity @e[tag=borderOrb] run schedule function sbremake:world/dreamworld/mercurius/attacks/orbs/rotate_1 3s append

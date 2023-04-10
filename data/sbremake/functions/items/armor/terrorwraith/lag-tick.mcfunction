@@ -4,7 +4,7 @@ execute if entity @s[tag=inWraith] run schedule function sbremake:items/armor/te
 
 scoreboard players remove @s[scores={wraithCD=1..}] wraithCD 1
 
-execute as @s[predicate=sbremake:items/armor/terrorwraith/main] run function sbremake:items/armor/terrorwraith/main
+execute as @s[predicate=sbremake:items/armor/terrorwraith/main] at @s run function sbremake:items/armor/terrorwraith/main
 
 execute as @s[scores={wraithTime=100..}] at @s run function sbremake:items/armor/terrorwraith/wraithout
 execute as @s[scores={mana=..49},tag=inWraith] at @s run function sbremake:items/armor/terrorwraith/wraithout

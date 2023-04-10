@@ -16,7 +16,7 @@ kill @e[type=illusioner]
 kill @e[tag=snow_bomb]
 kill @e[tag=wound_bomb]
 kill @e[tag=ender_bomb]
-kill @e[tag=dwindler]
+kill 7767141e-9475-49e9-bc12-971010d9f0ad
 kill @e[tag=item,nbt={Item:{id:"minecraft:totem_of_undying"}}]
 kill @e[tag=item,nbt={Item:{id:"minecraft:emerald"}}]
 clear @p totem_of_undying

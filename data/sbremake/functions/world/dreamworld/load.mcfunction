@@ -7,6 +7,8 @@ scoreboard objectives add hits dummy
 scoreboard objectives add mobCount dummy
 scoreboard objectives add stalkerType dummy
 scoreboard objectives add dmgDealtResis minecraft.custom:damage_dealt_resisted
+scoreboard objectives add mercuriusManaDec dummy
+scoreboard objectives add mercuriusDeaths custom:deaths
 
 tag @a remove mercuriusSpawn
 tag @a remove mercuriusBoss

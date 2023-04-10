@@ -1,10 +1,10 @@
 tellraw @s [{"text": "You may have died, but the fight isn't over yet. Fight The Dwindler again in the Misty Mines!","color": "dark_gray","italic": true}]
-execute as @e[tag=dwindler] run scoreboard players set @s health 500
-execute as @e[tag=dwindler] run tag @s remove 400
-execute as @e[tag=dwindler] run tag @s remove 300
-execute as @e[tag=dwindler] run tag @s remove 200
-execute as @e[tag=dwindler] run tag @s remove 100
-execute as @e[tag=dwindler] run tp @s 62 44 -57
+execute as 7767141e-9475-49e9-bc12-971010d9f0ad run scoreboard players set @s health 500
+execute as 7767141e-9475-49e9-bc12-971010d9f0ad run tag @s remove 400
+execute as 7767141e-9475-49e9-bc12-971010d9f0ad run tag @s remove 300
+execute as 7767141e-9475-49e9-bc12-971010d9f0ad run tag @s remove 200
+execute as 7767141e-9475-49e9-bc12-971010d9f0ad run tag @s remove 100
+execute as 7767141e-9475-49e9-bc12-971010d9f0ad run tp @s 62 44 -57
 
 fill 57 46 -45 49 43 -45 air replace barrier
 kill @e[type=vex]

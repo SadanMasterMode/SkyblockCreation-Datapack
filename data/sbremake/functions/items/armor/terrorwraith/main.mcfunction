@@ -10,5 +10,5 @@ team join player @e[type=!minecraft:armor_stand]
 effect give @s minecraft:resistance 5 100 true
 effect give @s speed 5 1 true
 effect give @s minecraft:invisibility 5 0 true
-playsound minecraft:entity.wither.spawn master @s ~ ~ ~
+playsound minecraft:entity.wither.spawn master @s
 scoreboard players set @s wraithCD 300

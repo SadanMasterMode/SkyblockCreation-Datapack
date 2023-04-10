@@ -1,0 +1,11 @@
+execute if score #power fakePlayers matches 0 run attribute @s generic.attack_damage base set 0
+execute if score #power fakePlayers matches 1 run attribute @s generic.attack_damage base set 2
+execute if score #power fakePlayers matches 2 run attribute @s generic.attack_damage base set 4
+execute if score #power fakePlayers matches 3 run attribute @s generic.attack_damage base set 6
+execute if score #power fakePlayers matches 4 run attribute @s generic.attack_damage base set 8
+execute if score #power fakePlayers matches 5 run attribute @s generic.attack_damage base set 10
+execute if score #power fakePlayers matches 6 run attribute @s generic.attack_damage base set 12
+execute if score #power fakePlayers matches 7 run attribute @s generic.attack_damage base set 14
+execute if score #power fakePlayers matches 8 run attribute @s generic.attack_damage base set 16
+execute if score #power fakePlayers matches 9 run attribute @s generic.attack_damage base set 18
+execute if score #power fakePlayers matches 10 run attribute @s generic.attack_damage base set 20

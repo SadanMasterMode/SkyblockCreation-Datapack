@@ -5,7 +5,7 @@
       "predicate": {
         "effects": {
           "minecraft:regeneration": {
-            "amplifier": 3,
+            "amplifier": 2,
             "visible": false
           }
         }

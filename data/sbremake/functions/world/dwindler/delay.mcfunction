@@ -1,5 +1,5 @@
-tp @e[tag=dwindler] ~ ~-100 ~
-kill @e[tag=dwindler]
+tp 7767141e-9475-49e9-bc12-971010d9f0ad ~ ~-100 ~
+kill 7767141e-9475-49e9-bc12-971010d9f0ad
 kill @e[tag=item,nbt={Item:{id:"minecraft:totem_of_undying"}}]
 kill @e[tag=item,nbt={Item:{id:"minecraft:emerald"}}]
 

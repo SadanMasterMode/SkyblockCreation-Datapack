@@ -15,6 +15,9 @@ data modify entity f9bfe799-3c1d-484c-9ed4-28333bc49fda CustomName set from bloc
 
 execute as 2122e1df-9d93-496e-8826-edae54fbead6 at @s run function sbremake:items/utility/deployables/overflux/as-stand
 
-execute at 2122e1df-9d93-496e-8826-edae54fbead6 as @a[distance=..18] run effect give @s regeneration infinite 2 true
-execute at 2122e1df-9d93-496e-8826-edae54fbead6 as @a[distance=..18] if score @s mana < @s maxMana run scoreboard players add @s mana 2
+execute at 2122e1df-9d93-496e-8826-edae54fbead6 as @a[distance=..18] run tag @s add near-overflux
+execute as @a[tag=near-overflux,predicate=!sbremake:items/utility/deployables/overflux/regen-3] run effect give @s regeneration infinite 2 true
+execute as @a[tag=near-overflux] if score @s mana < @s maxMana run scoreboard players add @s mana 2
+
 execute at 2122e1df-9d93-496e-8826-edae54fbead6 as @a[distance=18..,predicate=sbremake:items/utility/deployables/overflux/regen-3,tag=!regen] run effect clear @s regeneration
+execute at 2122e1df-9d93-496e-8826-edae54fbead6 as @a[distance=18..,tag=near-overflux] run tag @s remove near-overflux
