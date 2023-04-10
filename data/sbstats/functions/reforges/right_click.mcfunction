@@ -1,4 +1,4 @@
-function sbstats:roll
+function sbstats:reforges/reforges/main
 execute at @s run playsound block.anvil.use master @s ~ ~ ~
 scoreboard players reset #reforge cd
 

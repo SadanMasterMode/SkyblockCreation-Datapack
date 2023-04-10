@@ -1,85 +1,29 @@
 # Create objectives
-scoreboard objectives add bootsIntelligence dummy
 scoreboard objectives add sneak minecraft.custom:minecraft.sneak_time
-scoreboard objectives add itemCD dummy
-scoreboard objectives add chestplateFerocity dummy
 scoreboard objectives add const dummy
 scoreboard objectives add gamemode dummy
-scoreboard objectives add itemFerocity dummy
-scoreboard objectives add bootsFerocity dummy
-scoreboard objectives add const0 dummy
-scoreboard objectives add bootsDurability dummy
-scoreboard objectives add fallingEdge dummy
-scoreboard objectives add const250 dummy
 scoreboard objectives add intelligence dummy
-scoreboard objectives add itemDurability dummy
-scoreboard objectives add entityCount dummy
-scoreboard objectives add rcMana minecraft.used:minecraft.carrot_on_a_stick
-
-scoreboard objectives add chestplateCD dummy
 scoreboard objectives add manaWarn dummy
-scoreboard objectives add bootsCD dummy
 scoreboard objectives add damage dummy
-scoreboard objectives add bootsDefense dummy
-scoreboard objectives add freezeTime dummy
-scoreboard objectives add arrowDmg2 dummy
-scoreboard objectives add itemStrength dummy
-scoreboard objectives add leggingsIntelligence dummy
-scoreboard objectives add TNTGoBoom dummy
-scoreboard objectives add headDefense dummy
-scoreboard objectives add timeze dummy
-scoreboard objectives add chestplateDamage dummy
 scoreboard objectives add cd dummy
-scoreboard objectives add bootsHealth dummy
 scoreboard objectives add health health
 scoreboard objectives add rightClick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add mana dummy
-scoreboard objectives add headCD dummy
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy
-scoreboard objectives add chestplateDefense dummy
-scoreboard objectives add leggingsHealth dummy
-scoreboard objectives add arrowDmg dummy
-scoreboard objectives add rc69 minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add strength dummy
-scoreboard objectives add leggingsFerocity dummy
 scoreboard objectives add maxMana dummy
-scoreboard objectives add headFerocity dummy
-scoreboard objectives add bootsDamage dummy
 scoreboard objectives add ghastlyConsequences dummy
-scoreboard objectives add leggingsDurability dummy
-scoreboard objectives add itemIntelligence dummy
-scoreboard objectives add Test dummy
-scoreboard objectives add leggingsDamage dummy
 scoreboard objectives add healthVis dummy
-scoreboard objectives add test dummy
-scoreboard objectives add durability dummy
-scoreboard objectives add chestplateHealth dummy
-scoreboard objectives add chestplateDurability dummy
 scoreboard objectives add success dummy
 scoreboard objectives add healthMod dummy
 scoreboard objectives add endResult dummy
-scoreboard objectives add headDamage dummy
 scoreboard objectives add ferocity dummy
-scoreboard objectives add nx dummy
-scoreboard objectives add ny dummy
-scoreboard objectives add nz dummy
-scoreboard objectives add chestplateStrength dummy
-scoreboard objectives add timer dummy
-scoreboard objectives add leggingsStrength dummy
-scoreboard objectives add arrowKill dummy
-scoreboard objectives add headStrength dummy
-scoreboard objectives add headIntelligence dummy
-scoreboard objectives add bootsStrength dummy
-scoreboard objectives add sputingWand minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add dmgTaken minecraft.custom:minecraft.damage_resisted
-scoreboard objectives add rc70 minecraft.used:minecraft.carrot_on_a_stick
-
 scoreboard objectives add rand dummy
 scoreboard objectives add magicDamage dummy
 scoreboard objectives add damageHologram dummy
-
 scoreboard objectives add wimpactPart dummy
 scoreboard objectives add wimpactPartToggle dummy
 scoreboard objectives add infiniteMana dummy
@@ -88,9 +32,6 @@ scoreboard objectives add defense dummy
 scoreboard objectives add maxHealth dummy
 scoreboard objectives add maxHealthMod dummy
 scoreboard objectives add defenseMod dummy
-scoreboard objectives add solSuccess dummy
-scoreboard objectives add solRC minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add orbLife dummy
 scoreboard objectives add percentageMana dummy
 scoreboard objectives add percentageManaMod dummy
 team add notPlayer
@@ -100,11 +41,7 @@ team add green
 team add red
 scoreboard objectives add extraMana dummy
 scoreboard objectives add life dummy
-scoreboard objectives add solMaxDmg minecraft.custom:minecraft.damage_dealt
-scoreboard objectives add solMaxDmg2 dummy
-scoreboard objectives add solMaxDmg3 dummy
 scoreboard objectives add gamemodeType dummy
-scoreboard objectives add wimpactTemp dummy
 scoreboard objectives add damageTmp dummy
 scoreboard objectives add dmgResis minecraft.custom:minecraft.damage_resisted
 scoreboard objectives add fakePlayers dummy
@@ -155,7 +92,6 @@ bossbar set objective max 10
 bossbar set objective players @a
 scoreboard players set @a wimpactPart 0
 scoreboard players set @a infiniteMana 0
-scoreboard players set @a solSuccess 0
 scoreboard players set @a solMaxDmg2 0
 scoreboard players set @a dhC1O1 0
 scoreboard players set @a dhC1O2 0
@@ -187,6 +123,7 @@ execute positioned 3000000 0 3000001 run function sbremake:utils/typewriter/setu
 # Const Variables
 scoreboard players set #40 percentageMana 40
 
+scoreboard players set #-1 const -1
 scoreboard players set #0 const 0
 scoreboard players set #1 const 1
 scoreboard players set #2 const 2

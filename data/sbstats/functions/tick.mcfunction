@@ -7,8 +7,8 @@ execute unless data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrade
 execute as @a run function sbstats:pickaxe
 execute as @a at @s unless data storage sbstats:data {PlayerData:{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}} anchored eyes positioned ^ ^ ^ anchored feet run function sbstats:reforges/raycast/start_ray
 
-execute as @a at @s if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}} run tp @e[tag=reforgeBlock,limit=2,sort=nearest] ~ ~-100 ~
-execute as @a at @s if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}} run kill @e[tag=reforgeBlock,limit=2,sort=nearest]
+execute as @a at @s if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}} run tp @e[tag=reforgeBlock] ~ ~-100 ~
+execute as @a at @s if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{sbstats:{pickaxe:1b}}}}} run kill @e[tag=reforgeBlock]
 
 execute as @a at @s run tp @e[tag=reforgeBlock,type=area_effect_cloud] ~ ~ ~
 execute as @e[type=area_effect_cloud] store result entity @s Air short 1 run time query gametime

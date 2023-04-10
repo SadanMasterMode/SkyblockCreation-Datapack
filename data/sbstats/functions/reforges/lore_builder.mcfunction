@@ -48,10 +48,16 @@ execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapo
 execute if score #Base_strength stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Strength: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_strength","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"strength","storage": "sbstats:reforge","color": "blue","interpret": true},{"nbt":"HPB","storage":"sbstats:data","color":"yellow","interpret":true}]'
 execute if score #Base_strength stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### CRIT DAMAGE
+#### positive
 data remove storage sbstats:reforge crit_damage
 execute if score #crit_damage reforgeStats matches 1.. run data modify storage sbstats:reforge crit_damage set value '[{"text":"(+","color":"blue"},{"score":{"name":"#crit_damage","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
 execute if score #Base_crit_damage stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Crit Damage: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_crit_damage","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"crit_damage","storage": "sbstats:reforge","color": "blue","interpret": true}]'
 execute if score #Base_crit_damage stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
+#### negative
+data remove storage sbstats:reforge crit_damage
+execute if score #crit_damage reforgeStats matches ..-1 run data modify storage sbstats:reforge crit_damage set value '[{"text":"(","color":"blue"},{"score":{"name":"#crit_damage","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
+execute if score #Base_crit_damage stats matches ..-1 run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Crit Damage: ","color":"gray","italic": false},{"text":"","color":"red","italic": false},{"score":{"name": "#Base_crit_damage","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"crit_damage","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if score #Base_crit_damage stats matches ..-1 run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### CRIT CHANCE
 data remove storage sbstats:reforge crit_chance
 execute if score #crit_chance reforgeStats matches 1.. run data modify storage sbstats:reforge crit_chance set value '[{"text":"(+","color":"blue"},{"score":{"name":"#crit_chance","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
@@ -65,7 +71,7 @@ execute if score #Base_ferocity stats matches 1.. run data modify storage sbstat
 ### ATTACK SPEED
 data remove storage sbstats:reforge atk_speed
 execute if score #atk_speed reforgeStats matches 1.. run data modify storage sbstats:reforge atk_speed set value '[{"text":"(+","color":"blue"},{"score":{"name":"#atk_speed","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
-execute if score #Base_atk_speed stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Base Attack Speed: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_atk_speed","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"atk_speed","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if score #Base_atk_speed stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Bonus Attack Speed: ","color":"gray","italic": false},{"text":"+","color":"red","italic": false},{"score":{"name": "#Base_atk_speed","objective": "stats"},"color":"red","italic": false},{"text": " "},{"nbt":"atk_speed","storage": "sbstats:reforge","color": "blue","interpret": true}]'
 execute if score #Base_atk_speed stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### ABILITY DAMAGE
 data remove storage sbstats:reforge abil_dmg
@@ -95,15 +101,26 @@ execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{weapo
 execute if score #Base_defense stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Defense: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_defense","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"defense","storage": "sbstats:reforge","color": "blue","interpret": true},{"nbt":"HPB","storage":"sbstats:data","color":"yellow","interpret":true}]'
 execute if score #Base_defense stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### INTELLIGENCE
+#### positive
 data remove storage sbstats:reforge intelligence
 execute if score #intelligence reforgeStats matches 1.. run data modify storage sbstats:reforge intelligence set value '[{"text":"(+","color":"blue"},{"score":{"name":"#intelligence","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
 execute if score #Base_intelligence stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Intelligence: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_intelligence","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"intelligence","storage": "sbstats:reforge","color": "blue","interpret": true}]'
 execute if score #Base_intelligence stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
+#### negative
+execute if score #intelligence reforgeStats matches ..-1 run data modify storage sbstats:reforge intelligence set value '[{"text":"(","color":"blue"},{"score":{"name":"#intelligence","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
+execute if score #Base_intelligence stats matches ..-1 run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Intelligence: ","color":"gray","italic": false},{"text":"","color":"green","italic": false},{"score":{"name": "#Base_intelligence","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"intelligence","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if score #Base_intelligence stats matches ..-1 run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### SPEED
+#### positive
 data remove storage sbstats:reforge speed
 execute if score #speed reforgeStats matches 1.. run data modify storage sbstats:reforge speed set value '[{"text":"(+","color":"blue"},{"score":{"name":"#speed","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
 execute if score #Base_speed stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Speed: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_speed","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"speed","storage": "sbstats:reforge","color": "blue","interpret": true}]'
 execute if score #Base_speed stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
+#### negative
+data remove storage sbstats:reforge speed
+execute if score #speed reforgeStats matches ..-1 run data modify storage sbstats:reforge speed set value '[{"text":"(","color":"blue"},{"score":{"name":"#speed","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
+execute if score #Base_speed stats matches ..-1 run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Speed: ","color":"gray","italic": false},{"text":"","color":"green","italic": false},{"score":{"name": "#Base_speed","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"speed","storage": "sbstats:reforge","color": "blue","interpret": true}]'
+execute if score #Base_speed stats matches ..-1 run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 ### MAGIC FIND
 data remove storage sbstats:reforge magic_find
 execute if score #magic_find reforgeStats matches 1.. run data modify storage sbstats:reforge magic_find set value '[{"text":"(+","color":"blue"},{"score":{"name":"#magic_find","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
