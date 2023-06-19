@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 2881 run damage @s 288.1 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2882 run damage @s 288.2 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2883 run damage @s 288.3 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2884 run damage @s 288.4 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2885 run damage @s 288.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2886 run damage @s 288.6 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2887 run damage @s 288.7 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 2888 run damage @s 288.8 sbremake:magic_damage by @a[limit=1]

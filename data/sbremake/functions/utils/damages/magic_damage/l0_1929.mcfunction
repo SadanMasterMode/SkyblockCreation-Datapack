@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 1929 run damage @s 192.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1930 run damage @s 193.0 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1931 run damage @s 193.1 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1932 run damage @s 193.2 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1933 run damage @s 193.3 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1934 run damage @s 193.4 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1935 run damage @s 193.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1936 run damage @s 193.6 sbremake:magic_damage by @a[limit=1]

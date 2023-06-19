@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 1713 run damage @s 171.3 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1714 run damage @s 171.4 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1715 run damage @s 171.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1716 run damage @s 171.6 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1717 run damage @s 171.7 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1718 run damage @s 171.8 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1719 run damage @s 171.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1720 run damage @s 172.0 sbremake:magic_damage by @a[limit=1]

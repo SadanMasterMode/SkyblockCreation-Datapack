@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 1985 run damage @s 198.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1986 run damage @s 198.6 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1987 run damage @s 198.7 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1988 run damage @s 198.8 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1989 run damage @s 198.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1990 run damage @s 199.0 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1991 run damage @s 199.1 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 1992 run damage @s 199.2 sbremake:magic_damage by @a[limit=1]

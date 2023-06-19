@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 89 run damage @s 8.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 90 run damage @s 9.0 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 91 run damage @s 9.1 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 92 run damage @s 9.2 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 93 run damage @s 9.3 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 94 run damage @s 9.4 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 95 run damage @s 9.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 96 run damage @s 9.6 sbremake:magic_damage by @a[limit=1]

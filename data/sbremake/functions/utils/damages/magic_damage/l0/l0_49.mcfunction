@@ -1,2 +1,0 @@
-execute if score @p magicDamage matches 99 run damage @s 99 sbremake:magic_damage by @a[tag=magicDamage,limit=1]
-execute if score @p magicDamage matches 100 run damage @s 100 sbremake:magic_damage by @a[tag=magicDamage,limit=1]

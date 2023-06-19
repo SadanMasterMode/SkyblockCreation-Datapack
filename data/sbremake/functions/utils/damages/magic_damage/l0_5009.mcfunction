@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 5009 run damage @s 500.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5010 run damage @s 501.0 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5011 run damage @s 501.1 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5012 run damage @s 501.2 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5013 run damage @s 501.3 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5014 run damage @s 501.4 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5015 run damage @s 501.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 5016 run damage @s 501.6 sbremake:magic_damage by @a[limit=1]

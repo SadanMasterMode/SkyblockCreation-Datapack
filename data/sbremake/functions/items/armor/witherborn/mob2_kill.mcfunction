@@ -3,14 +3,14 @@ execute at @e[tag=witherborn,tag=mob-2] run particle explosion ~ ~3.5 ~ 0 0 0 0 
 tag @s add hologramTmp
 attribute @s generic.knockback_resistance base set 100
 
-scoreboard players set @a damageHologram 36
+scoreboard players set @a damageHologram 360
 execute at @s run function sbremake:utils/holograms/magic
 
 execute as @s[tag=newDmg,tag=!invulnerable] run scoreboard players operation @s health -= #36 const
 damage @s[tag=newDmg,tag=!invulnerable] 0 sbremake:magic_damage by @a[limit=1]
 
 tag @a add magicDamage
-scoreboard players set @a magicDamage 36
+scoreboard players set @a magicDamage 360
 execute as @s[tag=!newDmg] run function sbremake:utils/damages/magic_damage
 tag @a remove magicDamage
 

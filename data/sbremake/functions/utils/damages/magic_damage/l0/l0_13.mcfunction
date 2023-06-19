@@ -1,2 +1,0 @@
-execute if score @p magicDamage matches 27 run damage @s 27 sbremake:magic_damage by @a[tag=magicDamage,limit=1]
-execute if score @p magicDamage matches 28 run damage @s 28 sbremake:magic_damage by @a[tag=magicDamage,limit=1]

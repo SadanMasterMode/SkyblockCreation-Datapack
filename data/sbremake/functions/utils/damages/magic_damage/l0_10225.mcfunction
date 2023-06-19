@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 10225 run damage @s 1022.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10226 run damage @s 1022.6 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10227 run damage @s 1022.7 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10228 run damage @s 1022.8 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10229 run damage @s 1022.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10230 run damage @s 1023.0 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10231 run damage @s 1023.1 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 10232 run damage @s 1023.2 sbremake:magic_damage by @a[limit=1]

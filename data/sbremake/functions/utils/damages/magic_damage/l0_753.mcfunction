@@ -1,0 +1,8 @@
+execute if score @a[limit=1] magicDamage matches 753 run damage @s 75.3 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 754 run damage @s 75.4 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 755 run damage @s 75.5 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 756 run damage @s 75.6 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 757 run damage @s 75.7 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 758 run damage @s 75.8 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 759 run damage @s 75.9 sbremake:magic_damage by @a[limit=1]
+execute if score @a[limit=1] magicDamage matches 760 run damage @s 76.0 sbremake:magic_damage by @a[limit=1]

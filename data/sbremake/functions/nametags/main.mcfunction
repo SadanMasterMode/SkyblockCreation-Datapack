@@ -104,6 +104,8 @@ execute if entity @s[type=spider] run data modify block 3000000 1 3000000 Text1 
 execute if entity @s[type=silverfish] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Silverfish","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
 ## Skeleton
 execute if entity @s[type=skeleton,tag=!stronk] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Skeleton","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
+## Skeleton
+execute if entity @s[type=skeleton,tag=stronk] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Stronk Skeleton","color":"red"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
 ## Strider
 execute if entity @s[type=strider] run data modify block 3000000 1 3000000 Text1 set value '["",{"text":"[","color":"dark_gray"},{"text":"Lv1","color":"gray"},{"text":"]","color":"dark_gray"},{"text":" Strider","color":"aqua"},{"text":" "},{"score":{"name":"#current","objective":"health"},"color":"green"},{"text":"/","color":"green"},{"score":{"name":"#current","objective":"maxHealth"},"color":"green"},{"text":"\\u2764","color":"red"}]'
 ## Tadpole
@@ -150,4 +152,4 @@ execute if entity @s[type=elder_guardian] run data modify block 3000000 1 300000
 execute if entity @s[type=warden] run data modify block 3000000 1 3000000 Text1 set value '[{"text":"\\ufd3e","color":"#FFFF55"},{"text":" ☠","color":"#FF5555"},{"text":" Warden ","color":"blue"},{"text":"\\ufd3f ","color": "yellow"},{"score":{"name":"#current","objective":"health"},"color":"#55FF55"},{"text":"/","color":"#55FF55"},{"score":{"name":"#current","objective":"maxHealth"},"color":"#55FF55"},{"text":"\\u2764","color":"#FF5555"}]'
 
 data modify storage sbremake:nametags EntityData.CustomName set from block 3000000 1 3000000 Text1
-data modify entity @s[tag=!spectator] {} merge from storage sbremake:nametags EntityData
+execute as @s run data modify entity @s[tag=!spectator] {} merge from storage sbremake:nametags EntityData

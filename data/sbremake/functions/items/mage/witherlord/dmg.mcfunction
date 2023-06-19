@@ -1,18 +1,20 @@
 tag @s add hologramTmp
 attribute @s generic.knockback_resistance base set 100
 
-scoreboard players set @a damageHologram 2
+function sbremake:utils/damage-calc/magic-calc
+
+scoreboard players operation @a damageHologram = DamageCalc.out fakePlayers
 execute at @s run function sbremake:utils/holograms/magic
 
-execute as @s[tag=newDmg,tag=!invulnerable] run scoreboard players remove @s health 2
+execute as @s[tag=newDmg,tag=!invulnerable] run scoreboard players operation @s health -= DamageCalc.out fakePlayers
 damage @s[tag=newDmg,tag=!invulnerable] 0 sbremake:magic_damage by @a[limit=1]
 
 tag @a add magicDamage
-scoreboard players set @a magicDamage 2
+scoreboard players operation @a magicDamage = DamageCalc.out fakePlayers
 execute as @s[tag=!newDmg] run function sbremake:utils/damages/magic_damage
 tag @a remove magicDamage
 
-scoreboard players set @a solMaxDmg 20
+execute store result score @a solMaxDmg run scoreboard players operation DamageCalc.out fakePlayers *= #10 const
 
 attribute @s generic.knockback_resistance base set 0
 tag @s remove hologramTmp
