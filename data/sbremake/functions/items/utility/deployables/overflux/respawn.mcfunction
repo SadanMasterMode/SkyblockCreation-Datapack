@@ -11,10 +11,9 @@ execute store result score #half-mana fakePlayers run scoreboard players get @s 
 scoreboard players operation #half-mana fakePlayers /= #2 const
 scoreboard players operation @a mana -= #half-mana fakePlayers
 
-scoreboard players set @s manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @s actionbar [{"text":"Used","color":"aqua"},{"text":" Deploy","color":"gold"},{"text":"! (-"},{"score":{"name": "#half-mana","objective": "fakePlayers"},"color": "aqua"},{"text":" \u270e Mana)","color":"aqua"}]
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-","color":"aqua"},{"score":{"objective": "fakePlayers","name":"#half-mana"}},{"text": " Mana (","color":"aqua"},{"text":"Deploy","color":"gold"},{"text":")   ","color":"aqua"}]'
 
 tellraw @a [{"text": "Your previous Orb was removed and a new orb was spawned!","color": "red"}]
 scoreboard players reset #overflux-orb-bob fakePlayers

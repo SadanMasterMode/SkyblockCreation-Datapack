@@ -2,13 +2,16 @@ data remove storage sbremake:actionbar Item.tag.actionbar
 
 # Base
 ## Health
-data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name":"@a[limit=1]","objective":"healthVis"},"color":"red"},{"text":"/100❤ ","color":"red"}]' 
+data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name":"@a[limit=1]","objective":"healthVis"},"color":"red"},{"text":"/100❤   ","color":"red"}]' 
 data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
 ## Defense
-execute if score @s defense matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name":"@a[limit=1]","objective":"defense"},"color": "green"},{"text": "❈ Defense ","color": "green"}]' 
-execute if score @s defense matches 1.. run data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
+execute if score @s defense matches 1.. unless data storage sbremake:data Actionbar.AbilityUsage run data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name":"@a[limit=1]","objective":"defense"},"color": "green"},{"text": "❈ Defense   ","color": "green"}]' 
+execute if score @s defense matches 1.. unless data storage sbremake:data Actionbar.AbilityUsage run data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
+## Mana Usage
+execute if data storage sbremake:data Actionbar.AbilityUsage run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Actionbar.AbilityUsage","storage":"sbremake:data","interpret":true}]' 
+execute if data storage sbremake:data Actionbar.AbilityUsage run data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
 ## Mana
-data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name":"@a[limit=1]","objective":"mana"},"color":"aqua"},{"text":"/","color":"aqua"},{"score":{"name":"@a[limit=1]","objective":"maxMana"},"color":"aqua"},{"text":"✎","color":"aqua"}]' 
+data modify block 3000000 1 3000000 Text1 set value '[{"score":{"name":"@a[limit=1]","objective":"mana"},"color":"aqua"},{"text":"/","color":"aqua"},{"score":{"name":"@a[limit=1]","objective":"maxMana"},"color":"aqua"},{"text":"✎   ","color":"aqua"}]' 
 data modify storage sbremake:actionbar Item.tag.actionbar append from block 3000000 1 3000000 Text1
 
 # Angel's Ascent

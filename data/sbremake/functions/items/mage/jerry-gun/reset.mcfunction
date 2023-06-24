@@ -1,0 +1,1 @@
+scoreboard players set #jerry-gun fakePlayers 0

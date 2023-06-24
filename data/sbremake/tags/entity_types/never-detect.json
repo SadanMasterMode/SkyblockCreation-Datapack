@@ -5,6 +5,7 @@
         "minecraft:experience_orb",
         "minecraft:item_frame",
         "minecraft:glow_item_frame",
+        "minecraft:firework_rocket",
         "minecraft:text_display"
     ]
 }

@@ -10,10 +10,9 @@ schedule function sbremake:items/mage/spoon/wave 4t append
 schedule function sbremake:items/mage/spoon/wave 6t append
 schedule function sbremake:items/mage/spoon/wave 8t append
 
-scoreboard players set @s manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @s actionbar ["",{"text":"Used ","color":"aqua"},{"text":"Molten Wave","color":"gold"},{"text":"! (-250 \u270e Mana)","color":"aqua"}]
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-250 Mana (","color":"aqua"},{"text":"Molten Wave","color":"gold"},{"text":")   ","color":"aqua"}]'
 
 scoreboard players remove @s mana 250
 scoreboard players set @s moltenCD 0

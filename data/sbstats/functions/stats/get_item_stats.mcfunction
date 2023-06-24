@@ -19,6 +19,7 @@ execute store result score #Base_health_Regen stats run data get storage sbstats
 execute store result score #Base_vitality stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.vitality
 execute store result score #Base_mending stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.mending
 execute store result score #Base_true_def stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.true_defense
+execute store result score #Base_shot-cd stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.shot-cd
 
 ## Misc
 execute store result score #Base_speed stats run data get storage sbstats:data PlayerData.SelectedItem.tag.Base.stats.speed

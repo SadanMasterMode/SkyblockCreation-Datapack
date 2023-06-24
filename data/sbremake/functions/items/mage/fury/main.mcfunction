@@ -8,10 +8,9 @@ scoreboard players set DamageCalc.Scaling fakePlayers 0
 data modify storage sbremake:data Fury.PlayerData set from entity @a[limit=1]
 data modify storage sbremake:data DamageCalc.Ability set from storage sbremake:data Fury.PlayerData.SelectedItem.tag.Abilities[0]
 
-scoreboard players set @a manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @a actionbar ["",{"text":"Used","color":"aqua"},{"text":" Firestorm","color":"gold"},{"text":"! (-1000 \u270e Mana)","color":"aqua"}]
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-1000 Mana (","color":"aqua"},{"text":"Firestorm","color":"gold"},{"text":")   ","color":"aqua"}]'
 
 playsound entity.blaze.shoot master @a[distance=..10] ~ ~ ~
 

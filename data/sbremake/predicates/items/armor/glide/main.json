@@ -5,7 +5,17 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "nbt": "{Tags:[\"inGlide\",\"inWraith\"]}"
+          "nbt": "{Tags:[\"inGlide\"]}"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "nbt": "{Tags:[\"inWraith\"]}"
         }
       }
     },

@@ -12,17 +12,5 @@
         }
       }
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:entity_scores",
-      "entity": "this",
-      "scores": {
-        "manaWarn": {
-          "min": 1
-        }
-      }
-    }
   }
 ]

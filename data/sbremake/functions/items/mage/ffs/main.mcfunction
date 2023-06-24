@@ -11,10 +11,9 @@ summon armor_stand ~-5 ~ ~-2 {Invisible:1b,Invulnerable:1b,NoGravity:1b,Tags:["f
 
 playsound entity.wither.ambient master @a[distance=..10] ~ ~ ~
 
-scoreboard players set @a manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @a actionbar ["",{"text":"Used","color":"aqua"},{"text":" Fire Freeze","color":"gold"},{"text":"! (-500 \u270e Mana)","color":"aqua"}]
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-500 Mana (","color":"aqua"},{"text":"Fire Freeze","color":"gold"},{"text":")   ","color":"aqua"}]'
 
 scoreboard players remove @a mana 500
 scoreboard players set @a ffsCD 0

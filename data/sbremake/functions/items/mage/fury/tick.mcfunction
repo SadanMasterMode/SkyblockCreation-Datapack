@@ -1,7 +1,7 @@
 scoreboard players add @a[scores={furyCD=..239}] furyCD 1
 
-execute as @a[predicate=sbremake:items/mage/fury/cd] run function sbremake:items/mage/fury/cd
-execute as @a[predicate=sbremake:items/mage/fury/mana] run function sbremake:items/mage/fury/mana
+execute as @a[predicate=sbremake:items/mage/fury/cd] run tellraw @s {"text":"This item is on cooldown!","color":"red"}
+execute as @a[predicate=sbremake:items/mage/fury/mana] run tellraw @a {"text":"You don't have enough mana to use this ability!","color":"red"}
 execute as @a[predicate=sbremake:items/mage/fury/main] run function sbremake:items/mage/fury/main
 
 execute as 34177f8b-193d-4de7-b82b-99f489642c30 at @s run function sbremake:items/mage/fury/as-main

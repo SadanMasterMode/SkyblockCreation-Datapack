@@ -1,10 +1,9 @@
 execute at 8f1071f6-966b-424d-a35f-f24fb8ee568d run tp @p ~ ~ ~
 
-scoreboard players set @p manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @a actionbar ["",{"text":"Used","color":"aqua"},{"text":" Instant Transmission","color":"gold"},{"text":"! (-25 \u270e Mana)","color":"aqua"}]
-scoreboard players remove @p mana 25
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-25 Mana (","color":"aqua"},{"text":"Instant Transmission","color":"gold"},{"text":")   ","color":"aqua"}]'
+scoreboard players remove @a mana 25
 
 execute at @p run kill 8f1071f6-966b-424d-a35f-f24fb8ee568d
 execute at @p unless block ~ ~ ~ air run tp @p ~ ~1 ~

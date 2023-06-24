@@ -1,7 +1,7 @@
 # Wither Cloak
 execute as @a[predicate=sbremake:items/cloak/attack] run function sbremake:items/cloak/mana
 execute as @a[predicate=sbremake:items/cloak/death] run function sbremake:items/cloak/final
-execute as @a[predicate=sbremake:items/cloak/mana] run function sbremake:items/cloak/manawarn
+execute as @a[predicate=sbremake:items/cloak/mana] run tellraw @a {"text":"You don't have enough mana to use this ability!","color":"red"}
 execute as @a[predicate=sbremake:items/cloak/final] at @s run function sbremake:items/cloak/final
 execute as @a[predicate=sbremake:items/cloak/main] at @s run function sbremake:items/cloak/main
 

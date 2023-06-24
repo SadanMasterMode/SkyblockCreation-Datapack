@@ -1,1 +1,1 @@
-scoreboard players set @p manaWarn 0
+data remove storage sbremake:data Actionbar.AbilityUsage

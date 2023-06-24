@@ -9,10 +9,9 @@ execute if entity @s[nbt={playerGameType:1}] run scoreboard players set @s gamem
 execute if entity @s[nbt={playerGameType:2}] run scoreboard players set @s gamemode 2
 gamemode spectator @s
 
-scoreboard players set @s manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @s actionbar ["",{"text":"Used","color":"aqua"},{"text":" Spirit Glide","color":"gold"},{"text":"! (-250 \u270e Mana)","color":"aqua"}]
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-250 Mana (","color":"aqua"},{"text":"Spirit Glide","color":"gold"},{"text":")   ","color":"aqua"}]'
 
 scoreboard players set @s spiritCD 300
 scoreboard players remove @s mana 250

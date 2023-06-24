@@ -1,7 +1,6 @@
 data modify storage sbremake:data PlayerData set from entity @s
 
 # Mana
-execute unless score @s mana >= @s maxMana run scoreboard players add @s mana 1
 
 scoreboard players set @s extraMana 0
 function sbremake:utils/stats/extra_mana_give

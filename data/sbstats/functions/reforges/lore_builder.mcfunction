@@ -146,6 +146,9 @@ data remove storage sbstats:reforge true_def
 execute if score #true_def reforgeStats matches 1.. run data modify storage sbstats:reforge true_def set value '[{"text":"(+","color":"blue"},{"score":{"name":"#true_def","objective":"reforgeStats"},"color":"blue"},{"text":")","color":"blue"}]'
 execute if score #Base_true_def stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "True Defense: ","color":"gray","italic": false},{"text":"+","color":"green","italic": false},{"score":{"name": "#Base_true_def","objective": "stats"},"color":"green","italic": false},{"text": " "},{"nbt":"true_def","storage": "sbstats:reforge","color": "blue","interpret": true}]'
 execute if score #Base_true_def stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
+### SHOT COOLDOWN
+execute if score #Base_shot-cd stats matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "Shot Cooldown: ","color":"gray","italic": false},{"text":"0.","color":"green","italic": false},{"score":{"name": "#Base_shot-cd","objective": "stats"},"color":"green","italic": false},{"text": "s","color":"green"}]'
+execute if score #Base_shot-cd stats matches 1.. run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1
 
 ## BLUE STATS
 ### SCC

@@ -1,4 +1,4 @@
-execute as @a[predicate=sbremake:items/mage/sceptre/mana] run function sbremake:items/mage/sceptre/mana
+execute as @a[predicate=sbremake:items/mage/sceptre/mana] run tellraw @a {"text":"You don't have enough mana to use this ability!","color":"red"}
 execute as @a[predicate=sbremake:items/mage/sceptre/main] at @s run function sbremake:items/mage/sceptre/main
 
 execute as @e[tag=sceptre] at @s unless block ~ ~ ~ air run function sbremake:items/mage/sceptre/death

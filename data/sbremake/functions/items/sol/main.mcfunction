@@ -1,9 +1,8 @@
 advancement revoke @s only sbremake:items/sol/right_click_main
 
-scoreboard players set @s manaWarn 1
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
-title @s actionbar [{"text":"Used","color":"aqua","bold":false},{"text":" Orb of Shadows","color":"gold","bold":false},{"text":"! (-"},{"score":{"name":"#40","objective":"percentageManaMod"},"color":"aqua","bold":false},{"text":" mana)","color":"aqua","bold":false}]
+data modify storage sbremake:data Actionbar.AbilityUsage set value '[{"text":"-","color":"aqua"},{"score":{"objective": "percentageManaMod","name":"#40"}},{"text": " Mana (","color":"aqua"},{"text":"Orb of Shadows","color":"gold"},{"text":")   ","color":"aqua"}]'
 
 execute at @s run playsound minecraft:block.end_gateway.spawn master @s ~ ~ ~
 

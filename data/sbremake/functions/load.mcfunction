@@ -3,7 +3,6 @@ scoreboard objectives add sneak minecraft.custom:minecraft.sneak_time
 scoreboard objectives add const dummy
 scoreboard objectives add gamemode dummy
 scoreboard objectives add intelligence dummy
-scoreboard objectives add manaWarn dummy
 scoreboard objectives add damage dummy
 scoreboard objectives add cd dummy
 scoreboard objectives add health health
@@ -119,6 +118,7 @@ kill @e[tag=cw_typewriter]
 setblock 3000000 1 3000001 air
 setblock 3000000 0 3000001 air
 execute positioned 3000000 0 3000001 run function sbremake:utils/typewriter/setup
+forceload add 0 0
 
 # Const Variables
 scoreboard players set #40 percentageMana 40
@@ -177,6 +177,7 @@ tellraw @a [{"text": "Misc done \n","color": "dark_gray"}]
 
 # Function Calls
 execute if score #inWorld fakePlayers matches 1 run function sbremake:world/dwindler/load
+function sbremake:tick/every-second
 
 # Initialization message. Everything worked!
 tellraw @a [{"text": "Hey!\n\n","color": "red","bold": true},{"text": "Thanks for playing my map/datapack. If you have any questions or concerns,feel free to contact me :)\n\n","color": "red","bold": false},{"text": "Socials\n","color": "gray","bold": false},{"text": "Discord: @Sadan (Master Mode)#2278\n","color": "dark_gray","bold": false},{"text": "Twitter: @SadanMasterMode\n","color": "aqua","bold": false},{"text": "Forums: https://hypixel.net/members/sadan_mastermode.3210268/","color": "gold","bold": false,"clickEvent": {"action": "open_url","value": "https://hypixel.net/members/sadan_mastermode.3210268/"}}]

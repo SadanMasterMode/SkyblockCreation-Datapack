@@ -17,7 +17,6 @@ execute as cf4104c7-f284-42d1-9c58-9b105a8d158b at @s run function sbremake:item
 
 execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=..18] run tag @s add near-manaflux
 execute as @a[tag=near-manaflux,predicate=!sbremake:items/utility/deployables/manaflux/regen-2,tag=!near-overflux] run effect give @s regeneration infinite 1 true
-execute as @a[tag=near-manaflux] if score @s mana < @s maxMana run scoreboard players add @s mana 1
 
 execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=18..,predicate=sbremake:items/utility/deployables/manaflux/regen-2,tag=!regen] run effect clear @s regeneration
 execute at cf4104c7-f284-42d1-9c58-9b105a8d158b as @a[distance=18..,tag=near-manaflux] run tag @s remove near-manaflux
