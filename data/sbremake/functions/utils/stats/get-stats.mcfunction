@@ -22,3 +22,8 @@ execute if data storage sbremake:data PlayerData.Inventory[{Slot:101b}].tag.Upgr
 
 execute if data storage sbremake:data PlayerData.Inventory[{Slot:100b}] run function sbremake:utils/stats/base-stats/boots-stats
 execute if data storage sbremake:data PlayerData.Inventory[{Slot:100b}].tag.Upgrades.reforge run function sbremake:utils/stats/modifier-stats/leggings-reforge
+
+function sbremake:utils/stats/atk-speed
+function sbremake:utils/stats/strength
+function sbremake:utils/stats/crit-damage
+function sbremake:utils/stats/crit-chance

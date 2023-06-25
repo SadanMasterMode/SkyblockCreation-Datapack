@@ -4,7 +4,7 @@ data remove storage sbstats:reforge Item.tag.Upgrades.reforge.stats
 
 # Generate Random Number
 function sbremake:utils/random_number
-scoreboard players operation @a rand %= #9 const
+scoreboard players operation @a rand %= #10 const
 
 # Apply Stats
 
@@ -18,3 +18,4 @@ execute if score @a[limit=1] rand matches 5 run function sbstats:reforges/reforg
 execute if score @a[limit=1] rand matches 6 run function sbstats:reforges/reforges/bows/rapid
 execute if score @a[limit=1] rand matches 7 run function sbstats:reforges/reforges/bows/rich
 execute if score @a[limit=1] rand matches 8 run function sbstats:reforges/reforges/bows/unreal
+execute if score @a[limit=1] rand matches 9 run function sbstats:reforges/reforges/bows/nimble

@@ -21,7 +21,13 @@ scoreboard players operation #manaflux mana = #temp mana
 scoreboard players operation #manaflux mana *= #5 const
 scoreboard players operation #manaflux mana /= #10 const
 execute unless score @a[limit=1] mana >= #temp maxMana run scoreboard players operation @a[limit=1,tag=near-manaflux,tag=!near-overflux] mana += #manaflux mana
-execute if score #debug-mode fakePlayers matches 1 run tellraw @a [{"text":"Mana Regen: ","color":"white"},{"score":{"name":"#temp","objective":"mana"},"color": "gold"}]
-execute if score #debug-mode fakePlayers matches 1 run tellraw @a [{"text":"Manaflux Regen: ","color":"white"},{"score":{"name":"#manaflux","objective":"mana"},"color": "gold"}]
+
+# Juju
+scoreboard players set #juju-max-cd fakePlayers 10
+execute if score #bonus-atk-speed stats matches 20.. run scoreboard players remove #juju-max-cd fakePlayers 1
+execute if score #bonus-atk-speed stats matches 40.. run scoreboard players remove #juju-max-cd fakePlayers 1
+execute if score #bonus-atk-speed stats matches 60.. run scoreboard players remove #juju-max-cd fakePlayers 1
+execute if score #bonus-atk-speed stats matches 80.. run scoreboard players remove #juju-max-cd fakePlayers 1
+execute if score #bonus-atk-speed stats matches 100.. run scoreboard players remove #juju-max-cd fakePlayers 1
 
 schedule function sbremake:tick/every-second 1s append

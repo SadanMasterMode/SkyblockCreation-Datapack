@@ -25,6 +25,7 @@ execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{r
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{type:'Rapid'}}}}}} run function sbstats:reforges/reforges/bows/rapid
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{type:'Rich'}}}}}} run function sbstats:reforges/reforges/bows/rich
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{type:'Unreal'}}}}}} run function sbstats:reforges/reforges/bows/unreal
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{type:'Nimble'}}}}}} run function sbstats:reforges/reforges/bows/nimble
 
 # Armor Reforges
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{type:'Clean'}}}}}} run function sbstats:reforges/reforges/armor/clean

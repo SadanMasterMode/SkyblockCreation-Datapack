@@ -153,6 +153,13 @@ scoreboard players set #250 const 250
 scoreboard players set #500 const 500
 scoreboard players set #1000 const 1000
 scoreboard players set #2500 const 2500
+scoreboard players set #5000 const 5000
+scoreboard players set #10000 const 10000
+scoreboard players set #100000 const 100000
+scoreboard players set #1000000 const 1000000
+scoreboard players set #10000000 const 10000000
+scoreboard players set #100000000 const 100000000
+scoreboard players set #1000000000 const 1000000000
 
 # Misc
 kill 38b904a1-5164-476e-b23d-e86630ed0445
