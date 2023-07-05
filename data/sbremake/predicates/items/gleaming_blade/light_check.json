@@ -3,9 +3,8 @@
     "predicate": {
       "light": {
         "light": {
-          "min": 9,
-          "max": 15
+          "min": 9
         }
       }
     }
-  }  
+  } 

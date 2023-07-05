@@ -3,7 +3,7 @@ summon armor_stand ~ ~1 ~ {Passengers:[{id:"minecraft:item_display",CustomName:'
 # "cf4104c7-f284-42d1-9c58-9b105a8d158b"
 function sbremake:items/utility/deployables/manaflux/bob-1
 
-scoreboard players set e42a9d23-f22d-4393-bb01-6676a5140841 life 600
+scoreboard players set e42a9d23-f22d-4393-bb01-6676a5140841 life 30
 
 execute store result score #half-mana fakePlayers run scoreboard players get @s maxMana
 scoreboard players operation #half-mana fakePlayers /= #2 const

@@ -4,9 +4,9 @@ summon minecraft:text_display ~ ~ ~ {Tags:["glide","spectator"],billboard:"verti
 # 9e2555c3-0221-4982-937c-ecca667a6007
 
 gamerule sendCommandFeedback false
-execute if entity @s run scoreboard players set @s[nbt={playerGameType:0}] gamemode 0
-execute if entity @s[nbt={playerGameType:1}] run scoreboard players set @s gamemode 1
-execute if entity @s[nbt={playerGameType:2}] run scoreboard players set @s gamemode 2
+execute if entity @s[gamemode=survival] run scoreboard players set @s gamemode 0
+execute if entity @s[gamemode=creative] run scoreboard players set @s gamemode 1
+execute if entity @s[gamemode=adventure] run scoreboard players set @s gamemode 2
 gamemode spectator @s
 
 schedule clear sbremake:manareset

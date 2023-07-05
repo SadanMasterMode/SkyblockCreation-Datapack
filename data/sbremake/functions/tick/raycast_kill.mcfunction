@@ -5,3 +5,5 @@ kill @s[tag=bonzo-balloon]
 execute on passengers run kill @s[tag=jerry-gun]
 kill @s[tag=jerry-gun]
 execute if entity @s[tag=sceptre] at @s run function sbremake:items/mage/sceptre/death
+execute on passengers run kill @s[tag=frozen-scythe-bolt]
+kill @s[tag=frozen-scythe-bolt]

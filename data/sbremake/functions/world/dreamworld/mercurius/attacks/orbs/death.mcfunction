@@ -5,7 +5,6 @@ scoreboard players remove @a mobCount 1
 execute if score @p mobCount matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "There are still ","color": "green"},{"score":{"name": "@p","objective": "mobCount"},"color": "greem"},{"text": " orb(s) left!","color": "green"}]'
 execute if score @p mobCount matches 0 run data modify block 3000000 1 3000000 Text1 set value '{"text": "There are no orbs left, go after the emperor!","color": "green"}'
 data modify storage sbremake:world BorderOrb.count set from block 3000000 1 3000000 Text1
-execute positioned 3000000 1 3000000 run kill @e[type=item,nbt={Item:{id:"minecraft:oak_sign"}},limit=1,distance=..3]
 
 # General Death Message
 execute if entity @s[tag=summon_orb] run data modify storage sbremake:world BorderOrb.type set value '[{"text":"Summoning Orb","color":"blue"}]'

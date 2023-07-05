@@ -3,7 +3,7 @@ function sbstats:stats/get_item_stats
 tag @s add recombLoreBuilder
 
 # Get item type/reforge
-execute unless data entity @s SelectedItem.tag.SBStats.OldName run item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:old_name
+execute unless data entity @s SelectedItem.tag.SBStats.OldName run item modify entity @s[predicate=!sbstats:reforged] weapon.mainhand sbstats:old_name
 data modify storage sbstats:item_name Name set from storage sbstats:data PlayerData.SelectedItem.tag.SBStats.OldName
 data modify storage sbstats:reforge Name set from storage sbstats:data PlayerData.SelectedItem.tag.Upgrades.reforge.type
 
@@ -19,7 +19,7 @@ execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarit
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{rarity:'DIVINE'}}}}} run data modify block 3000000 1 3000000 Text1 set value '[{"nbt":"Name","storage": "sbstats:item_name","color": "aqua","interpret": true,"italic": false}]'
 execute unless data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.OldName set from block 3000000 1 3000000 Text1
 
-item modify entity @s[nbt=!{SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] weapon.mainhand sbstats:item_name_2
+item modify entity @s[predicate=!sbstats:reforged] weapon.mainhand sbstats:item_name_2
 
 
 # Apply new name (reforged)
@@ -275,7 +275,7 @@ data remove storage sbstats:stone Item.tag.ReforgeBonus
 data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":" "}]'
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{soulbound:'COOP'}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"٭ ","bold":true,"italic":false,"color":"dark_gray"},{"text":"Co-op Soulbound","bold":false,"italic":false,"color":"dark_gray"},{"text":" ٭","bold":true,"italic":false,"color":"dark_gray"}]'
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Base:{soulbound:'SOLO'}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"٭ ","bold":true,"italic":false,"color":"dark_gray"},{"text":"Soulbound","bold":false,"italic":false,"color":"dark_gray"},{"text":" ٭","bold":true,"italic":false,"color":"dark_gray"}]'
-execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{stats:{}}}}}}} unless entity @s[nbt={SelectedItem:{tag:{Upgrades:{reforged:1b}}}}] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"This item can be reforged!","bold":false,"italic":false,"color":"dark_gray"}]'
+execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{Upgrades:{reforge:{stats:{}}}}}}} unless entity @s[predicate=sbstats:reforged] run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"This item can be reforged!","bold":false,"italic":false,"color":"dark_gray"}]'
 execute if data storage sbstats:data {PlayerData:{SelectedItem:{tag:{SBRemake:{CustomItem:1b}}}}} run data modify storage sbstats:reforge Item.tag.SBStats.NewLore append value '[{"text":"Custom Item","bold":false,"italic":false,"color":"dark_gray"}]'
 function sbstats:reforges/lore_rarity
 data modify storage sbstats:reforge Item.tag.SBStats.NewLore append from block 3000000 1 3000000 Text1

@@ -18,7 +18,7 @@ kill @e[tag=ender_bomb]
 schedule function sbremake:world/dwindler/delay 3s append
 kill @e[tag=item,nbt={Item:{id:"minecraft:totem_of_undying"}}]
 kill @e[tag=item,nbt={Item:{id:"minecraft:emerald"}}]
-clear @p totem_of_undying
-clear @p emerald
+clear @a totem_of_undying
+clear @a emerald
 
 scoreboard players reset @p dwindlerDeaths

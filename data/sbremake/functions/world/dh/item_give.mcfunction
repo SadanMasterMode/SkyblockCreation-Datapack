@@ -7,9 +7,11 @@ execute if score @s dhGleamingSpawn matches 50..99 positioned 28 57 25 run parti
 execute if score @s dhGleamingSpawn matches 1..99 positioned 28 57 25 run playsound minecraft:entity.evoker.celebrate master @s ~ ~ ~ 0.05 2 0
 
 execute if score @s dhGleamingSpawn matches 100 positioned 28 55 25 run loot spawn ~ ~2 ~ loot sbremake:world/dh/gleaming_blade
-execute if score @s dhGleamingSpawn matches 100 run data merge entity @e[type=item,nbt={Item:{id:"minecraft:golden_sword",Count:1b,tag:{gleaming:1b}}},limit=1] {PickupDelay:60s,Tags:["float"],Motion:[0,0,0],Glowing:1b,Air:10s}
+
+execute if score @s dhGleamingSpawn matches 100 run data merge entity @e[type=item,nbt={Item:{id:"minecraft:golden_sword",Count:1b,tag:{Base:{id:'GLEAMING_BLADE'}}}},limit=1] {PickupDelay:60s,Tags:["float"],Motion:[0,0,0],Glowing:1b,Air:10s}
+
 execute as @e[tag=float] run function sbremake:utils/item_float
-team join green @e[type=item,nbt={Item:{id:"minecraft:golden_sword",Count:1b,tag:{gleaming:1b}}},limit=1]
+team join green @e[type=item,tag=float]
 execute if score @s dhGleamingSpawn matches 100 positioned 28 57.5 25 run summon text_display ~ ~ ~ {text:'[{"text":"S ","obfuscated": true,"color": "green"},{"text": "GLEAMING BLADE","color": "green","bold": true,"obfuscated": false},{"text": " S","obfuscated": true,"bold": false}]',billboard:"center",Invulnerable:1b,NoGravity:1b,Tags:["gleam","spectator"],CustomNameVisible:1b,see_through:0b,background:0,UUID:[I;1707659289,849625723,-1193020842,-1778586846]}
 # "65c8d019-32a4-427b-b8e3-f25695fceb22"
 execute if score @s dhGleamingSpawn matches 100 positioned 28 57 25 run particle reverse_portal ~ ~0.4 ~ 0 0 0 1 1000 normal

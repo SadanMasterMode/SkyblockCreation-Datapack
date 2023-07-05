@@ -1,5 +1,3 @@
-execute as d00ad08c-6d83-4816-95ff-33b3d23d312e run scoreboard players remove @s[scores={life=1..}] life 1
-
 scoreboard players add #radiant-orb-bob fakePlayers 1
 execute if score #radiant-orb-bob fakePlayers matches 80.. run scoreboard players reset #radiant-orb-bob fakePlayers
 
@@ -8,18 +6,9 @@ execute as @a[predicate=sbremake:items/utility/deployables/radiant/holding] at @
 
 execute as d00ad08c-6d83-4816-95ff-33b3d23d312e if score @s life matches 0 run function sbremake:items/utility/deployables/radiant/final
 
-execute store result score #radiant-life fakePlayers run scoreboard players get d00ad08c-6d83-4816-95ff-33b3d23d312e life
-scoreboard players operation #radiant-life fakePlayers /= #20 const
-data modify block 3000000 1 3000000 Text1 set value '[{"text":"Radiant ","color":"green"},{"score":{"objective":"fakePlayers","name": "#radiant-life"},"color":"yellow"},{"text":"s","color":"yellow"}]'
-data modify entity d00ad08c-6d83-4816-95ff-33b3d23d312e CustomName set from block 3000000 1 3000000 Text1
-
 execute as 9befeee3-67e9-4b7f-b282-987efeb7d2cb at @s run function sbremake:items/utility/deployables/radiant/as-stand
 
 execute at 9befeee3-67e9-4b7f-b282-987efeb7d2cb as @a[distance=..18] run tag @s add near-radiant
-execute as @a[tag=near-radiant,predicate=!sbremake:items/utility/deployables/radiant/regen-1,tag=!near-manaflux,tag=!near-overflux] run effect give @s regeneration infinite 0 true
+execute as @a[tag=near-radiant,predicate=!sbremake:items/utility/deployables/radiant/regen-1,tag=!near-manaflux,tag=!near-overflux] run effect give @s regeneration 3 0 true
 
-execute at 9befeee3-67e9-4b7f-b282-987efeb7d2cb as @a[distance=18..,predicate=sbremake:items/utility/deployables/radiant/regen-1,tag=!regen] run effect clear @s regeneration
 execute at 9befeee3-67e9-4b7f-b282-987efeb7d2cb as @a[distance=18..,tag=near-radiant] run tag @s remove near-radiant
-
-execute as @a[tag=near-manaflux,predicate=sbremake:items/utility/deployables/radiant/regen-1] run effect clear @s regeneration
-execute as @a[tag=near-overflux,predicate=sbremake:items/utility/deployables/radiant/regen-1] run effect clear @s regeneration

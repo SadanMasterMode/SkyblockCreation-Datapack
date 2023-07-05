@@ -30,3 +30,6 @@ execute if entity @a[predicate=!sbremake:misc/holding-lc,limit=1] as 23659f9b-55
 # Objective System
 execute at @a facing entity @e[tag=objective,limit=1] eyes positioned ^ ^3 ^2 run tp 38b904a1-5164-476e-b23d-e86630ed0445 ~ ~ ~
 execute at 38b904a1-5164-476e-b23d-e86630ed0445 run particle minecraft:composter ~ ~ ~ 0 0 0 3 0 normal
+
+# Items
+function sbremake:items/mage/frozen-scythe/tick

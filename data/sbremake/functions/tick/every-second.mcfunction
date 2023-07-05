@@ -1,5 +1,3 @@
-schedule clear sbremake:tick/every-second
-
 # Mana
 ## Find out 2% of mana
 scoreboard players operation #temp mana = @a maxMana
@@ -22,12 +20,31 @@ scoreboard players operation #manaflux mana *= #5 const
 scoreboard players operation #manaflux mana /= #10 const
 execute unless score @a[limit=1] mana >= #temp maxMana run scoreboard players operation @a[limit=1,tag=near-manaflux,tag=!near-overflux] mana += #manaflux mana
 
-# Juju
-scoreboard players set #juju-max-cd fakePlayers 10
-execute if score #bonus-atk-speed stats matches 20.. run scoreboard players remove #juju-max-cd fakePlayers 1
-execute if score #bonus-atk-speed stats matches 40.. run scoreboard players remove #juju-max-cd fakePlayers 1
-execute if score #bonus-atk-speed stats matches 60.. run scoreboard players remove #juju-max-cd fakePlayers 1
-execute if score #bonus-atk-speed stats matches 80.. run scoreboard players remove #juju-max-cd fakePlayers 1
-execute if score #bonus-atk-speed stats matches 100.. run scoreboard players remove #juju-max-cd fakePlayers 1
+# Power Orb Lives
 
-schedule function sbremake:tick/every-second 1s append
+## Overflux
+execute as f9bfe799-3c1d-484c-9ed4-28333bc49fda run scoreboard players remove @s[scores={life=1..}] life 1
+
+execute store result score #overflux-life fakePlayers run scoreboard players get f9bfe799-3c1d-484c-9ed4-28333bc49fda life
+data modify block 3000000 1 3000000 Text1 set value '[{"text":"Overflux ","color":"dark_purple"},{"score":{"objective":"fakePlayers","name": "#overflux-life"},"color":"yellow"},{"text":"s","color":"yellow"}]'
+data modify entity f9bfe799-3c1d-484c-9ed4-28333bc49fda CustomName set from block 3000000 1 3000000 Text1
+
+## Manaflux
+execute as e42a9d23-f22d-4393-bb01-6676a5140841 run scoreboard players remove @s[scores={life=1..}] life 1
+
+execute store result score #manaflux-life fakePlayers run scoreboard players get e42a9d23-f22d-4393-bb01-6676a5140841 life
+data modify block 3000000 1 3000000 Text1 set value '[{"text":"Mana Flux ","color":"blue"},{"score":{"objective":"fakePlayers","name": "#manaflux-life"},"color":"yellow"},{"text":"s","color":"yellow"}]'
+data modify entity e42a9d23-f22d-4393-bb01-6676a5140841 CustomName set from block 3000000 1 3000000 Text1
+
+## Radiant
+execute as d00ad08c-6d83-4816-95ff-33b3d23d312e run scoreboard players remove @s[scores={life=1..}] life 1
+
+execute store result score #radiant-life fakePlayers run scoreboard players get d00ad08c-6d83-4816-95ff-33b3d23d312e life
+data modify block 3000000 1 3000000 Text1 set value '[{"text":"Radiant ","color":"green"},{"score":{"objective":"fakePlayers","name": "#radiant-life"},"color":"yellow"},{"text":"s","color":"yellow"}]'
+data modify entity d00ad08c-6d83-4816-95ff-33b3d23d312e CustomName set from block 3000000 1 3000000 Text1
+
+# Function Calls
+execute as @a run function sbremake:achievements/check
+execute as @a run function sbremake:utils/player_gamemode
+
+schedule function sbremake:tick/every-second 1s

@@ -3,7 +3,7 @@ summon armor_stand ~ ~1 ~ {Passengers:[{id:"minecraft:item_display",CustomName:'
 # "9befeee3-67e9-4b7f-b282-987efeb7d2cb"
 function sbremake:items/utility/deployables/radiant/bob-1
 
-scoreboard players set d00ad08c-6d83-4816-95ff-33b3d23d312e life 600
+scoreboard players set d00ad08c-6d83-4816-95ff-33b3d23d312e life 30
 
 execute store result score #half-mana fakePlayers run scoreboard players get @s maxMana
 scoreboard players operation #half-mana fakePlayers /= #2 const
