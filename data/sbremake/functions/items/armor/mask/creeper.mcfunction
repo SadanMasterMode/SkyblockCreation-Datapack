@@ -1,4 +1,4 @@
-execute if score @s spookyMute matches 1 run execute if entity @e[tag=spookyCart] run tellraw @s [{"text":"You selected Explosion Mode","color":"green"}]
+execute if score @s spookyMute matches 1 run execute if entity 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 run tellraw @s [{"text":"You selected Explosion Mode","color":"green"}]
 tag @s remove skeletonMode
 tag @s remove arthropodMode
 tag @s remove zombieMode
@@ -15,7 +15,7 @@ data modify storage sbstats:data PlayerData set from entity @s
 function sbstats:reforges/lore_builder
 
 clear @a minecraft:creeper_head{display:{Name:'[{"text":"Explosive Mode","italic":false,"color":"red"}]',Lore:['[{"text":"Click to select ","italic":false,"color":"gray"},{"text":"Explosion Repellent!","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"All ","italic":false,"color":"gray"},{"text":"Explosions","color":"red"},{"text":" within "},{"text":"20 ","color":"green"},{"text":"blocks","color":"gray"}]','[{"text":"will automatically be","italic":false,"color":"gray"},{"text":" pushed away","color":"green"},{"text":"!"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Works On:","italic":false,"color":"gray"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Creepers","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Primed TNT","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Wither Skulls","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"⚠ May cause further damage.","italic":false,"color":"gold"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"GUI ITEM","italic":false,"color":"red","bold":true}]']}}
-tp @e[tag=spookyCart] ~ ~-100 ~
-kill @e[tag=spookyCart]
+tp 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 ~ ~-100 ~
+kill 35466863-3d53-4344-9b8c-9e3c6f6c4ff4
 scoreboard players set @s inSpookyGUI 0
 execute at @s run playsound minecraft:entity.creeper.hurt master @s ~ ~ ~

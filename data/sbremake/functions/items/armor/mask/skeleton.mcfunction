@@ -1,4 +1,4 @@
-execute if score @a[limit=1] spookyMute matches 1 run execute if entity @e[tag=spookyCart] run tellraw @a[limit=1] [{"text":"You selected Skeleton Mode","color":"green"}]
+execute if score @a[limit=1] spookyMute matches 1 run execute if entity 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 run tellraw @a[limit=1] [{"text":"You selected Skeleton Mode","color":"green"}]
 tag @a[limit=1] remove explosionMode
 tag @a[limit=1] remove arthropodMode
 tag @a[limit=1] remove zombieMode
@@ -12,7 +12,7 @@ data modify storage sbstats:data PlayerData set from entity @s
 function sbstats:reforges/lore_builder
 
 clear @a[limit=1] skeleton_skull{display:{Name:'[{"text":"Skeleton Mode","italic":false,"color":"red"}]',Lore:['[{"text":"Click to select ","italic":false,"color":"gray"},{"text":"Skeleton Repellent!","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"All Skeletons within ","italic":false,"color":"gray"},{"text":"20 ","color":"green"},{"text":"blocks","color":"gray"}]','[{"text":"will automatically be","italic":false,"color":"gray"},{"text":" pushed away","color":"green"},{"text":"!"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Works On:","italic":false,"color":"gray"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Skeleton","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Wither Skeleton","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Skeleton Horse","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"GUI ITEM","italic":false,"color":"red","bold":true}]']}}
-tp @e[tag=spookyCart] ~ ~-100 ~
-kill @e[tag=spookyCart]
+tp 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 ~ ~-100 ~
+kill 35466863-3d53-4344-9b8c-9e3c6f6c4ff4
 scoreboard players set @a[limit=1] inSpookyGUI 0
 execute at @a[limit=1] run playsound minecraft:entity.skeleton.hurt master @a[limit=1] ~ ~ ~

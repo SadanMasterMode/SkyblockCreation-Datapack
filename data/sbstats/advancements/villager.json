@@ -8,9 +8,8 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type": "minecraft:villager",
-                "nbt": "{Tags:[\"reforgeBlock\"]}",
-                "team": "player"
+                "type": "minecraft:interaction",
+                "nbt": "{Tags:[\"reforge\"]}"
               }
             }
           ]

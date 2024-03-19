@@ -77,35 +77,35 @@ execute at @e[tag=wound_bomb] as @a[distance=..1] run function sbremake:world/dw
 execute at @e[tag=ender_bomb] as @a[distance=..1] run function sbremake:world/dwindler/ender_bomb
 
 # Health Notifications + Smoke Screen
-execute as @e[tag=dwindler,scores={health=..400},tag=!400] at @s run playsound entity.wither.hurt master @s ~ ~ ~
-execute as @e[tag=dwindler,scores={health=..400},tag=!400] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, ActiveEffects: [{Id: 11, Duration: 20, Amplifier: 5, ShowParticles: 0b}]}
-execute as @e[tag=dwindler,scores={health=..400},tag=!400] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
-execute as @e[tag=dwindler,scores={health=..400}] at @s run tp @s 51 44 -57 facing entity @s
-execute as @e[tag=dwindler,scores={health=..400},tag=!400] at @s run tellraw @a [{"text": "The creature appears to be more angry...","italic": true,"color": "dark_gray"}]
-execute as @e[tag=dwindler,scores={health=..400},tag=!400] at @s run tag @s add 400
+execute as @e[tag=dwindler,scores={health=..4000},tag=!400] at @s run playsound entity.wither.hurt master @s ~ ~ ~
+execute as @e[tag=dwindler,scores={health=..4000},tag=!400] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, active_effects: [{id: "resistance", duration: 20, amplifier: 5, show_particles: 0b}]}
+execute as @e[tag=dwindler,scores={health=..4000},tag=!400] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
+execute as @e[tag=dwindler,scores={health=..4000}] at @s run tp @s 51 44 -57 facing entity @s
+execute as @e[tag=dwindler,scores={health=..4000},tag=!400] at @s run tellraw @a [{"text": "The creature appears to be more angry...","italic": true,"color": "dark_gray"}]
+execute as @e[tag=dwindler,scores={health=..4000},tag=!400] at @s run tag @s add 400
 
-execute as @e[tag=dwindler,scores={health=..300},tag=!300] at @s run playsound entity.wither.hurt master @s ~ ~ ~
-execute as @e[tag=dwindler,scores={health=..300},tag=!300] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, ActiveEffects: [{Id: 11, Duration: 20, Amplifier: 5, ShowParticles: 0b}]}
-execute as @e[tag=dwindler,scores={health=..300},tag=!300] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
-execute as @e[tag=dwindler,scores={health=..300}] at @s run tp @s 64 44 -48 facing entity @s
-execute as @e[tag=dwindler,scores={health=..300},tag=!300] at @s run tellraw @a [{"text": "The creature gets angrier...","italic": true,"color": "dark_gray"}]
-execute as @e[tag=dwindler,scores={health=..300},tag=!300] at @s run tag @s add 300
+execute as @e[tag=dwindler,scores={health=..3000},tag=!300] at @s run playsound entity.wither.hurt master @s ~ ~ ~
+execute as @e[tag=dwindler,scores={health=..3000},tag=!300] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, active_effects: [{id: "resistance", duration: 20, amplifier: 5, show_particles: 0b}]}
+execute as @e[tag=dwindler,scores={health=..3000},tag=!300] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
+execute as @e[tag=dwindler,scores={health=..3000}] at @s run tp @s 64 44 -48 facing entity @s
+execute as @e[tag=dwindler,scores={health=..3000},tag=!300] at @s run tellraw @a [{"text": "The creature gets angrier...","italic": true,"color": "dark_gray"}]
+execute as @e[tag=dwindler,scores={health=..3000},tag=!300] at @s run tag @s add 300
 
-execute as @e[tag=dwindler,scores={health=..200},tag=!200] at @s run playsound entity.wither.hurt master @s ~ ~ ~
-execute as @e[tag=dwindler,scores={health=..200},tag=!200] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, ActiveEffects: [{Id: 11, Duration: 20, Amplifier: 5, ShowParticles: 0b}]}
-execute as @e[tag=dwindler,scores={health=..200},tag=!200] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
-execute as @e[tag=dwindler,scores={health=..200}] at @s run tp @s 51 44 -57 facing entity @s
-execute as @e[tag=dwindler,scores={health=..200},tag=!200] at @s run tellraw @a [{"text": "The creature gets even angrier...","italic": true,"color": "dark_gray"}]
-execute as @e[tag=dwindler,scores={health=..200},tag=!200] at @s run tag @s add 200
+execute as @e[tag=dwindler,scores={health=..2000},tag=!200] at @s run playsound entity.wither.hurt master @s ~ ~ ~
+execute as @e[tag=dwindler,scores={health=..2000},tag=!200] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, active_effects: [{id: "resistance", duration: 20, amplifier: 5, show_particles: 0b}]}
+execute as @e[tag=dwindler,scores={health=..2000},tag=!200] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
+execute as @e[tag=dwindler,scores={health=..2000}] at @s run tp @s 51 44 -57 facing entity @s
+execute as @e[tag=dwindler,scores={health=..2000},tag=!200] at @s run tellraw @a [{"text": "The creature gets even angrier...","italic": true,"color": "dark_gray"}]
+execute as @e[tag=dwindler,scores={health=..2000},tag=!200] at @s run tag @s add 200
 
-execute as @e[tag=dwindler,scores={health=..100},tag=!100] at @s run playsound entity.wither.hurt master @s ~ ~ ~
-execute as @e[tag=dwindler,scores={health=..100},tag=!100] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, ActiveEffects: [{Id: 11, Duration: 20, Amplifier: 5, ShowParticles: 0b}]}
-execute as @e[tag=dwindler,scores={health=..100},tag=!100] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
-execute as @e[tag=dwindler,scores={health=..100}] at @s run tp @s 62 44 -57 facing entity @s
-execute as @e[tag=dwindler,scores={health=..100},tag=!100] at @s run tellraw @a [{"text": "The creature gets extremely angry...","italic": true,"color": "dark_gray"}]
-execute as @e[tag=dwindler,scores={health=..100},tag=!100] at @s run tellraw @a [{"text": "Your ","color": "red"},{"text": "✎ Mana","color": "aqua"},{"text": " is being drained away!","color": "red"}]
-execute as @e[tag=dwindler,scores={health=..100},tag=!100] at @s run tag @s add 100
-execute if entity @e[tag=dwindler,scores={health=..100}] as @s unless score @s maxMana matches ..300 run scoreboard players add @s dwindlerMana 1
+execute as @e[tag=dwindler,scores={health=..1000},tag=!100] at @s run playsound entity.wither.hurt master @s ~ ~ ~
+execute as @e[tag=dwindler,scores={health=..1000},tag=!100] at @s run summon minecraft:illusioner ~ ~ ~ {Team: notPlayer, active_effects: [{id: "resistance", duration: 20, amplifier: 5, show_particles: 0b}]}
+execute as @e[tag=dwindler,scores={health=..1000},tag=!100] at @s run particle minecraft:campfire_cosy_smoke ~ ~1 ~ 0 0 0 0.1 1000 normal
+execute as @e[tag=dwindler,scores={health=..1000}] at @s run tp @s 62 44 -57 facing entity @s
+execute as @e[tag=dwindler,scores={health=..1000},tag=!100] at @s run tellraw @a [{"text": "The creature gets extremely angry...","italic": true,"color": "dark_gray"}]
+execute as @e[tag=dwindler,scores={health=..1000},tag=!100] at @s run tellraw @a [{"text": "Your ","color": "red"},{"text": "✎ Mana","color": "aqua"},{"text": " is being drained away!","color": "red"}]
+execute as @e[tag=dwindler,scores={health=..1000},tag=!100] at @s run tag @s add 100
+execute if entity @e[tag=dwindler,scores={health=..1000}] as @s unless score @s maxMana matches ..300 run scoreboard players add @s dwindlerMana 1
 
 # Spawn Animation
 execute unless score @s dwindlerSpawn matches 131.. run scoreboard players add @s dwindlerSpawn 1
@@ -160,6 +160,6 @@ execute if score @s dwindlerSpawn matches 110 run summon minecraft:end_crystal 5
 
 execute if score @s dwindlerSpawn matches 120 run summon minecraft:evoker 62 44 -57 {SpellTicks: 10,DeathLootTable:"minecraft:empty", Health: 500, PersistenceRequired: 1b, Tags: ["dwindler","boss","newDmg","not_kill"], Team: notPlayer, Attributes: [{Name: "generic.max_health", Base: 500d}],UUID:[I;2003244062,-1804252695,-1139632368,282718381]}
 # "7767141e-9475-49e9-bc12-971010d9f0ad"
-execute if score @s dwindlerSpawn matches 120 run scoreboard players set 7767141e-9475-49e9-bc12-971010d9f0ad health 500
+execute if score @s dwindlerSpawn matches 120 run scoreboard players set 7767141e-9475-49e9-bc12-971010d9f0ad health 5000
 execute if score @s dwindlerSpawn matches 120 run playsound entity.wither.shoot hostile @s 62 44 -57
 execute if score @s dwindlerSpawn matches 120 run tag @s add inDwindlerBoss

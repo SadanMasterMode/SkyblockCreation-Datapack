@@ -14,5 +14,16 @@ execute if entity @e[tag=shadowMark,limit=1] run schedule function sbremake:item
 execute unless entity 07c041fc-445a-41ed-ad7e-090b5219235d run tag @e[tag=lifeMark] remove lifeMark
 execute unless entity 48782dea-21f1-43a5-b4cb-23fa86396cec run tag @e[tag=shadowMark] remove shadowMark
 
-execute as @a[predicate=sbremake:items/sol/holding-item] at @s unless entity 8c0d6829-7757-4552-bac3-619ad4deebee run function sbremake:items/sol/summon
-execute as @a[predicate=!sbremake:items/sol/holding-item] run kill @e[tag=sol]
+# Check if player is looking at reforge anvil
+execute as @a[predicate=sbremake:items/sol/holding-item,limit=1] at @s anchored eyes positioned ^ ^ ^ anchored feet run function sbremake:items/armor/mask/start_ray
+
+# Summon interaction
+execute as @a[predicate=sbremake:items/sol/holding-item,tag=!lookingAtReforge] at @s unless entity 8c0d6829-7757-4552-bac3-619ad4deebee run function sbremake:items/sol/summon
+
+# Kill interaction if not holding SOL
+execute if entity @a[predicate=!sbremake:items/sol/holding-item] as 8c0d6829-7757-4552-bac3-619ad4deebee on passengers run kill @s
+execute if entity @a[predicate=!sbremake:items/sol/holding-item] as 8c0d6829-7757-4552-bac3-619ad4deebee run kill @s
+
+# Kill interaction if looking at reforge anvil
+execute if entity @a[tag=lookingAtReforge] as 8c0d6829-7757-4552-bac3-619ad4deebee on passengers run kill @s
+execute if entity @a[tag=lookingAtReforge] as 8c0d6829-7757-4552-bac3-619ad4deebee run kill @s

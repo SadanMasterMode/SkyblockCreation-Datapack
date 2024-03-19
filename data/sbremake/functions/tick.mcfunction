@@ -21,6 +21,8 @@ execute as @a[scores={dmgDealt=1..},tag=inDwindlerBoss] run function sbremake:ut
 scoreboard players add @e[type=vex,tag=!spectator,tag=!mercuriusHeal] life 1
 kill @e[type=vex,scores={life=300..}]
 
+execute as @e[type=area_effect_cloud] store result entity @s Air short 1 run time query gametime
+
 # Left Click
 execute at @a run tp 23659f9b-55c6-4089-908e-1cc6a38c3584 ~ ~-1 ~
 execute store result entity 23659f9b-55c6-4089-908e-1cc6a38c3584 Air short 1 run time query gametime

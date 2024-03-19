@@ -37,10 +37,10 @@ effect give @e[tag=mercuriusHeal] glowing infinite 0 true
 effect clear @e[tag=mercuriusSummon,tag=!mercuriusHeal]
 
 ## Worldborder + Phases
-execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..2000 if score @s phase matches 0 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
-execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..1500 if score @s phase matches 1 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
-execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..1000 if score @s phase matches 2 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
-execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..500 if score @s phase matches 3 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
+execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..20000 if score @s phase matches 0 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
+execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..15000 if score @s phase matches 1 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
+execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..10000 if score @s phase matches 2 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
+execute as e39dc353-0355-4517-b803-00dee36ca116 at @s if score @s health matches ..5000 if score @s phase matches 3 in sbremake:dreamworld run function sbremake:world/dreamworld/mercurius/attacks/worldborder
 execute as @e[tag=mercuriusShield] at @s unless entity @e[tag=borderOrb] run function sbremake:world/dreamworld/mercurius/attacks/worldborder/tick
 
 ### Orbs
@@ -52,7 +52,7 @@ execute unless entity @e[tag=summon_orb] run schedule clear sbremake:world/dream
 ## Totems
 execute as @e[tag=stoner] at @s run tp @s ~ ~ ~ ~10 ~
 execute as @e[type=interaction,tag=mercuriusTotem,nbt={attack:{}}] at @s run function sbremake:world/dreamworld/mercurius/attacks/totem/totem_death
-execute as @e[type=area_effect_cloud,tag=healingTotem] unless score e39dc353-0355-4517-b803-00dee36ca116 health matches 2500.. run scoreboard players add e39dc353-0355-4517-b803-00dee36ca116 health 1
+execute as @e[type=area_effect_cloud,tag=healingTotem] unless score e39dc353-0355-4517-b803-00dee36ca116 health matches 25000.. run scoreboard players add e39dc353-0355-4517-b803-00dee36ca116 health 10
 scoreboard players set #power fakePlayers 0
 execute if entity @e[tag=strengthTotem,type=area_effect_cloud,limit=1] at @e[tag=mercuriusSummon] run particle crit ~ ~ ~ 0.5 0.5 0.5 0 1 normal
 execute as @e[tag=strengthTotem,type=area_effect_cloud] run scoreboard players add #power fakePlayers 1

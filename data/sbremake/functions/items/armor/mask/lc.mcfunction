@@ -12,8 +12,8 @@ function sbstats:reforges/lore_builder
 
 clear @s minecraft:barrier{display:{Name:'[{"text":"Revert Selection","italic":false,"color":"red"}]',Lore:['[{"text":"Feeling a bit plain?","italic":false,"color":"gray"}]','[{"text":"Revert the mask back to it\'s","italic":false,"color":"gray"}]','[{"text":"original design for no cost!","italic":false,"color":"gray"}]']}}
 
-tp @e[tag=spookyCart] ~ ~-1000 ~
-kill @e[tag=spookyCart]
+tp 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 ~ ~-1000 ~
+kill 35466863-3d53-4344-9b8c-9e3c6f6c4ff4
 
 tag @s remove skeletonMode
 tag @s remove explosionMode

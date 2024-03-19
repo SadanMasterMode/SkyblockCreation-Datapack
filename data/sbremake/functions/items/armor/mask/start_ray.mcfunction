@@ -6,7 +6,7 @@ scoreboard players set #distance vdvcasttemp 0
 
 #Activating the raycast. This function will call itself until it is done.
 
-function sbstats:reforges/raycast/ray
+function sbremake:items/armor/mask/ray
 
 #Raycasting finished, removing tag from the raycaster.
 

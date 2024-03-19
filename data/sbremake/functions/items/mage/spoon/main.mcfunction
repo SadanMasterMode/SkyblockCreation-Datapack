@@ -1,8 +1,8 @@
-summon marker ^ ^ ^1 {Invulnerable:1b,Tags:["moltenGuide","spectator"],NoGravity:1b,data:{SBRemake:{UUID:"a6ae9cfe-01ee-4cc2-8752-f481b8babe7a"}},UUID:[I;-1498505986,32394434,-2024606591,-1195721094]}
+execute positioned ~ ~-0.5 ~ run summon marker ^ ^0.05 ^0.5 {Invulnerable:1b,Tags:["moltenGuide","spectator"],NoGravity:1b,data:{SBRemake:{UUID:"a6ae9cfe-01ee-4cc2-8752-f481b8babe7a"}},UUID:[I;-1498505986,32394434,-2024606591,-1195721094]}
 
 execute as a6ae9cfe-01ee-4cc2-8752-f481b8babe7a at @s[tag=!facingPlayer] run tp @s ~ ~ ~ facing entity @p feet
 execute as a6ae9cfe-01ee-4cc2-8752-f481b8babe7a at @s[tag=!facingPlayer] run tp @s ~ ~ ~ ~180 0
-tag @e[tag=moltenGuide,tag=!facingPlayer] add facingPlayer
+tag a6ae9cfe-01ee-4cc2-8752-f481b8babe7a add facingPlayer
 
 scoreboard players set #spoon count 0
 schedule function sbremake:items/mage/spoon/wave 2t append

@@ -71,7 +71,7 @@ execute if score @s dhDialogueProgress matches 780 at @e[tag=decayedHusk] run pl
 execute if score @s dhDialogueProgress matches 840 run tellraw @a [{"text": "[NPC] ","color": "yellow"},{"text": "Decayed Husk","color": "gold"},{"text": ": I've had this for quite a long while, I think you deserve it.","color": "white"}]
 execute if score @s dhDialogueProgress matches 840 at @e[tag=decayedHusk] run playsound entity.villager.no master @s
 execute if score @s dhDialogueProgress matches 900 as @s run scoreboard players set @s decayedHuskDigout -120
-execute if score @s dhDialogueProgress matches 900 run data merge block 24 53 22 {Text2:''}
+execute if score @s dhDialogueProgress matches 900 run data modify block 24 53 22 front_text.messages[1] set value ''
 execute if score @s dhDialogueProgress matches 900 run data merge entity @e[tag=decayedHusk,limit=1] {CustomNameVisible:0b}
 execute if score @s dhDialogueProgress matches 900 run function sbremake:world/dh/item_give
 

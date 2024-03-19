@@ -1,11 +1,15 @@
 [
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "nbt": "{SelectedItem:{id:\"minecraft:golden_shovel\",Count:1b,tag:{display:{Name:'[{\"text\":\"Midas Staff\",\"italic\":false,\"color\":\"gold\"}]'}}}}"
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "mainhand": {
+          "nbt": "{Base:{id:'MIDAS_STAFF'}}"
+        }
       }
-    },
+    }
+  },
     {
       "condition": "minecraft:entity_scores",
       "entity": "this",

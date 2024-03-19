@@ -5,11 +5,11 @@ kill @e[tag=emperorHeart]
 scoreboard players reset #2 life
 tag @a add mercuriusSpawn
 
-execute in sbremake:dreamworld positioned 88 42 99 unless entity e39dc353-0355-4517-b803-00dee36ca116 run summon evoker ~ ~ ~ {CustomNameVisible:1b,DeathLootTable:"minecraft:empty",Invulnerable:1b,Silent:1b,NoAI:1b,NoGravity:1b,Tags:["mercurius","boss","maxHealth","newDmg","invulnerable","not_kill"],Team:player,ActiveEffects:[{Id:11,Amplifier:5,Duration:1000000000}],UUID:[I;-476200109,55919895,-1207762722,-479420138],ArmorItems:[{id:"minecraft:stone",Count:1b,tag:{AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Amount:100,Name:"generic.knockback_resistance",UUID:[I;-12339,32148,23541,-64296]}]}},{},{},{}],ArmorDropChances:[0.0f,0.0f,0.0f,0.f]}
+execute in sbremake:dreamworld positioned 88 42 99 unless entity e39dc353-0355-4517-b803-00dee36ca116 run summon evoker ~ ~ ~ {CustomNameVisible:1b,DeathLootTable:"minecraft:empty",Invulnerable:1b,Silent:1b,NoAI:1b,NoGravity:1b,Tags:["mercurius","boss","maxHealth","newDmg","invulnerable","not_kill"],Team:player,active_effects:[{id:"resistance",amplifier:5,duration:1000000000}],UUID:[I;-476200109,55919895,-1207762722,-479420138],ArmorItems:[{id:"minecraft:stone",Count:1b,tag:{AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Amount:100,Name:"generic.knockback_resistance",UUID:[I;-12339,32148,23541,-64296]}]}},{},{},{}],ArmorDropChances:[0.0f,0.0f,0.0f,0.f]}
 # e39dc353-0355-4517-b803-00dee36ca116
 
-scoreboard players set e39dc353-0355-4517-b803-00dee36ca116 health 2500
-scoreboard players set e39dc353-0355-4517-b803-00dee36ca116 maxHealth 2500
+scoreboard players set e39dc353-0355-4517-b803-00dee36ca116 health 25000
+scoreboard players set e39dc353-0355-4517-b803-00dee36ca116 maxHealth 25000
 attribute e39dc353-0355-4517-b803-00dee36ca116 generic.knockback_resistance base set 100
 attribute e39dc353-0355-4517-b803-00dee36ca116 generic.movement_speed base set 0
 scoreboard players set e39dc353-0355-4517-b803-00dee36ca116 phase 0

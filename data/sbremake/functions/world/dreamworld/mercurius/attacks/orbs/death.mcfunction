@@ -2,9 +2,9 @@ scoreboard players reset @a mobCount
 execute as @e[tag=borderOrb] run scoreboard players add @a mobCount 1
 scoreboard players remove @a mobCount 1
 
-execute if score @p mobCount matches 1.. run data modify block 3000000 1 3000000 Text1 set value '[{"text": "There are still ","color": "green"},{"score":{"name": "@p","objective": "mobCount"},"color": "greem"},{"text": " orb(s) left!","color": "green"}]'
-execute if score @p mobCount matches 0 run data modify block 3000000 1 3000000 Text1 set value '{"text": "There are no orbs left, go after the emperor!","color": "green"}'
-data modify storage sbremake:world BorderOrb.count set from block 3000000 1 3000000 Text1
+execute if score @p mobCount matches 1.. run data modify block 3000000 1 3000000 front_text.messages[0] set value '[{"text": "There are still ","color": "green"},{"score":{"name": "@p","objective": "mobCount"},"color": "greem"},{"text": " orb(s) left!","color": "green"}]'
+execute if score @p mobCount matches 0 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"text": "There are no orbs left, go after the emperor!","color": "green"}'
+data modify storage sbremake:world BorderOrb.count set from block 3000000 1 3000000 front_text.messages[0]
 
 # General Death Message
 execute if entity @s[tag=summon_orb] run data modify storage sbremake:world BorderOrb.type set value '[{"text":"Summoning Orb","color":"blue"}]'

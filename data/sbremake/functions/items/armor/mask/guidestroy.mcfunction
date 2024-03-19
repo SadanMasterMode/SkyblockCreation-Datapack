@@ -1,2 +1,2 @@
-tp @e[tag=spookyCart] ~ ~-1000 ~
-kill @e[tag=spookyCart]
+tp 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 ~ ~-1000 ~
+kill 35466863-3d53-4344-9b8c-9e3c6f6c4ff4

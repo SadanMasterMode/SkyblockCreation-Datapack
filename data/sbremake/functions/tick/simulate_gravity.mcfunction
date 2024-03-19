@@ -10,5 +10,5 @@ kill @s[scores={life=60..}]
 
 kill @s[type=block_display,predicate=sbremake:items/spoon/passenger]
 
-execute unless block ~ ~2 ~ #sbremake:items/air on passengers run kill @s
-execute unless block ~ ~2 ~ #sbremake:items/air run kill @s
+execute unless block ~ ~2.5 ~ #sbremake:items/air on passengers run kill @s
+execute unless block ~ ~2.5 ~ #sbremake:items/air run kill @s

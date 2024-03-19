@@ -43,55 +43,55 @@ execute if score DamageCalc.tmp.10 fakePlayers matches 1.. run data modify stora
 scoreboard players set DamageCalc.tmp.condition9 fakePlayers 1
 execute if score DamageCalc.tmp.9 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition9 fakePlayers 0 
 execute if score DamageCalc.tmp.10 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition9 fakePlayers 1
-execute if score DamageCalc.tmp.condition9 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.9","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition9 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition9 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.9","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition9 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition8 fakePlayers 1
 execute if score DamageCalc.tmp.8 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition8 fakePlayers 0 
 execute if score DamageCalc.tmp.condition9 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition8 fakePlayers 1
-execute if score DamageCalc.tmp.condition8 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.8","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition8 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition8 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.8","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition8 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition7 fakePlayers 1
 execute if score DamageCalc.tmp.7 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition7 fakePlayers 0 
 execute if score DamageCalc.tmp.condition8 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition7 fakePlayers 1
-execute if score DamageCalc.tmp.condition7 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.7","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition7 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition7 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.7","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition7 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition6 fakePlayers 1
 execute if score DamageCalc.tmp.6 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition6 fakePlayers 0 
 execute if score DamageCalc.tmp.condition7 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition6 fakePlayers 1
-execute if score DamageCalc.tmp.condition6 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.6","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition6 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition6 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.6","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition6 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition5 fakePlayers 1
 execute if score DamageCalc.tmp.5 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition5 fakePlayers 0 
 execute if score DamageCalc.tmp.condition6 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition5 fakePlayers 1
-execute if score DamageCalc.tmp.condition5 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.5","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition5 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition5 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.5","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition5 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition4 fakePlayers 1
 execute if score DamageCalc.tmp.4 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition4 fakePlayers 0 
 execute if score DamageCalc.tmp.condition5 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition4 fakePlayers 1
-execute if score DamageCalc.tmp.condition4 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.4","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition4 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition4 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.4","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition4 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition3 fakePlayers 1
 execute if score DamageCalc.tmp.3 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition3 fakePlayers 0 
 execute if score DamageCalc.tmp.condition4 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition3 fakePlayers 1
-execute if score DamageCalc.tmp.condition3 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.3","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition3 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition3 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.3","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition3 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition2 fakePlayers 1
 execute if score DamageCalc.tmp.2 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition2 fakePlayers 0 
 execute if score DamageCalc.tmp.condition3 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition2 fakePlayers 1
-execute if score DamageCalc.tmp.condition2 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '{"score":{"name":"DamageCalc.tmp.2","objective":"fakePlayers"}}'
-execute if score DamageCalc.tmp.condition2 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition2 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '{"score":{"name":"DamageCalc.tmp.2","objective":"fakePlayers"}}'
+execute if score DamageCalc.tmp.condition2 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 scoreboard players set DamageCalc.tmp.condition1 fakePlayers 1
 execute if score DamageCalc.tmp.1 fakePlayers matches 0 run scoreboard players set DamageCalc.tmp.condition1 fakePlayers 0 
 execute if score DamageCalc.tmp.condition2 fakePlayers matches 1.. run scoreboard players set DamageCalc.tmp.condition2 fakePlayers 1
-execute if score DamageCalc.tmp.condition1 fakePlayers matches 1 run data modify block 3000000 1 3000000 Text1 set value '[{"text":".","color":"white"},{"score":{"name":"DamageCalc.tmp.1","objective":"fakePlayers"}}]'
-execute if score DamageCalc.tmp.condition1 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 Text1
+execute if score DamageCalc.tmp.condition1 fakePlayers matches 1 run data modify block 3000000 1 3000000 front_text.messages[0] set value '[{"text":".","color":"white"},{"score":{"name":"DamageCalc.tmp.1","objective":"fakePlayers"}}]'
+execute if score DamageCalc.tmp.condition1 fakePlayers matches 1.. run data modify storage sbremake:data DamageCalc.tmp append from block 3000000 1 3000000 front_text.messages[0]
 
 data modify storage sbremake:data DamageCalc.CritHologram set value '[{"text":"✧ ","color": "white"},{"nbt":"DamageCalc.tmp[0]","storage":"sbremake:data","color": "white","interpret": true},{"nbt":"DamageCalc.tmp[1]","storage":"sbremake:data","color": "yellow","interpret": true},{"nbt":"DamageCalc.tmp[2]","storage":"sbremake:data","color": "gold","interpret": true},{"nbt":"DamageCalc.tmp[3]","storage":"sbremake:data","color": "red","interpret": true},{"nbt":"DamageCalc.tmp[4]","storage":"sbremake:data","color": "red","interpret": true},{"nbt":"DamageCalc.tmp[5]","storage":"sbremake:data","color": "white","interpret": true},{"nbt":"DamageCalc.tmp[6]","storage":"sbremake:data","color": "white","interpret": true},{"nbt":"DamageCalc.tmp[7]","storage":"sbremake:data","color": "yellow","interpret": true},{"nbt":"DamageCalc.tmp[8]","storage":"sbremake:data","color": "gold","interpret": true},{"nbt":"DamageCalc.tmp[9]","storage":"sbremake:data","color": "red","interpret": true},{"text":" ✧","color": "white"}]'

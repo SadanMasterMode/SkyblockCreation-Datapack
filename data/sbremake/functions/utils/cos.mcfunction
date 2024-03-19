@@ -1,4 +1,7 @@
+advancement revoke @s only sbremake:utils/cos/inventory-changed
 scoreboard players set @a success 0
+
+execute unless data storage sbremake:data {PlayerData:{Inventory:[{Slot:-106b,id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:199999}}]}} store success score @s success run item replace entity @s weapon.offhand with carrot_on_a_stick
 execute if data storage sbremake:data {PlayerData:{Inventory:[{Slot:0b,id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:199999}}]}} store success score @s success run item replace entity @s container.0 with air
 execute if data storage sbremake:data {PlayerData:{Inventory:[{Slot:1b,id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:199999}}]}} store success score @s success run item replace entity @s container.1 with air
 execute if data storage sbremake:data {PlayerData:{Inventory:[{Slot:2b,id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:199999}}]}} store success score @s success run item replace entity @s container.2 with air
