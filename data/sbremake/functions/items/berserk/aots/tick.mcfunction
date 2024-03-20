@@ -2,7 +2,6 @@ execute as @a unless score @s aotsRotate matches 359 run scoreboard players add 
 execute as @a if score @s aotsRotate matches 359.. run scoreboard players set @s aotsRotate 1
 execute as @e[tag=aots] store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @a[limit=1] aotsRotate
 
-execute as @e[tag=aots,type=area_effect_cloud] store result entity @s Air short 1 run time query gametime
 
 scoreboard players add @a[limit=1,scores={aotsCD=..19}] aotsCD 1
 execute as @e[tag=aots] run scoreboard players add @s life 1

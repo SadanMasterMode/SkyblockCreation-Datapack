@@ -9,20 +9,17 @@ execute if score #2 life matches 61.. run function sbremake:world/dreamworld/mer
 # Spawning
 execute as e39dc353-0355-4517-b803-00dee36ca116 at @s run tp @s ~ ~ ~ facing entity @p feet
 
-execute as e39dc353-0355-4517-b803-00dee36ca116 on attacker run scoreboard players operation @s dmgDealtResis /= #10 const
-execute as e39dc353-0355-4517-b803-00dee36ca116 on attacker run scoreboard players operation e39dc353-0355-4517-b803-00dee36ca116 health -= @s dmgDealtResis
-execute as e39dc353-0355-4517-b803-00dee36ca116 on attacker run scoreboard players reset @s dmgDealtResis
-attribute e39dc353-0355-4517-b803-00dee36ca116 generic.knockback_resistance base set 100
+execute as e39dc353-0355-4517-b803-00dee36ca116 on attacker run function sbremake:world/dreamworld/mercurius/melee-dmg
 
 ## Attacks
 execute as e39dc353-0355-4517-b803-00dee36ca116 if entity @a[tag=mercuriusBoss] run scoreboard players add @s[tag=!mercuriusShield] cd 1
 execute as e39dc353-0355-4517-b803-00dee36ca116 run scoreboard players reset @s[tag=mercuriusShield] cd
 
-execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=140..},tag=!mercuriusShield] phase matches 0 at @s run function sbremake:world/dreamworld/mercurius/attack
-execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=120..},tag=!mercuriusShield] phase matches 1 at @s run function sbremake:world/dreamworld/mercurius/attack
-execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=100..},tag=!mercuriusShield] phase matches 2 at @s run function sbremake:world/dreamworld/mercurius/attack
-execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=80..},tag=!mercuriusShield] phase matches 3 at @s run function sbremake:world/dreamworld/mercurius/attack
-execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=60..},tag=!mercuriusShield] phase matches 4 at @s run function sbremake:world/dreamworld/mercurius/attack
+execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=120..},tag=!mercuriusShield] phase matches 0 at @s run function sbremake:world/dreamworld/mercurius/attack
+execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=100..},tag=!mercuriusShield] phase matches 1 at @s run function sbremake:world/dreamworld/mercurius/attack
+execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=80..},tag=!mercuriusShield] phase matches 2 at @s run function sbremake:world/dreamworld/mercurius/attack
+execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=60..},tag=!mercuriusShield] phase matches 3 at @s run function sbremake:world/dreamworld/mercurius/attack
+execute as e39dc353-0355-4517-b803-00dee36ca116 if score @s[scores={cd=40..},tag=!mercuriusShield] phase matches 4 at @s run function sbremake:world/dreamworld/mercurius/attack
 
 ## Fang Attack
 

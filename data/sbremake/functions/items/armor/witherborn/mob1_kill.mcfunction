@@ -1,4 +1,4 @@
-execute at @e[tag=witherborn,tag=mob-1] run particle explosion ~ ~3.5 ~ 0 0 0 0 1 normal
+execute at fccff781-547f-498c-b424-1297596e1d57 run particle explosion ~ ~3.5 ~ 0 0 0 0 1 normal
 
 tag @s add hologramTmp
 attribute @s generic.knockback_resistance base set 100
@@ -20,7 +20,12 @@ attribute @s generic.knockback_resistance base set 0
 tag @s remove hologramTmp
 
 tellraw @a [{"text": "Your Witherborn hit ","color": "gray"},{"text": "1","color": "red"},{"text": " enemy for "},{"text": "36","color": "red"},{"text": " damage.","color": "gray"}]
-tp @e[tag=witherborn,tag=mob-1] ~ ~-1000 ~
-kill @e[tag=witherborn,tag=mob-1]
+
+# Kill witherborn
+execute as fccff781-547f-498c-b424-1297596e1d57 on passengers run tp @s ~ ~-1000 ~
+execute as fccff781-547f-498c-b424-1297596e1d57 on passengers run kill @s
+execute as fccff781-547f-498c-b424-1297596e1d57 run tp @s ~ ~-1000 ~
+execute as fccff781-547f-498c-b424-1297596e1d57 run kill @s
+
 scoreboard players remove @a witherbornCount 1
 kill 638e122c-b657-4d30-a679-7358a2d5f184

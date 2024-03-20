@@ -23,4 +23,9 @@ kill @e[tag=mercuriusTotem]
 execute in sbremake:dreamworld as @e[tag=mercuriusBomb] on passengers run kill @s
 execute in sbremake:dreamworld as @e[tag=mercuriusBomb] run kill @s
 
+# Teleport entities back
+## Witherlord
+execute in overworld run tp e4e3300c-d322-4618-a0dc-ea79d82d2844 0 0 0
+execute in overworld run tp fccff781-547f-498c-b424-1297596e1d57 0 0 0
+
 tellraw @a [{"text": "This fight is replayable, try again!","color": "dark_gray","italic": true}]

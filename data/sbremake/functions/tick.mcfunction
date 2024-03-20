@@ -25,7 +25,6 @@ execute as @e[type=area_effect_cloud] store result entity @s Air short 1 run tim
 
 # Left Click
 execute at @a run tp 23659f9b-55c6-4089-908e-1cc6a38c3584 ~ ~-1 ~
-execute store result entity 23659f9b-55c6-4089-908e-1cc6a38c3584 Air short 1 run time query gametime
 execute if entity @a[predicate=!sbremake:misc/holding-lc,limit=1] as 23659f9b-55c6-4089-908e-1cc6a38c3584 on passengers run kill @s
 execute if entity @a[predicate=!sbremake:misc/holding-lc,limit=1] as 23659f9b-55c6-4089-908e-1cc6a38c3584 run kill @s
 

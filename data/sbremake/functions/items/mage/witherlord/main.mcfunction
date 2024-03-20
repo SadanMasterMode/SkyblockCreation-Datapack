@@ -1,8 +1,8 @@
-execute positioned ^-0.5 ^ ^1 summon area_effect_cloud run function sbremake:items/mage/witherlord/witherlord-3
+execute positioned ^-0.5 ^ ^1 positioned ~ ~-0.25 ~ summon area_effect_cloud run function sbremake:items/mage/witherlord/witherlord-3
 
-execute positioned ^ ^ ^1 summon area_effect_cloud run function sbremake:items/mage/witherlord/witherlord-1
+execute positioned ^ ^ ^1 positioned ~ ~-0.25 ~ summon area_effect_cloud run function sbremake:items/mage/witherlord/witherlord-1
 
-execute positioned ^0.5 ^ ^1 summon area_effect_cloud run function sbremake:items/mage/witherlord/witherlord-2
+execute positioned ^0.5 ^ ^1 positioned ~ ~-0.25 ~ summon area_effect_cloud run function sbremake:items/mage/witherlord/witherlord-2
 
 schedule clear sbremake:manareset
 schedule function sbremake:manareset 1s append
