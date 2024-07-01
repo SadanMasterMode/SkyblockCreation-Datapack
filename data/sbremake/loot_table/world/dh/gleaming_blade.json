@@ -1,0 +1,125 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_sword",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": {
+                "text": "Gleaming Blade",
+                "color": "green",
+                "bold": false,
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{Base:{id:'GLEAMING_BLADE',type:'SWORD',rarity:'UNCOMMON',stats:{damage:50},description:['[{\"text\":\"Deals \",\"italic\":false,\"color\":\"gray\"},{\"text\":\"+150 ❁ Damage\",\"color\":\"red\"},{\"text\":\" if\",\"color\":\"gray\"}]','[{\"text\":\"the current light level\",\"italic\":false,\"color\":\"gray\"}]','[{\"text\":\"is above \",\"italic\":false,\"color\":\"gray\"},{\"text\":\"9\",\"color\":\"green\"},{\"text\":\"\",\"color\":\"dark_purple\"}]'],Gemstones:[],weapon:'TOOL',lore_builder:1b},Upgrades:{recomb:0b,reforge:{type:'',stats:{}},Gemstones:[],HotPotatoBooks:0,FumingPotatoBooks:0},Abilities:[],SBRemake:{gleaming:0b}}"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                [
+                  {
+                    "text": "Damage: ",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "+50",
+                    "color": "red"
+                  },
+                  {
+                    "text": "",
+                    "color": "dark_purple"
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "color": "dark_purple",
+                    "italic": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Deals ",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "+150 ❁ Damage",
+                    "color": "red"
+                  },
+                  {
+                    "text": " if",
+                    "color": "gray"
+                  }
+                ],
+                [
+                  {
+                    "text": "the current light level",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                [
+                  {
+                    "text": "is above ",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "9",
+                    "color": "green"
+                  },
+                  {
+                    "text": "",
+                    "color": "dark_purple"
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "color": "dark_purple",
+                    "italic": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Custom Item",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                [
+                  {
+                    "text": "UNCOMMON SWORD",
+                    "color": "green",
+                    "bold": true,
+                    "italic": false
+                  }
+                ]
+              ],
+              "mode": "replace_all"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:unbreakable": {
+                  "show_in_tooltip": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

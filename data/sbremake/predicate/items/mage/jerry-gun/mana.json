@@ -1,0 +1,35 @@
+[
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "mana": {
+          "max": {
+            "type": "minecraft:score",
+            "target": {
+              "type": "minecraft:fixed",
+              "name": "#jerry-gun"
+            },
+            "score": "fakePlayers"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'JERRY_GUN'}}"
+            }
+          }
+        }
+      }
+    }
+  ]
+  

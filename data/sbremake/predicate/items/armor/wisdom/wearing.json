@@ -1,0 +1,31 @@
+[
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'WISDOM_HELMET'}}"
+            }
+          },
+          "chest": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'WISDOM_CHESTPLATE'}}"
+            }
+          },
+          "legs": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'WISDOM_LEGGINGS'}}"
+            }
+          },
+          "feet": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'WISDOM_BOOTS'}}"
+            }
+          }
+        }
+      }
+    }
+  ]
+  

@@ -1,0 +1,29 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "head": {
+          "components": {
+            "minecraft:custom_data": "{SBRemake:{SpookyMask:1b}}"
+          }
+        },
+        "chest": {
+          "components": {
+            "minecraft:custom_data": "{Base:{id:'TERRORWRAITH_CLOAK'}}"
+          }
+        },
+        "legs": {
+          "components": {
+            "minecraft:custom_data": "{Base:{id:'ANGEL_ASCENT'}}"
+          }
+        },
+        "feet": {
+          "components": {
+            "minecraft:custom_data": "{Base:{id:'SPIRIT_BOOTS'}}"
+          }
+        }
+      }
+    }
+  }
+  

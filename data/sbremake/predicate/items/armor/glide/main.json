@@ -1,0 +1,56 @@
+[
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "nbt": "{Tags:[\"inGlide\"]}"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "nbt": "{Tags:[\"inWraith\"]}"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "mana": {
+          "min": 250
+        },
+        "sneak": {
+          "min": 1
+        },
+        "spiritCD": {
+          "max": 0
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "stepping_on": {
+          "block": {
+            "tag": "sbremake:items/air"
+          }
+        },
+        "equipment": {
+          "feet": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'SPIRIT_BOOTS'}}"
+            }
+          }
+        }
+      }
+    }
+  ]
+  

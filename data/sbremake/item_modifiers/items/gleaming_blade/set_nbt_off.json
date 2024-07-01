@@ -1,6 +1,0 @@
-[
-  {
-    "function": "minecraft:set_nbt",
-    "tag": "{Base:{stats:{damage:50}},SBRemake:{gleaming:0b}}"
-  }
-]

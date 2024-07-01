@@ -1,0 +1,17 @@
+[
+    {
+      "function": "minecraft:copy_custom_data",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "sbstats:reforge"
+      },
+      "ops": [
+        {
+          "source": "Item.components.minecraft:custom_data.Upgrades.reforge.stats",
+          "target": "Upgrades.reforge.stats",
+          "op": "replace"
+        }
+      ]
+    }
+  ]
+  

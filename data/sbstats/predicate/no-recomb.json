@@ -1,0 +1,14 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "mainhand": {
+          "predicates": {
+            "custom_data": "{Upgrades:{recomb:0b}}"
+          }
+        }
+      }
+    }
+  }
+  

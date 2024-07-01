@@ -1,0 +1,14 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "legs": {
+          "predicates": {
+              "minecraft:custom_data": "{Base:{id:'ANGEL_ASCENT'}}"
+            }
+        }
+      }
+    }
+  }
+  

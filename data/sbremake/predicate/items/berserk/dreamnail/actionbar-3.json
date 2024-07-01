@@ -1,0 +1,23 @@
+[
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "dreamnailCharge": 3
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'DREAMNAIL'}}"
+            }
+          }
+        }
+      }
+    }
+  ]
+  

@@ -1,0 +1,36 @@
+[
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "mana": {
+          "min": {
+            "type": "minecraft:score",
+            "target": {
+              "type": "minecraft:fixed",
+              "name": "#wom-mana"
+            },
+            "score": "fakePlayers",
+            "scale": 1
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'MANA_WAND'}}"
+            }
+          }
+        }
+      }
+    }
+  ]
+  

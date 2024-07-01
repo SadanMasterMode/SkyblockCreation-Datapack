@@ -1,6 +1,0 @@
-[
-    {
-      "function": "minecraft:set_nbt",
-      "tag": "{Upgrades:{recomb:1b}}"
-    }
-  ]  

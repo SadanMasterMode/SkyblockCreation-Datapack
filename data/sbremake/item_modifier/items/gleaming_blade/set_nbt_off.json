@@ -1,0 +1,6 @@
+[
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{Base:{stats:{damage:50}},SBRemake:{gleaming:0b}}"
+  }
+]

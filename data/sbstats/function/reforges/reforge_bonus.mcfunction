@@ -1,0 +1,2 @@
+data modify storage sbstats:stone Item.components."minecraft:custom_data".ReforgeBonus append value '[{"text":" "}]'
+data modify storage sbstats:stone Item.components."minecraft:custom_data".ReforgeBonus append from storage sbstats:stone SelectedItem.components."minecraft:custom_data".ReforgeStone.bonus[]

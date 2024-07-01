@@ -1,0 +1,28 @@
+[
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'AXE_OF_THE_SHREDDED'}}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "aotsCD": {
+          "min": 20
+        }
+      }
+    }
+  ]
+  

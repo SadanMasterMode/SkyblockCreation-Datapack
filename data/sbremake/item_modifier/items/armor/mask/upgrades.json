@@ -1,0 +1,16 @@
+[
+    {
+      "function": "minecraft:copy_custom_data",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "sbstats:data"
+      },
+      "ops": [
+        {
+          "source": "PlayerData.SelectedItem.components.minecraft:custom_data.Upgrades",
+          "target": "Upgrades",
+          "op": "replace"
+        }
+      ]
+    }
+  ]  

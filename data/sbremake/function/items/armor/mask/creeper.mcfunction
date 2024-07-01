@@ -1,0 +1,25 @@
+execute if score @s spookyMute matches 1 run execute if entity 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 run tellraw @s [{"text":"You selected Explosion Mode","color":"green"}]
+tag @s remove skeletonMode
+tag @s remove arthropodMode
+tag @s remove zombieMode
+tag @s add explosionMode
+
+data modify storage sbstats:data PlayerData set from entity @s
+
+item replace entity @s weapon.mainhand with minecraft:creeper_head[minecraft:lore=['[{"text":"True Defense: ","italic":false,"color":"gray"},{"text":"+15","color":"green"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"BOOM BOOM BOOM!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"EXPLOSIONS","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"EPIC MASK","italic":false,"color":"dark_purple","bold":true}]'],minecraft:custom_name='[{"text":"Explosion Mask","italic":false,"color":"dark_purple"}]',minecraft:custom_data={Base:{Gemstones:[],description:['[{"text":"BOOM BOOM BOOM!","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Ability: Spook ","italic":false,"color":"gold"},{"text":"RIGHT CLICK","color":"yellow","bold":true},{"text":"","color":"dark_purple","bold":false}]','[{"text":"Select a mob type to Spook.","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Current Mob:","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"EXPLOSIONS","color":"red","bold":true},{"text":"","color":"dark_purple","bold":false}]'],id:"CREEPER_MASK",lore_builder:1b,rarity:"EPIC",stats:{true_defense:15},type:"MASK",weapon:"ARMOR"},SBRemake:{CustomItem:1b,SpookyMask:1b},Upgrades:{FumingPotatoBooks:0,Gemstones:[],HotPotatoBooks:0,recomb:0b,reforge:{stats:{},type:""}}}] 1
+
+item modify entity @s weapon.mainhand sbremake:items/armor/mask/upgrades
+item modify entity @s weapon.mainhand sbremake:items/armor/mask/base-rarity
+
+data modify storage sbstats:data oldnametmp.oldname set from entity @s SelectedItem.components."minecraft:item_name"
+execute unless data entity @s SelectedItem.components."minecraft:item_name".SBStats.OldName run function sbstats:macros/old_name with storage sbstats:data oldnametmp
+
+data modify storage sbstats:data PlayerData set from entity @s
+function sbstats:reforges/lore_builder
+
+clear @a minecraft:creeper_head[minecraft:lore=['[{"text":"Click to select ","italic":false,"color":"gray"},{"text":"Explosion Repellent!","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"All ","italic":false,"color":"gray"},{"text":"Explosions","color":"red"},{"text":" within "},{"text":"20 ","color":"green"},{"text":"blocks","color":"gray"}]','[{"text":"will automatically be","italic":false,"color":"gray"},{"text":" pushed away","color":"green"},{"text":"!"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Works On:","italic":false,"color":"gray"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Creepers","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Primed TNT","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":" - ","italic":false,"color":"gray"},{"text":"Wither Skulls","color":"red"},{"text":"","color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"⚠ May cause further damage.","italic":false,"color":"gold"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Custom Item","italic":false,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"GUI ITEM","italic":false,"color":"red","bold":true}]'],minecraft:custom_name='[{"text":"Explosive Mode","italic":false,"color":"red"}]']
+
+tp 35466863-3d53-4344-9b8c-9e3c6f6c4ff4 ~ ~-100 ~
+kill 35466863-3d53-4344-9b8c-9e3c6f6c4ff4
+scoreboard players set @s inSpookyGUI 0
+execute at @s run playsound minecraft:entity.creeper.hurt master @s ~ ~ ~

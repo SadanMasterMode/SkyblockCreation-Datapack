@@ -1,0 +1,16 @@
+[
+    {
+      "function": "minecraft:copy_custom_data",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "sbstats:recomb"
+      },
+      "ops": [
+        {
+          "source": "Item.components.minecraft:custom_data.rarity",
+          "target": "Base.rarity",
+          "op": "replace"
+        }
+      ]
+    }
+  ]  

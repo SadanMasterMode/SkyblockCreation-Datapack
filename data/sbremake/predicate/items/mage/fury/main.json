@@ -1,0 +1,31 @@
+[
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "rightClick": {
+          "min": 1
+        },
+        "furyCD": {
+          "min": 240
+        },
+        "mana": {
+          "min": 1000
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "predicates": {
+              "minecraft:custom_data": "{Base:{id:'FIRE_FURY_STAFF'}}"
+            }
+          }
+        }
+      }
+    }
+  ]
+  
